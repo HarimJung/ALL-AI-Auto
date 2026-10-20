@@ -1,5 +1,5 @@
 ---
-name: sdg-indicator-card
+name: indicator-card
 description: Build a one-page, citable card for any SDG indicator and country. Use when someone gives an SDG indicator code (like 6.1.1) and a country and wants the definition, the latest official value, the custodian agency and the methodological catch, each line traced to its official source.
 ---
 

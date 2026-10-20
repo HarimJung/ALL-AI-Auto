@@ -1,13 +1,14 @@
-<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Claude for SDG</title>
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Claude for SDG: AI that quotes the UN source</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Weekly, tested ways to make AI quote the official UN source.">
+<meta name="description" content="Weekly, tested ways to make AI quote the official UN source, with free skills and indicator cards checked against the SDG Global Database.">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://sdgai.org/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Claude for SDG">
-<meta property="og:description" content="Weekly, tested ways to make AI quote the official UN source.">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="Claude for SDG: AI that quotes the UN source">
+<meta property="og:description" content="Weekly, tested ways to make AI quote the official UN source, with free skills and indicator cards checked against the SDG Global Database.">
 <meta property="og:url" content="https://sdgai.org/">
-<meta property="og:image" content="https://sdgai.org/assets/slide_01.jpg">
+<meta property="og:image" content="https://sdgai.org/assets/w01/slide_01.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -15,20 +16,23 @@
  --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
  --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
 a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
 .wrap{max-width:1080px;margin:0 auto}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
 p{margin:0}
-nav{display:flex;align-items:center;gap:20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
 nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
 nav .brand b{color:var(--or)}
-nav a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
-nav a.on{color:var(--or-ink)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
 .eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
 .lede{color:var(--mut);max-width:62ch}
-section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair)}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
 h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
 h3{font-size:19px;font-weight:800}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
@@ -42,8 +46,10 @@ h3{font-size:19px;font-weight:800}
 .said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
 .small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
 .big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
 .big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
 q{quotes:"\201C" "\201D"}
 .said q{color:var(--mut);font-size:15px}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -51,59 +57,103 @@ q{quotes:"\201C" "\201D"}
 .step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
 .step p{color:var(--mut);font-size:15.5px}
 .drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
-.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair)}
-.join{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.todo{font-family:var(--mono);font-size:12px;color:var(--or-ink)}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
 .strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
 video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
-.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
 .ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.abc .q{font-weight:700}
-.abc .a{color:var(--mut);font-size:15px}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
 .verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
 .verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
-.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
 .ctl{display:flex;gap:8px;align-self:flex-end}
 .ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
 .ctl button[aria-pressed="true"]{border-color:var(--ink)}
-.bar{display:grid;grid-template-columns:minmax(120px,240px) 1fr 70px;align-items:center;gap:12px;min-height:38px}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
 .bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
 .bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
 .bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
 .bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
-.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
 .bar:hover .t i{filter:brightness(1.08)}
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
 .tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
-table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
 th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
 th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
 td.n{text-align:right;font-variant-numeric:tabular-nums}
 tr:last-child td{border-bottom:0}
-pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
 .note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
 .pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
 .pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
-@media (max-width:780px){.pair2{grid-template-columns:1fr}}
-footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:6px}
-@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
-</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><a href="w01.html" class="">This week</a><a href="indicators.html" class="">Indicators</a><a href="skills.html" class="">Skills</a><a href="index.html#join" class="">Join</a></nav>
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Claude for SDG", "url": "https://sdgai.org/", "description": "Weekly, tested ways to make AI quote the official UN source.", "inLanguage": "en", "author": {"@type": "Person", "name": "Harim Jung"}, "potentialAction": {"@type": "SearchAction", "target": "https://sdgai.org/indicators.html?q={search_term_string}", "query-input": "required name=search_term_string"}}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w01.html">This week</a><a href="weeks.html">Weeks</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
 <header class="hero">
  <div>
   <div class="eyebrow">A community for people who report on the SDGs</div>
-  <h1>AI that <span>quotes the source</span> instead of guessing.</h1>
+  <h1>Make AI <span>read the UN source</span> before it answers.</h1>
   <p class="lede">Every week: one method that makes Claude read the official UN source before it answers, tested in public, with a free skill you can use the same day.</p>
   <div class="row"><a class="btn primary" href="w01.html">See this week's test</a><a class="btn" href="skills.html">Get the free skill</a></div>
  </div>
  <div class="duo" aria-label="What Claude said without the skill, next to the official value">
-  <div class="said"><span class="small">Claude, no skill, no tools</span><div class="big dim">38%</div><q>From memory, the latest figure I recall for Ghana is about 38% of the population using safely ma…</q></div>
+  <div class="said"><span class="small">Claude, no skill, no tools</span><div class="big dim">38%</div><q>From memory, the latest figure I recall for Ghana is about 38% of the population using safely…</q></div>
   <div class="truth"><span class="small">SDG Global Database</span><div class="big">42.9%</div><span class="small" style="text-transform:none">Ghana · 2024 · Estimated data</span></div>
  </div>
 </header>
+<section>
+ <div class="eyebrow">This week · W01</div>
+ <div class="drop">
+  <img src="assets/w01/slide_01.jpg" alt="W01 slide 1: I asked Claude for Ghana&#x27;s water figure. Memory 38%. Database 42.9%.">
+  <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+   <h2>One indicator code in, one citable card out</h2>
+   <p class="lede">Ghana and Kenya, indicator 6.1.1. What Claude said from memory, what the database says, and an eight-country dashboard built by the same skill.</p>
+   <div class="row"><a class="btn" href="w01.html">Open W01</a><a class="btn" href="weeks.html">All weeks</a></div>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="eyebrow">AI vs source</div>
+ <h2>What it said, next to what the source says</h2>
+ <div class="vs"><a class="vsc" href="tests.html#w01-value_ghana"><span class="h">SDG 6.1.1 · Ghana</span><div><span class="small">Claude from memory</span><div class="big dim mid">38%</div></div><div><span class="small">SDG Global Database</span><div class="big mid">42.9%</div></div></a><a class="vsc" href="tests.html#w01-value_kenya"><span class="h">SDG 6.1.1 · Kenya</span><div><span class="small">Claude from memory</span><div class="big dim mid">30–40%</div></div><div><span class="small">SDG Global Database</span><div class="big mid dim mid">NOT IN SOURCE</div></div></a></div>
+ <div class="row"><a class="btn" href="tests.html">Open the test log</a></div>
+</section>
 <section>
  <div class="eyebrow">How it works</div>
  <h2>Three rules, every week</h2>
@@ -114,27 +164,16 @@ footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direct
  </div>
 </section>
 <section>
- <div class="eyebrow">This week · W01</div>
- <div class="drop">
-  <img src="assets/slide_01.jpg" alt="W01 first slide: memory said 38%, the database says 42.9%">
-  <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
-   <h2>One SDG code in, one page you can cite out</h2>
-   <p class="lede">Ghana and Kenya, indicator 6.1.1. What Claude said from memory, what the database says, and an eight-country dashboard built by the same skill.</p>
-   <div class="row"><a class="btn primary" href="w01.html">Open W01</a></div>
-  </div>
- </div>
+ <div class="eyebrow">Indicator cards</div>
+ <h2>Look up an indicator, with its source</h2>
+ <p class="lede">The latest value, the official definition and the custodian, for each country we have checked. No value means NOT IN SOURCE.</p>
+ <ul class="chips"><li><a href="indicators.html?q=3.1.1"><b>3.1.1</b>Maternal mortality ratio</a></li><li><a href="indicators.html?q=6.1.1"><b>6.1.1</b>Proportion of population using safely managed drinking water services</a></li><li><a href="indicators.html?q=7.1.1"><b>7.1.1</b>Proportion of population with access to electricity</a></li></ul>
+ <div class="row"><a class="btn" href="indicators.html">Find an indicator card</a></div>
 </section>
 <section id="join">
  <div class="eyebrow">Join</div>
- <h2>Bring the question you are stuck on</h2>
- <div class="join">
-  <div class="joincard"><h3>Follow the weekly test</h3><p class="note">New method every Tuesday, one chart from UN data every Thursday.</p><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a></div>
-  <div class="joincard"><h3>Ask for the next one</h3><p class="note">Tell us which indicator, report or task you want tested next.</p><span class="todo">Google Group: link added at launch</span></div>
-  <div class="joincard"><h3>Take the skill</h3><p class="note">Free. Works in Claude. The method works with any assistant you are allowed to use.</p><a class="btn" href="skills.html">Skills</a></div>
- </div>
-</section>
-<section>
- <div class="eyebrow">Who runs this</div>
- <h2>Harim Jung</h2>
- <ul class="note" style="margin:0;padding-left:20px"><li>Working in data since 2017, with UN agencies since 2019</li><li>2024 Tableau Ambassador</li><li>Featured in the Tableau Conference 2025 keynote</li><li>LinkedIn Learning instructor since 2025</li></ul>
-</section><footer><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database or the SDG Metadata Repository, and checked on 2026-10-20.</p></footer></div></body></html>
+ <h2>Get the weekly test</h2>
+ <p class="lede">A method post every Tuesday and one chart from UN data every Thursday. Free, and you can leave any time.</p>
+ <div class="row"><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a><a class="btn" href="join.html">What you get</a></div>
+ <p class="note">Run by Harim Jung. <a href="about.html">About this site and how the checks work</a>.</p>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database or the SDG Metadata Repository, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>
