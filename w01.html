@@ -1,0 +1,177 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>W01 · Ghana water test</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="What Claude said from memory, what the SDG database says, and an eight-country dashboard.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/w01.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="W01 · Ghana water test">
+<meta property="og:description" content="What Claude said from memory, what the SDG database says, and an eight-country dashboard.">
+<meta property="og:url" content="https://sdgai.org/w01.html">
+<meta property="og:image" content="https://sdgai.org/assets/slide_01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair)}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair)}
+.join{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.todo{font-family:var(--mono);font-size:12px;color:var(--or-ink)}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q{font-weight:700}
+.abc .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(120px,240px) 1fr 70px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+@media (max-width:780px){.pair2{grid-template-columns:1fr}}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><a href="w01.html" class="on">This week</a><a href="indicators.html" class="">Indicators</a><a href="skills.html" class="">Skills</a><a href="index.html#join" class="">Join</a></nav>
+<section>
+ <div class="eyebrow">W01 · Indicator 6.1.1 · Checked 2026-10-20</div>
+ <h2>I asked Claude for Ghana's water figure. Memory said 38%. The database says 42.9%.</h2>
+ <div class="post">I asked Claude for Ghana&#x27;s SDG 6.1.1 figure, with no tools and no skill.
+
+It answered from memory: about 38%, from estimates for around 2022. It also told me to check the source, which was fair.
+
+The SDG Global Database says 42.9% for 2024, labelled Estimated data.
+
+For Kenya it gave a range: 30–40%. The database has no country value for Kenya at all.
+
+So I built a small skill that makes Claude read before it answers. You give it an indicator code and a country. It opens the official metadata PDF, pulls the country series and reads the label for how the value was produced. It returns one page where every line has its source, and NOT IN SOURCE when there is nothing to quote.
+
+Give it eight countries and you get the dashboard.
+
+Every figure in this post was checked against its source today.
+
+Comment CARD and I&#x27;ll send you the skill.
+
+Views are my own.</div>
+</section>
+<section>
+ <div class="eyebrow">The carousel</div>
+ <div class="strip"><img src="assets/slide_01.jpg" alt="W01 slide 1" loading="lazy"><img src="assets/slide_02.jpg" alt="W01 slide 2" loading="lazy"><img src="assets/slide_03.jpg" alt="W01 slide 3" loading="lazy"><img src="assets/slide_04.jpg" alt="W01 slide 4" loading="lazy"><img src="assets/slide_05.jpg" alt="W01 slide 5" loading="lazy"><img src="assets/slide_06.jpg" alt="W01 slide 6" loading="lazy"></div>
+ <div class="row"><a class="btn" href="assets/carousel.pdf">Carousel as PDF</a></div>
+ <video src="assets/motion_4x5.mp4" poster="assets/slide_01.jpg" controls muted playsinline preload="metadata" aria-label="W01 as a 27-second video"></video>
+</section>
+<section>
+ <div class="eyebrow">Share it</div>
+ <h2>One chart, and a vertical cut</h2>
+ <p class="lede">The eight-country chart as a single image, and the same six slides at full phone height. Free to repost with the source line.</p>
+ <div class="pair2">
+  <a href="assets/share_chart.jpg"><img src="assets/share_chart.jpg" alt="Safe drinking water at home in eight countries, latest year in the SDG Global Database. Kenya has no value." loading="lazy"></a>
+  <video src="assets/motion_9x16.mp4" poster="assets/slide916_01.jpg" controls muted playsinline preload="metadata" aria-label="W01 as a vertical video"></video>
+ </div>
+</section>
+<section>
+ <div class="eyebrow">The test, word for word</div>
+ <h2>What Claude said with no tools and no skill</h2>
+ <p class="lede">Same three questions, asked once each. It got the method right and said so plainly. The two values came from memory, and it told us to check the source.</p>
+ <div class="ab"><div class="abc"><span class="small">Asked 2026-10-20 21:24 UTC</span><p class="q">What is the latest SDG indicator 6.1.1 value for Ghana? Answer in at most three sentences.</p><p class="a">From memory, the latest figure I recall for Ghana is about 38% of the population using safely managed drinking water services. That comes from the WHO/UNICEF Joint Monitoring Programme (JMP) estimates for around 2022. About 87% of Ghanaians have at least basic drinking water. I can&#x27;t confirm whether a newer JMP update has been released, so check the JMP database or the UN SDG Global Database for the current number.</p><span class="verdict off">Database: 42.9% (2024)</span></div><div class="abc"><span class="small">Asked 2026-10-20 21:24 UTC</span><p class="q">How is the SDG 6.1.1 &#x27;safely managed drinking water services&#x27; figure built from its three service criteria? Answer in at most three sentences.</p><p class="a">The JMP&#x27;s &quot;safely managed&quot; drinking water figure is the share of the population using an improved source that meets all three criteria at once: it is located on premises, water is available when needed, and it is free from faecal (E. coli) and priority chemical contamination (arsenic and fluoride). In practice it&#x27;s built as a &quot;ladder&quot; in which a household counts as safely managed only if it passes every criterion. The overall figure is therefore limited by the weakest criterion, and in data-sparse countries it is often estimated from whichever of the three have data, since water quality data are the scarcest.</p><span class="verdict ok">Matches metadata 6.1.1 §4.c: the lowest of the three</span></div><div class="abc"><span class="small">Asked 2026-10-20 21:24 UTC</span><p class="q">What is the latest SDG indicator 6.1.1 value for Kenya? Answer in at most three sentences.</p><p class="a">I can&#x27;t give a figure I&#x27;m confident in without checking the source. SDG 6.1.1 is the share of people using safely managed drinking water services, and the WHO/UNICEF Joint Monitoring Programme (JMP) publishes it. My recollection is that Kenya&#x27;s recent estimate is roughly 60–65% for at least basic drinking water, and a good deal lower, somewhere around 30–40%, for safely managed. For the exact latest value, check the JMP database (washdata.org) or the UN SDG Global Database. I can look it up if you&#x27;d like.</p><span class="verdict off">Database: no country value for Kenya</span></div></div>
+</section>
+<section>
+ <div class="eyebrow">The dashboard</div>
+ <h2>Same skill, eight countries</h2>
+ <p class="lede">Share of the population using safely managed drinking water services, latest year in the SDG Global Database (SH_H2O_SAFE). No value, no bar. Nothing is averaged.</p>
+ <div class="chart" id="chart">
+  <div class="ctl"><button type="button" id="v-chart" aria-pressed="true">Chart</button><button type="button" id="v-table" aria-pressed="false">Table</button></div>
+  <div id="bars"></div>
+  <div class="tablewrap" id="tbl" hidden><table><thead><tr><th>Country</th><th>Value</th><th>Year</th><th>Nature</th></tr></thead><tbody><tr><td>Rwanda</td><td class="n">53.4%</td><td class="n">2024</td><td>Estimated data</td></tr><tr><td>Ghana</td><td class="n">42.9%</td><td class="n">2024</td><td>Estimated data</td></tr><tr><td>United Republic of Tanzania</td><td class="n">31.3%</td><td class="n">2024</td><td>Estimated data</td></tr><tr><td>Nigeria</td><td class="n">29.9%</td><td class="n">2024</td><td>Estimated data</td></tr><tr><td>Senegal</td><td class="n">27.2%</td><td class="n">2024</td><td>Estimated data</td></tr><tr><td>Uganda</td><td class="n">18.1%</td><td class="n">2024</td><td>Estimated data</td></tr><tr><td>Ethiopia</td><td class="n">13.5%</td><td class="n">2024</td><td>Estimated data</td></tr><tr><td>Kenya</td><td class="n">NOT IN SOURCE</td><td class="n">–</td><td>–</td></tr></tbody></table></div>
+  <p class="note">Custodian: World Health Organization (WHO), United Nations Children&#x27;s Fund (UNICEF). Scale 0 to 100%.</p>
+ </div>
+</section>
+<section>
+ <div class="eyebrow">Sources</div>
+ <h2>Where every number comes from</h2>
+ <ul class="note" style="margin:0;padding-left:20px">
+  <li>Values: UN SDG Global Database, series SH_H2O_SAFE, read through unstats.un.org/sdgapi</li>
+  <li>Definition, custodian and method: SDG Metadata Repository, indicator 6.1.1, last updated 2024-09-27</li>
+  <li>Value labels (Estimated data, Modeled data): the series attribute list in the same API</li>
+  <li>Claude's answers: recorded word for word on 2026-10-20, no tools, no skill</li>
+ </ul>
+</section>
+<script>
+const D=[{"c": "Rwanda", "v": 53.4, "y": 2024, "n": "Estimated data"}, {"c": "Ghana", "v": 42.9, "y": 2024, "n": "Estimated data"}, {"c": "United Republic of Tanzania", "v": 31.3, "y": 2024, "n": "Estimated data"}, {"c": "Nigeria", "v": 29.9, "y": 2024, "n": "Estimated data"}, {"c": "Senegal", "v": 27.2, "y": 2024, "n": "Estimated data"}, {"c": "Uganda", "v": 18.1, "y": 2024, "n": "Estimated data"}, {"c": "Ethiopia", "v": 13.5, "y": 2024, "n": "Estimated data"}, {"c": "Kenya", "v": null, "y": null, "n": null}];
+const bars=document.getElementById('bars');
+D.forEach(r=>{const el=document.createElement('div');el.className='bar'+(r.v==null?' none':'');
+ const c=document.createElement('span');c.className='c';c.textContent=r.c;
+ const t=document.createElement('span');t.className='t';
+ if(r.v==null){const e=document.createElement('em');e.textContent='NOT IN SOURCE';t.appendChild(e)}
+ else{const i=document.createElement('i');i.style.width=r.v+'%';t.appendChild(i)}
+ const v=document.createElement('span');v.className='v';v.textContent=r.v==null?'–':r.v.toFixed(1)+'%';
+ el.append(c,t,v);el.dataset.tip=r.v==null?r.c+': no value in the database':r.c+': '+r.v.toFixed(1)+'% ('+r.y+', '+r.n+')';
+ bars.appendChild(el)});
+const chart=document.getElementById('chart');const tip=document.createElement('div');tip.className='tip';tip.hidden=true;chart.appendChild(tip);
+bars.addEventListener('mousemove',e=>{const b=e.target.closest('.bar');if(!b){tip.hidden=true;return}
+ tip.textContent=b.dataset.tip;tip.hidden=false;const r=chart.getBoundingClientRect();
+ tip.style.left=Math.min(e.clientX-r.left+12,r.width-tip.offsetWidth-8)+'px';tip.style.top=(e.clientY-r.top+14)+'px'});
+bars.addEventListener('mouseleave',()=>tip.hidden=true);
+const bc=document.getElementById('v-chart'),bt=document.getElementById('v-table'),tb=document.getElementById('tbl');
+function view(t){tb.hidden=!t;bars.hidden=t;bc.setAttribute('aria-pressed',!t);bt.setAttribute('aria-pressed',t)}
+bc.onclick=()=>view(false);bt.onclick=()=>view(true);
+</script><footer><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database or the SDG Metadata Repository, and checked on 2026-10-20.</p></footer></div></body></html>

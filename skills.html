@@ -1,0 +1,163 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Skills · Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Free skills that make AI read the official UN source first.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/skills.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skills · Claude for SDG">
+<meta property="og:description" content="Free skills that make AI read the official UN source first.">
+<meta property="og:url" content="https://sdgai.org/skills.html">
+<meta property="og:image" content="https://sdgai.org/assets/slide_01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair)}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair)}
+.join{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.todo{font-family:var(--mono);font-size:12px;color:var(--or-ink)}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q{font-weight:700}
+.abc .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(120px,240px) 1fr 70px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+@media (max-width:780px){.pair2{grid-template-columns:1fr}}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><a href="w01.html" class="">This week</a><a href="indicators.html" class="">Indicators</a><a href="skills.html" class="on">Skills</a><a href="index.html#join" class="">Join</a></nav>
+<section>
+ <div class="eyebrow">Free skill</div>
+ <h2>sdg-indicator-card</h2>
+ <p class="lede">Give it an SDG indicator code and a country. It reads the official metadata and the SDG Global Database and returns one page where every line carries its source. When there is no value, it says NOT IN SOURCE.</p>
+ <div class="row"><a class="btn primary" href="assets/sdg-indicator-card.SKILL.md">Download SKILL.md</a></div>
+ <h3>Use it in three steps</h3>
+ <ol class="note" style="margin:0;padding-left:20px">
+  <li>In Claude, add the file as a skill (Customize, then Skills).</li>
+  <li>Type <code>/indicator-card 6.1.1 Ghana</code>, or any code and country.</li>
+  <li>Check the source line under each value before you quote it.</li>
+ </ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the two source links.</p>
+</section>
+<section>
+ <div class="eyebrow">The file</div>
+ <pre>---
+name: sdg-indicator-card
+description: Build a one-page, citable card for any SDG indicator and country. Use when someone gives an SDG indicator code (like 6.1.1) and a country and wants the definition, the latest official value, the custodian agency and the methodological catch, each line traced to its official source.
+---
+
+# SDG Indicator Card
+
+Two inputs, one card. Every line on the card says where it came from.
+
+**Inputs**
+- `code`: an indicator code from the global SDG indicator framework, e.g. `6.1.1`
+- `country`: a country name as the SDG Global Database writes it, e.g. `Ghana`
+
+## Sources (use these and nothing else)
+
+| What | Where | Cite as |
+|---|---|---|
+| Definition, custodian, method | `https://unstats.un.org/sdgs/metadata/files/Metadata-&lt;CC-TT-II&gt;.pdf` (6.1.1 becomes `06-01-01`) | `metadata &lt;code&gt; §&lt;section&gt;, last updated &lt;date&gt;` |
+| Series list for the code | `https://unstats.un.org/sdgapi/v1/sdg/Indicator/List` | `SDG API, Indicator/List` |
+| Country code | `https://unstats.un.org/sdgapi/v1/sdg/GeoArea/List` | `SDG API, GeoArea/List` |
+| Values | `https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=&lt;SERIES&gt;&amp;areaCode=&lt;M49&gt;&amp;pageSize=1000` | `SDG Global Database, &lt;SERIES&gt;, &lt;year&gt;` |
+
+## Steps
+
+1. Open the metadata PDF. Copy the **last updated** date from the page header.
+2. Copy the custodian agencies from **§0.g** and the first sentence of the definition from **§2.a**, word for word.
+3. Read **§4.c** (computation), **§4.f** (missing values) and **§4.g** (aggregation). Pick the one rule a reader is most likely to get wrong. Quote it word for word with its §.
+4. Get the series codes for the indicator, then the country&#x27;s rows for each series.
+5. Use the total row (`ALLAREA`, `BOTHSEX`, `ALLAGE` where those dimensions exist). Report the latest year, the value, the unit and the `Nature` attribute (estimated, modelled, country data).
+
+## Card layout
+
+```
+&lt;code&gt; · &lt;official indicator name&gt;
+&lt;country&gt; · &lt;value&gt;&lt;unit&gt; (&lt;year&gt;, &lt;nature&gt;)        SDG Global Database, &lt;SERIES&gt;
+Definition   &quot;&lt;first sentence of §2.a&gt;&quot;             metadata §2.a, &lt;last updated&gt;
+Custodian    &lt;agencies&gt;                              metadata §0.g
+The catch    &quot;&lt;quoted rule&gt;&quot;                         metadata §4.x
+Source       &lt;source field of the data row&gt;
+```
+
+## Rules
+
+- **No value in the database: write `NOT IN SOURCE` and say which series was empty.** Never fill it from a news story, a report or a guess.
+- Never average, sum or convert values. If the method says how a figure is built, quote that sentence instead.
+- If an indicator has several series, list each series code. Do not choose one silently.
+- Quotes are word for word. If the PDF text is broken by extraction (`t aken`), fix only the spacing.
+- Keep the `Nature` label. An estimated or modelled value is not the same as country-reported data.
+
+## Running it as code
+
+`engines/ai/indicator_card.py &lt;code&gt; &lt;country&gt;` in the claude-for-sdg repository does steps 1 to 5 and keeps a copy of every source it read, with its SHA-256.
+</pre>
+</section><footer><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database or the SDG Metadata Repository, and checked on 2026-10-20.</p></footer></div></body></html>
