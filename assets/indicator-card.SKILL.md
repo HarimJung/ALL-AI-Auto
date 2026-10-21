@@ -11,6 +11,10 @@ Two inputs, one card. Every line on the card says where it came from.
 - `code`: an indicator code from the global SDG indicator framework, e.g. `6.1.1`
 - `country`: a country name as the SDG Global Database writes it, e.g. `Ghana`
 
+## Why this exists
+
+An assistant asked for an indicator value from memory gives a number, a rough year and a hedge. In a recorded test without this skill, Claude said Ghana's 6.1.1 figure was "about 38%" for "around 2022". The SDG Global Database read on 20 October 2026 has 42.9 percent for 2024, estimated. For Kenya it said "somewhere around 30–40%". The database has no Kenya row for the series `SH_H2O_SAFE` at all.
+
 ## Sources (use these and nothing else)
 
 | What | Where | Cite as |
@@ -44,8 +48,13 @@ Source       <source field of the data row>
 - **No value in the database: write `NOT IN SOURCE` and say which series was empty.** Never fill it from a news story, a report or a guess.
 - Never average, sum or convert values. If the method says how a figure is built, quote that sentence instead.
 - If an indicator has several series, list each series code. Do not choose one silently.
+- Take series only from the entry for the exact code in `Indicator/List`. A series filed under a neighbouring code, such as `SH_SAN_HNDWSH` under 6.2.1, is not a series of 6.1.1.
 - Quotes are word for word. If the PDF text is broken by extraction (`t aken`), fix only the spacing.
 - Keep the `Nature` label. An estimated or modelled value is not the same as country-reported data.
+
+## Copy-paste prompt (works in any assistant)
+
+> For SDG indicator <code> in <country>, take the value only from the UN SDG Global Database (unstats.un.org/sdgapi) and the definition and custodian only from the official metadata PDF (unstats.un.org/sdgs/metadata). Quote the definition word for word with its section number. Give the year, the unit and whether the value is estimated, modelled or country data. If the database has no row for this country, write NOT IN SOURCE and name the empty series. If you can't open these pages now, say so and give me the links instead of a number. Do not answer from memory.
 
 ## Running it as code
 

@@ -8,7 +8,7 @@
 <meta property="og:title" content="Skills | Claude for SDG">
 <meta property="og:description" content="Free skills that make AI read the official UN source first.">
 <meta property="og:url" content="https://sdgai.org/skills.html">
-<meta property="og:image" content="https://sdgai.org/assets/w01/slide_01.jpg">
+<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -117,6 +117,25 @@ code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2
 .skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
 details summary{cursor:pointer;font-weight:800}
 details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
@@ -124,11 +143,329 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
-</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w01.html">This week</a><a href="weeks.html">Weeks</a><a href="indicators.html">Indicators</a><a href="skills.html" class="on">Skills</a><a href="join.html">Join</a></div></nav><main>
+</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="indicators.html">Indicators</a><a href="skills.html" class="on">Skills</a><a href="join.html">Join</a></div></nav><main>
 <section>
  <div class="eyebrow">Skills</div>
  <h1 class="page">Free skills that read the UN source first</h1>
- <p class="lede">Each one is a single file. Add it to Claude and it reads the official metadata and the SDG Global Database before it answers. When there is no value, it says NOT IN SOURCE.</p>
+ <p class="lede">Each one is a single file. Add it to Claude and it reads the official UN source before it answers. If it cannot read the source, it says so instead of guessing.</p>
+</section>
+<section class="skill" id="btr-checklist">
+ <div class="eyebrow">Free skill</div>
+ <h2>btr-checklist</h2>
+ <p class="lede">Build a preparation checklist for a country&#x27;s next Biennial Transparency Report (BTR) under the Enhanced Transparency Framework of the Paris Agreement, with every item and every date traced to a UNFCCC decision paragraph. Use when someone asks what a country must submit in its BTR, by when, and what flexibility or discretion applies.</p>
+ <div class="row"><a class="btn primary" href="assets/btr-checklist.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: btr-checklist
+description: Build a preparation checklist for a country&#x27;s next Biennial Transparency Report (BTR) under the Enhanced Transparency Framework of the Paris Agreement, with every item and every date traced to a UNFCCC decision paragraph. Use when someone asks what a country must submit in its BTR, by when, and what flexibility or discretion applies.
+---
+
+# BTR Checklist
+
+One country situation in, one checklist out. Each line names the decision and paragraph it comes from. A date that no opened document states is marked unverified.
+
+**Inputs**
+- `country`: optional. Matters only for whether it is a least developed country (LDC) or small island developing State (SIDS), and whether it is a developing country Party applying flexibility.
+- `report`: which BTR, e.g. the second.
+
+## Why this exists
+
+BTR questions get answered from slides and blog posts that mix the old biennial update reports with the new framework, and that state deadlines without saying where they come from. A deadline in a brief needs a decision number and a paragraph, or it needs the word unverified next to it.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Decision 1/CP.21, FCCC/CP/2015/10/Add.1 | Para 90, how often Parties report under Article 13 | `https://unfccc.int/resource/docs/2015/cop21/eng/10a01.pdf` |
+| Decision 18/CMA.1 and its annex (the MPGs), FCCC/PA/CMA/2018/3/Add.2 | Decision para 3 (first BTR date), para 4 (LDC and SIDS discretion). MPG paras 5 and 6 (flexibility), para 10 (what a BTR contains), paras 11 to 16 (format and submission), para 58 (latest inventory year), para 198 (late submission) | `https://unfccc.int/sites/default/files/resource/CMA2018_03a02E.pdf` |
+| UNFCCC page for the report in question | The secretariat&#x27;s statement of the due date and the list of submissions | `https://unfccc.int/second-biennial-transparency-reports` (for BTR2) |
+| Paris Agreement, Article 13 | The paragraphs 7 to 10 the decisions refer to. The Agreement is the annex to decision 1/CP.21 | Same file as decision 1/CP.21 |
+
+The UNFCCC site often serves a bot check instead of the page. The PDFs usually open with a plain download. If a page does not open, say so and do not fill it from memory or a search summary.
+
+## Steps
+
+1. Open both decision PDFs. Copy each document symbol and its date from the first page.
+2. Find the due date. Quote decision 18/CMA.1 para 3 for the first BTR and decision 1/CP.21 para 90 for the frequency.
+3. For a later BTR, open the UNFCCC page for that report and quote its date. If the page does not open, write the date as derived from the two paragraphs above and mark it `UNVERIFIED: not stated in an opened document`.
+4. Build the checklist from MPG para 10, one line per sub-paragraph, keeping the decision&#x27;s own verb. &quot;Shall&quot; is required. &quot;Should&quot; is expected. Do not turn a &quot;should&quot; into a must.
+5. Add the format and submission lines from MPG paras 12, 15 and 16, the inventory year rule from para 58, and the LDC and SIDS line from decision para 4 and MPG para 11.
+6. If the country is a developing country Party, add the flexibility rule from MPG para 6 in one line.
+
+## Answer layout
+
+```
+&lt;report&gt; · sources read &lt;today&#x27;s date&gt;
+Due: &lt;date&gt;   &quot;&lt;quoted line&gt;&quot;   &lt;decision&gt;, para &lt;n&gt;     (or UNVERIFIED and why)
+Frequency:    &quot;&lt;quoted line&gt;&quot;   decision 1/CP.21, para 90
+
+| # | Item | Shall or should | Source |
+|---|---|---|---|
+| 1 | &lt;item in the decision&#x27;s words&gt; | shall | MPG para 10(a) |
+| ... | | | |
+
+Not covered: &lt;anything asked about that the opened documents do not state&gt;
+```
+
+## Rules
+
+- **A date with no paragraph behind it is `UNVERIFIED`. Never give a deadline from memory, a news item or a search result summary as confirmed.**
+- Quote the decision&#x27;s words for every item. Shorten only by cutting, never by paraphrase that changes &quot;shall&quot; or &quot;should&quot;.
+- Keep BTRs apart from national communications and from biennial update reports. They are different reports under different decisions.
+- If the question asks about a tool, a template or a table the opened documents do not describe, write `NOT IN SOURCE` and name the document that would hold it, if known.
+- Never invent a number of tables, pages or chapters.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Make me a checklist for &lt;country&gt;&#x27;s &lt;first/second&gt; Biennial Transparency Report under the Paris Agreement. Use only UNFCCC decisions: decision 1/CP.21 paragraph 90, decision 18/CMA.1 and its annex of modalities, procedures and guidelines (paragraph 10 for contents), and the UNFCCC page for that report. For each item, give the decision paragraph and say whether the text says &quot;shall&quot; or &quot;should&quot;. For the due date, quote the paragraph or page that states it. If no document you opened states the date, write UNVERIFIED next to it. Do not answer from memory.
+
+## Running it as code
+
+Copies of the two decision PDFs used for the recorded test, with SHA-256, are in `data/anchors/skills/btr-checklist/` in the claude-for-sdg repository. The UNFCCC page for BTR2 could not be opened when this skill was written.
+</pre></details>
+</section>
+<section class="skill" id="claim-check">
+ <div class="eyebrow">Free skill</div>
+ <h2>claim-check</h2>
+ <p class="lede">Check a short draft (a brief, talking points, a donor note) sentence by sentence against the public UN documents it cites. Returns one table row per sentence with the source, the page or section, the line quoted word for word, and a verdict of SUPPORTED, NOT IN SOURCES or WRONG PAGE. Use before a draft with figures goes to a reviewer, a donor or a meeting.</p>
+ <div class="row"><a class="btn primary" href="assets/claim-check.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: claim-check
+description: Check a short draft (a brief, talking points, a donor note) sentence by sentence against the public UN documents it cites. Returns one table row per sentence with the source, the page or section, the line quoted word for word, and a verdict of SUPPORTED, NOT IN SOURCES or WRONG PAGE. Use before a draft with figures goes to a reviewer, a donor or a meeting.
+---
+
+# Claim Check
+
+A draft and its sources in, one row per sentence out. A sentence passes only when a line in the source says the same thing on the page the draft cites.
+
+**Inputs**
+- `draft`: up to about 15 sentences. Number them if they are not numbered.
+- `sources`: the documents the draft cites, as links or files. Official UN documents only (see below).
+
+## Why this exists
+
+A reviewer checks the number and the page. A checker that reads from memory, or matches only the numbers, passes a sentence whose figure sits on another page or belongs to another sentence. Long UN reports repeat the same percentages for different subjects, so a number found on the right page is not yet a match.
+
+## Sources (use these and nothing else)
+
+- The documents the user gives, if they are published by the UN system: documents with a UN symbol (A/..., E/..., FCCC/...) from `documents.un.org` or the publishing office, and reports on `un.org`, `unstats.un.org` or a UN agency&#x27;s own site.
+- Nothing else. Do not confirm a sentence from memory, from a news story or from a different edition of the same report.
+- A source the user names but you cannot open is not a source. Every sentence that cites it gets `NOT IN SOURCES` with the note &quot;could not open&quot;.
+
+## Steps
+
+1. Open each source. Copy its symbol or title and its date as printed on the first page.
+2. Work out how the document numbers its pages. Use the page number printed on the page. Say so if it differs from the PDF page count.
+3. For each sentence, go to the page or section it cites. Look for a line that states the same claim: the same figure, the same year, the same unit and the same subject.
+4. If the cited page has no such line, search the whole source. If the line is on another page, the verdict is `WRONG PAGE` and the row gives the right page.
+5. If no page in any source has the line, the verdict is `NOT IN SOURCES`. Quote the closest line, if there is one, so the reader sees what the source does say.
+6. Fill one row per sentence. Never merge two sentences into one row.
+
+## Verdicts
+
+| Verdict | Means |
+|---|---|
+| SUPPORTED | A line on the cited page states the same figure, year, unit and subject |
+| WRONG PAGE | The line exists in the source but not on the page the draft cites |
+| NOT IN SOURCES | No line in any source states it. This includes a figure that differs from the source by any amount |
+
+A number that matches but belongs to a different subject is not support. A share of adults with a bank account does not support the same share of people with electricity.
+
+## Answer layout
+
+```
+Source: &lt;symbol or title&gt;, &lt;date as printed&gt; · &lt;URL&gt; · read &lt;today&#x27;s date&gt;
+Pages: &lt;printed page numbers | PDF page numbers&gt;
+
+| # | Sentence | Source | Page/section | Quoted line | Verdict |
+|---|---|---|---|---|---|
+| 1 | &lt;first words of the sentence&gt; | &lt;symbol&gt; | p. &lt;n&gt;, para &lt;n&gt; | &quot;&lt;line, word for word&gt;&quot; | SUPPORTED |
+| 2 | ... | ... | cited p. &lt;n&gt;, found p. &lt;m&gt; | &quot;&lt;line&gt;&quot; | WRONG PAGE |
+| 3 | ... | ... | cited p. &lt;n&gt; | closest: &quot;&lt;line&gt;&quot; or none | NOT IN SOURCES |
+
+&lt;n&gt; of &lt;total&gt; supported.
+```
+
+## Rules
+
+- **Cannot open a source: say which one and mark its sentences NOT IN SOURCES with &quot;could not open&quot;. Do not judge them from memory.**
+- Quotes are word for word. If text extraction breaks spacing, fix only the spacing.
+- Never round, convert or recompute a figure to make it match. A source that says 12% does not support 13%.
+- Do not rewrite the draft. The table says what is wrong, the author fixes it.
+- Do not add sources the draft did not cite. If a better source exists, say so in one line under the table.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Check my draft against its sources, one sentence at a time. For each sentence, open the source and the page it cites, and give me a table: sentence, source, page or section, the line from the source word for word, and a verdict. The verdict is SUPPORTED only if a line on the cited page states the same figure, year and subject. If the line is on another page, write WRONG PAGE and give the right page. If no line in the source says it, write NOT IN SOURCES and quote the closest line. Do not judge any sentence from memory. If you can&#x27;t open a source, say so for every sentence that cites it.
+
+## Demo
+
+`demo/draft_brief.md` is a five-sentence draft citing the Secretary-General&#x27;s SDG progress report A/81/93-E/2026/73 (8 June 2026). Two sentences carry planted errors, and the answer key is in the same file. A copy of the report and its SHA-256 are in `data/anchors/skills/claim-check/` in the claude-for-sdg repository.
+</pre></details>
+</section>
+<section class="skill" id="metadata-read">
+ <div class="eyebrow">Free skill</div>
+ <h2>metadata-read</h2>
+ <p class="lede">Read the official SDG metadata PDF for any indicator code and return six fields in a fixed order (definition, unit, numerator and denominator, method of computation, limitations, custodian), each quoted word for word with its section heading. Use when someone asks what an SDG indicator measures, what it is divided by, how it is computed or who the custodian is.</p>
+ <div class="row"><a class="btn primary" href="assets/metadata-read.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: metadata-read
+description: Read the official SDG metadata PDF for any indicator code and return six fields in a fixed order (definition, unit, numerator and denominator, method of computation, limitations, custodian), each quoted word for word with its section heading. Use when someone asks what an SDG indicator measures, what it is divided by, how it is computed or who the custodian is.
+---
+
+# Metadata Read
+
+One indicator code in, six quoted fields out, always in the same order. Every field says which section of the metadata it came from, and the section heading is copied as the PDF writes it.
+
+**Input**
+- `code`: an indicator code from the global SDG indicator framework, e.g. `3.1.1`
+
+## Why this exists
+
+The wrong denominator is the most common way a correct number gets misread. The maternal mortality ratio in 3.1.1 is per 100,000 live births, and the metadata itself warns that the maternal mortality rate, a different measure, divides by person-years lived by women of reproductive age.
+
+In a recorded test without this skill, Claude got most of the 3.1.1 wording right and still put the custodian under `1.a &quot;Organisation&quot;`. The PDF names it in 0.g. Its 3.1.1 limitations were about vital registration and sibling histories, while 4.b of the PDF is about the ratio and the rate. For 6.1.1 it gave `Denominator (4.c): The total population.` Section 4.c of the 6.1.1 PDF never says what is divided by what.
+
+## Sources (use these and nothing else)
+
+| What | Where |
+|---|---|
+| Metadata PDF | `https://unstats.un.org/sdgs/metadata/files/Metadata-&lt;CC-TT-II&gt;.pdf`. Each part of the code becomes two digits, so 3.1.1 becomes `03-01-01` and 6.1.1 becomes `06-01-01` |
+| Index of metadata files, if the PDF link fails | `https://unstats.un.org/sdgs/metadata/` |
+
+Do not use a WHO, UNICEF or World Bank page, a textbook, a news story or a summary from memory, even when it agrees.
+
+## Steps
+
+1. Open the PDF. Copy the `Last updated` date from the page header and the template line (`Harmonized metadata template - format version 1.1` or the like).
+2. Find each field under its section. In the harmonized template these are:
+
+| Field | Section |
+|---|---|
+| Definition | `2.a. Definition and concepts (STAT_CONC_DEF)` |
+| Unit | `2.b. Unit of measure (UNIT_MEASURE)` |
+| Numerator and denominator | No section of its own. Look in 4.c first, then 2.a |
+| Method of computation | `4.c. Method of computation (DATA_COMP)` |
+| Limitations | `4.b. Comment and limitations (REC_USE_LIM)` |
+| Custodian | `0.g. International organisations(s) responsible for global monitoring (SDG_CUSTODIAN_AGENCIES)` |
+
+3. Copy each section heading exactly as the PDF prints it, spelling included (`organisations(s)` is the PDF&#x27;s own spelling). If the PDF uses an older template with other numbers, copy its headings and say so.
+4. Quote the first sentence of the definition, the whole unit line and the first sentence of the limitations. For the method, quote the first sentence in 4.c that says how the value is computed. If 4.c opens with a list of production steps, skip it and take the sentence with the rule, such as the 6.1.1 line that the service level is &quot;taken as the minimum of these three indicators&quot;. Fix only spacing broken by text extraction (`t aken` becomes `taken`).
+5. For numerator and denominator, quote the one sentence that says what is divided by what. If no sentence in the PDF names both, write `NOT IN SOURCE` and quote the unit line instead. Do not build a fraction from the definition.
+
+## Answer layout
+
+```
+&lt;code&gt; · &lt;indicator name from 0.c&gt;       metadata last updated &lt;date&gt;, &lt;template line&gt;
+Definition      &quot;&lt;quote&gt;&quot;                          &lt;section heading&gt;
+Unit            &quot;&lt;quote&gt;&quot;                          &lt;section heading&gt;
+Numerator and denominator  &quot;&lt;quote&gt;&quot; or NOT IN SOURCE    &lt;section heading&gt;
+Method          &quot;&lt;quote&gt;&quot;                          &lt;section heading&gt;
+Limitations     &quot;&lt;quote&gt;&quot;                          &lt;section heading&gt;
+Custodian       &quot;&lt;quote&gt;&quot;                          &lt;section heading&gt;
+Source: &lt;PDF URL&gt; · read &lt;today&#x27;s date&gt;
+```
+
+## Rules
+
+- **Cannot open the PDF: say &quot;I can&#x27;t open the metadata now&quot; and give the link. Do not fill any field from memory.**
+- The order of the six fields never changes, even when the question asks about one of them.
+- A field the PDF does not have is `NOT IN SOURCE`. Never fill it from another indicator, another agency or what the field usually says.
+- Never convert a unit. Per 100,000 live births stays per 100,000 live births. Do not restate it as a percent or per woman.
+- When the PDF names a similar measure that uses a different denominator, add one line quoting that sentence with its section. For 3.1.1 that is the maternal mortality rate in 4.b.
+- Never invent a number. Every number in the answer appears in the PDF.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Open the official UN metadata PDF for SDG indicator &lt;code&gt; at unstats.un.org/sdgs/metadata (the file is Metadata-CC-TT-II.pdf, so 3.1.1 is Metadata-03-01-01.pdf). Give me, in this order: definition, unit of measure, numerator and denominator, method of computation, limitations, custodian agency. Quote each one word for word and copy the section heading it sits under. If the PDF never says what is divided by what, write NOT IN SOURCE for that line. If you can&#x27;t open the PDF now, say so and give me the link. Do not answer from memory.
+
+## Running it as code
+
+`engines/ai/indicator_card.py` in the claude-for-sdg repository downloads the same PDF, keeps its SHA-256 and cuts sections by their numbers. Copies of the 3.1.1 and 6.1.1 PDFs used for the recorded test are in `data/anchors/skills/metadata-read/`.
+</pre></details>
+</section>
+<section class="skill" id="ref-year-check">
+ <div class="eyebrow">Free skill</div>
+ <h2>ref-year-check</h2>
+ <p class="lede">Check a country comparison table (CSV or pasted rows) for one SDG indicator against the UN SDG Global Database, and flag every row whose value comes from a different reference year than the rest, or from a partial row such as urban only. Shows the database year of each value. Use before a table with &quot;latest&quot; values goes into a brief, a slide or a donor report.</p>
+ <div class="row"><a class="btn primary" href="assets/ref-year-check.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: ref-year-check
+description: Check a country comparison table (CSV or pasted rows) for one SDG indicator against the UN SDG Global Database, and flag every row whose value comes from a different reference year than the rest, or from a partial row such as urban only. Shows the database year of each value. Use before a table with &quot;latest&quot; values goes into a brief, a slide or a donor report.
+---
+
+# Reference Year Check
+
+One table in, the same table back with a database year next to every value. A table that compares countries is only fair when every value is from the same year and the same population.
+
+**Inputs**
+- `table`: CSV or pasted rows with a country column and a value column. A year column is optional.
+- `code`: the SDG indicator code the values claim to be, e.g. `6.1.1`. If the table does not say, ask.
+
+## Why this exists
+
+Comparison tables are built over weeks from several downloads. Each value was &quot;latest&quot; on the day it was copied, so one table can hold several years and still carry one year in its header. The database also holds partial rows. For some countries the only rows for a series are urban or rural, and a value copied from them reads like a national figure.
+
+## Sources (use these and nothing else)
+
+| What | Where |
+|---|---|
+| Series codes for the indicator | `https://unstats.un.org/sdgapi/v1/sdg/Indicator/List`, the entry for the exact code |
+| Country codes | `https://unstats.un.org/sdgapi/v1/sdg/GeoArea/List` |
+| Values with years | `https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=&lt;SERIES&gt;&amp;areaCode=&lt;M49&gt;&amp;pageSize=1000` |
+
+Do not use an agency portal, a report table or memory to find a year. The years in this check come from `timePeriodStart` in the database rows.
+
+## Steps
+
+1. Find the series for the code. If there are several, ask which one the table uses, or check each and say so.
+2. Get the M49 code for every country in the table, using the names as the database writes them.
+3. Pull every row for each country. Keep the total rows (`ALLAREA`, `BOTHSEX`, `ALLAGE` where those dimensions exist). Note when a country has no total row.
+4. For each table value, find the database year whose value matches it. Round the database value to the table&#x27;s number of decimals before comparing, and never round the table value.
+5. Take the year most rows share as the table&#x27;s reference year. Flag every row that differs from it, every row that matches only a partial row, every row with no match and every empty cell.
+6. For each flagged row, also give the database value for the reference year, if there is one, so the author can replace it.
+
+## Answer layout
+
+```
+&lt;code&gt; · series &lt;SERIES&gt; · SDG Global Database, read &lt;today&#x27;s date&gt;
+Reference year: &lt;year&gt; (&lt;n&gt; of &lt;total&gt; rows)
+
+| Country | Table value | Table year | Database year of that value | Row used | Database value for &lt;ref year&gt; | Flag |
+|---|---|---|---|---|---|---|
+| &lt;country&gt; | &lt;v&gt; | &lt;y&gt; | &lt;year&gt; | ALLAREA | &lt;value&gt; (&lt;nature&gt;) | OK |
+| &lt;country&gt; | &lt;v&gt; | &lt;y&gt; | &lt;year&gt; | ALLAREA | &lt;value&gt; (&lt;nature&gt;) | YEAR DIFFERS |
+| &lt;country&gt; | &lt;v&gt; | &lt;y&gt; | &lt;year&gt; | URBAN only | NOT IN SOURCE for national | PARTIAL ROW |
+| &lt;country&gt; | &lt;v&gt; | &lt;y&gt; | no match | ALLAREA | &lt;value&gt; (&lt;nature&gt;) | NO MATCH |
+| &lt;country&gt; | empty | &lt;y&gt; | none | none | NOT IN SOURCE | NO DATA |
+
+&lt;n&gt; rows flagged.
+```
+
+## Rules
+
+- **Cannot reach the API: say &quot;I can&#x27;t check the database now&quot;, give the link and flag nothing. Do not guess years.**
+- A row with no total in the database is `NOT IN SOURCE` for the national value. Never use an urban or rural value in its place, and never average urban and rural.
+- A value that matches no year is `NO MATCH`. Do not pick the nearest year.
+- If two years round to the same table value, list both years and flag the row.
+- Keep the `Nature` attribute (estimated, modelled, country data) next to every database value.
+- Never fill an empty cell. Report what the database has for it, or `NOT IN SOURCE`.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Here is a country comparison table for SDG indicator &lt;code&gt;. For every row, look up the country in the UN SDG Global Database (unstats.un.org/sdgapi, Series/Data) and tell me which year the value in my table belongs to. Use only the national total row. Tell me if a country has only urban or rural rows. Give the year most rows share, and flag every row from another year, every value that matches no year and every empty cell. For each flagged row, give the database value for the shared year. Do not guess any year from memory. If you can&#x27;t open the database now, say so.
+
+## Demo
+
+`demo/water_6.1.1.csv` is an eight-country 6.1.1 table where every row claims 2024. `demo/answer_key.md` lists what is planted in it and what comes from the database itself. Copies of the API responses with their SHA-256 are in `data/anchors/skills/ref-year-check/` in the claude-for-sdg repository.
+</pre></details>
 </section>
 <section class="skill" id="indicator-card">
  <div class="eyebrow">Free skill</div>
@@ -149,6 +486,10 @@ Two inputs, one card. Every line on the card says where it came from.
 **Inputs**
 - `code`: an indicator code from the global SDG indicator framework, e.g. `6.1.1`
 - `country`: a country name as the SDG Global Database writes it, e.g. `Ghana`
+
+## Why this exists
+
+An assistant asked for an indicator value from memory gives a number, a rough year and a hedge. In a recorded test without this skill, Claude said Ghana&#x27;s 6.1.1 figure was &quot;about 38%&quot; for &quot;around 2022&quot;. The SDG Global Database read on 20 October 2026 has 42.9 percent for 2024, estimated. For Kenya it said &quot;somewhere around 30–40%&quot;. The database has no Kenya row for the series `SH_H2O_SAFE` at all.
 
 ## Sources (use these and nothing else)
 
@@ -183,23 +524,28 @@ Source       &lt;source field of the data row&gt;
 - **No value in the database: write `NOT IN SOURCE` and say which series was empty.** Never fill it from a news story, a report or a guess.
 - Never average, sum or convert values. If the method says how a figure is built, quote that sentence instead.
 - If an indicator has several series, list each series code. Do not choose one silently.
+- Take series only from the entry for the exact code in `Indicator/List`. A series filed under a neighbouring code, such as `SH_SAN_HNDWSH` under 6.2.1, is not a series of 6.1.1.
 - Quotes are word for word. If the PDF text is broken by extraction (`t aken`), fix only the spacing.
 - Keep the `Nature` label. An estimated or modelled value is not the same as country-reported data.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; For SDG indicator &lt;code&gt; in &lt;country&gt;, take the value only from the UN SDG Global Database (unstats.un.org/sdgapi) and the definition and custodian only from the official metadata PDF (unstats.un.org/sdgs/metadata). Quote the definition word for word with its section number. Give the year, the unit and whether the value is estimated, modelled or country data. If the database has no row for this country, write NOT IN SOURCE and name the empty series. If you can&#x27;t open these pages now, say so and give me the links instead of a number. Do not answer from memory.
 
 ## Running it as code
 
 `engines/ai/indicator_card.py &lt;code&gt; &lt;country&gt;` in the claude-for-sdg repository does steps 1 to 5 and keeps a copy of every source it read, with its SHA-256.
 </pre></details>
 </section>
-<section class="skill" id="un-latest-edition">
+<section class="skill" id="latest-edition">
  <div class="eyebrow">Free skill</div>
- <h2>un-latest-edition</h2>
+ <h2>latest-edition</h2>
  <p class="lede">Answer any request for a figure from a UN flagship report (HDI, SDG Report, World Population Prospects, SOFI, World Health Statistics and the like) from the latest edition only. Use when someone asks for a number &quot;from the latest report&quot;, or names a report without an edition. Names the edition and its publication date, reads the publisher&#x27;s current file, and refuses to give a number from memory.</p>
- <div class="row"><a class="btn primary" href="assets/un-latest-edition.SKILL.md" download>Download SKILL.md</a></div>
- <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <div class="row"><a class="btn primary" href="assets/latest-edition.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Type <code>/latest-edition Human Development Report, HDI for Ghana</code>, or any code and country.</li><li>Check the source line under each value before you quote it.</li></ol>
  <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
  <details><summary>Read the file</summary><pre>---
-name: un-latest-edition
+name: latest-edition
 description: Answer any request for a figure from a UN flagship report (HDI, SDG Report, World Population Prospects, SOFI, World Health Statistics and the like) from the latest edition only. Use when someone asks for a number &quot;from the latest report&quot;, or names a report without an edition. Names the edition and its publication date, reads the publisher&#x27;s current file, and refuses to give a number from memory.
 ---
 
@@ -272,4 +618,4 @@ Source: &lt;URL&gt; · read &lt;today&#x27;s date&gt;
  <div class="eyebrow">Next week</div>
  <h2>Get the next skill when it is out</h2>
  <div class="row"><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a><a class="btn" href="join.html">What you get</a></div>
-</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database or the SDG Metadata Repository, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>

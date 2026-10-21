@@ -1,0 +1,247 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>W02: I asked Claude for Ghana&#x27;s HDI | Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="I asked Claude for Ghana&#x27;s HDI. Memory 0.602. Report 0.628. The no-skill answer word for word, the official value and a free skill that reads the source first.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/w02.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="W02: I asked Claude for Ghana&#x27;s HDI | Claude for SDG">
+<meta property="og:description" content="I asked Claude for Ghana&#x27;s HDI. Memory 0.602. Report 0.628. The no-skill answer word for word, the official value and a free skill that reads the source first.">
+<meta property="og:url" content="https://sdgai.org/w02.html">
+<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "I asked Claude for Ghana's HDI. Memory 0.602. Report 0.628.", "description": "I asked Claude for Ghana's HDI. Memory 0.602. Report 0.628. The no-skill answer word for word, the official value and a free skill that reads the source first.", "url": "https://sdgai.org/w02.html", "mainEntityOfPage": "https://sdgai.org/w02.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Claude for SDG", "url": "https://sdgai.org"}, "author": {"@type": "Person", "name": "Harim Jung", "url": "https://www.linkedin.com/in/harimjungmsc/"}, "isBasedOn": ["https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv", "https://hdr.undp.org/sites/default/files/2023-24_HDR/HDR23-24_Composite_indices_complete_time_series.csv", "https://hdr.undp.org/data-center/documentation-and-downloads", "https://unstats.un.org/sdgs/report/2026/", "https://www.un.org/development/desa/pd/world-population-prospects-2024", "https://www.fao.org/publications/fao-flagship-publications/the-state-of-food-security-and-nutrition-in-the-world/en", "https://desapublications.un.org/publications/world-economic-situation-and-prospects-2026", "https://www.who.int/data/gho/publications/world-health-statistics", "https://www.unicef.org/reports/state-of-worlds-children/2025", "https://www.ilo.org/publications/flagship-reports/employment-and-social-trends-2026", "https://unctad.org/topic/investment/world-investment-report", "https://wmo.int/publication-series/state-of-global-climate"], "datePublished": "2026-10-20", "dateModified": "2026-10-20", "image": "https://sdgai.org/assets/w02/slide_01.jpg"}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html" class="on">This week</a><a href="weeks.html">Weeks</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<section>
+ <div class="eyebrow">W02 · Latest edition of UN flagship reports · Checked 2026-10-20</div>
+ <h1 class="page">I asked Claude for Ghana&#x27;s HDI. Memory 0.602. Report 0.628.</h1>
+ <div class="post">I asked Claude for Ghana&#x27;s Human Development Index, with no tools and no skill.
+
+It said the latest report it knew was the 2025 Human Development Report, and gave 0.602, rank 145. Those are the figures from the 2023/24 edition. The 2025 edition says 0.628, rank 143.
+
+The gap is small. What caught me is the label. It put the old edition&#x27;s numbers under the new edition&#x27;s name. It did say it was quoting from memory and told me to check, which was fair.
+
+For Kenya it remembered the 2023/24 figures correctly, then guessed 0.613 for the new edition. The 2025 report says 0.628, the same as Ghana.
+
+So I wrote a skill that makes Claude open the publisher&#x27;s page and the current file before it answers. Same question, recorded the same way:
+
+Without the skill: 0.602, from the 2023/24 edition, no source link.
+With the skill: 0.628, from the 2025 edition, with the UNDP link and the date it read the file.
+
+The same trap sits in every UN flagship report. Each one comes in editions, and each edition recomputes past years. The PDF has the latest edition of ten of them, each checked on the publisher&#x27;s own page, and a prompt you can paste into any assistant before your next report.
+
+HDI is a UNDP index and sits outside the SDG indicator list. I tested it because it is a UN figure most of us have quoted.
+
+Every figure in this post was checked against its source today.
+
+Comment EDITION and I&#x27;ll send you the skill.
+
+Views are my own.</div>
+</section>
+<section>
+ <div class="eyebrow">The carousel</div>
+ <div class="strip"><img src="assets/w02/slide_01.jpg" alt="W02 slide 1" loading="lazy"><img src="assets/w02/slide_02.jpg" alt="W02 slide 2" loading="lazy"><img src="assets/w02/slide_03.jpg" alt="W02 slide 3" loading="lazy"><img src="assets/w02/slide_04.jpg" alt="W02 slide 4" loading="lazy"><img src="assets/w02/slide_05.jpg" alt="W02 slide 5" loading="lazy"><img src="assets/w02/slide_06.jpg" alt="W02 slide 6" loading="lazy"></div>
+ <div class="row"><a class="btn" href="assets/w02/carousel.pdf">Carousel as PDF</a></div>
+ <video src="assets/w02/motion_4x5.mp4" poster="assets/w02/slide_01.jpg" controls muted playsinline preload="metadata" aria-label="W02 as a video"></video>
+</section>
+<section id="test">
+ <div class="eyebrow">The test, word for word</div>
+ <h2>What Claude said, with and without the skill</h2>
+ <p class="lede">Two questions with no tools and no skill, then the Ghana question again with the latest-edition skill. Each answer is shown word for word. The verdict compares the value in the answer with the current UNDP file. <a href="tests.html">The other five questions from the same session are in the test log.</a></p>
+ <h3>Without the skill, no tools</h3><div class="ab"><div class="abc"><span class="small">Asked 2026-10-20 23:10 UTC</span><span class="small">Claude, no skill, no tools</span><p class="q">What is Ghana&#x27;s latest Human Development Index (HDI) value and rank in the UNDP Human Development Report? Answer in at most three sentences.</p><p class="a">As far as I know, the latest report I&#x27;m confident about is the 2025 Human Development Report (released May 2025). It gave Ghana an HDI of about 0.602, which ranks around 145th out of 193 countries and puts Ghana in the medium human development category. I can&#x27;t confirm whether a newer edition has come out, and I&#x27;m quoting these figures from memory, so check them against the UNDP website.</p><span class="verdict off">HDR 2025 CSV: 0.628, rank 143. 0.602 is the HDR 2023/24 value</span></div><div class="abc"><span class="small">Asked 2026-10-20 23:26 UTC</span><span class="small">Claude, no skill, no tools</span><p class="q">What is Kenya&#x27;s latest Human Development Index (HDI) value and rank in the UNDP Human Development Report? Answer in at most three sentences.</p><p class="a">Kenya&#x27;s HDI value was 0.601 in the 2023/2024 Human Development Report (released in March 2024), ranking it 146th out of 193 countries and territories and placing it in the &quot;medium human development&quot; category. A newer report, covering 2024 data, was released in 2025, and my recollection of its Kenya figures is less certain. I believe the value rose to about 0.613, with a rank near 129th, but please check the UNDP&#x27;s Human Development Reports website to confirm.</p><span class="verdict off">HDR 2025 CSV: 0.628, rank 143. 0.601 is the HDR 2023/24 value. 0.613 is in neither file</span></div></div><h3>With the latest-edition skill</h3><div class="ab"><div class="abc"><span class="small">Asked 2026-10-20 23:34 UTC</span><span class="small">Claude, with skill</span><p class="q">What is Ghana&#x27;s latest Human Development Index (HDI) value and rank in the UNDP Human Development Report? Answer in at most three sentences.</p><p class="a">Ghana&#x27;s HDI in the latest edition, the UNDP Human Development Report 2025, is **0.628**, which puts it at **rank 143** and in the Medium human development group. I read both figures from `HDR25_Composite_indices_complete_time_series.csv` (row GHA, columns `hdi_2023` and `hdi_rank_2023`), which is the file linked from UNDP&#x27;s downloads page. The page I read doesn&#x27;t state a publication date, so I can&#x27;t give one; the report&#x27;s cover image is filed under 2025-05, but that isn&#x27;t a stated date.
+
+Source: https://hdr.undp.org/data-center/documentation-and-downloads · read 2026-10-20.</p><span class="verdict ok">HDR 2025 CSV: 0.628, rank 143. Same value in the answer</span></div></div>
+</section>
+<section id="before-after">
+ <div class="eyebrow">Before and after</div>
+ <h2>Same question, with a skill. It reads the current file first.</h2>
+ <p class="lede">Both Ghana answers named the 2025 report. Only one read it.</p>
+ <div class="tablewrap"><table class="ba"><thead><tr><th></th><th>Without the skill</th><th>With the skill</th></tr></thead><tbody><tr data-ba="edition_named"><td>Edition it named</td><td data-k="before">HDR 2025</td><td data-k="after">HDR 2025</td></tr><tr data-ba="value"><td>HDI it gave</td><td data-k="before">0.602</td><td data-k="after">0.628</td></tr><tr data-ba="value_matches"><td>That value is from</td><td data-k="before">HDR 2023/24</td><td data-k="after">HDR 2025</td></tr><tr data-ba="rank"><td>Rank it gave</td><td data-k="before">145</td><td data-k="after">143</td></tr><tr data-ba="source_url"><td>Source link</td><td data-k="before"><span class="note">none</span></td><td data-k="after"><a href="https://hdr.undp.org/data-center/documentation-and-downloads">hdr.undp.org/data-center/documentation-and-downloads</a></td></tr><tr data-ba="retrieved_date"><td>Date it read the file</td><td data-k="before"><span class="note">none</span></td><td data-k="after">2026-10-20</td></tr></tbody></table></div>
+ <p class="note">Both runs: Claude, headless, asked 2026-10-20. Each value matched to the HDR 2025 and HDR 2023/24 CSVs.</p>
+</section>
+<section id="hdi-table">
+ <div class="eyebrow">Human Development Index, current and previous edition</div>
+ <h2>HDI in eight countries. Ghana and Kenya tie at 143.</h2>
+ <p class="lede">Each value is one cell of the UNDP file for that edition. Each edition recomputes past years, so quote one edition at a time. The HDR 2025 file gives Ghana 0.625 for 2022. The HDR 2023/24 file gave 0.602 for the same year.</p>
+ <div class="tablewrap"><table><thead><tr><th>Country</th><th class="n">HDR 2025 · 2023 data</th><th class="n">Rank</th>
+ <th class="n">HDR 2023/24 · 2022 data</th><th class="n">Rank</th></tr></thead><tbody><tr data-iso="GHA"><td data-k="country">Ghana</td><td class="n" data-k="cur">0.628</td><td class="n" data-k="cur_rank">143</td><td class="n" data-k="prev">0.602</td><td class="n" data-k="prev_rank">145</td></tr><tr data-iso="KEN"><td data-k="country">Kenya</td><td class="n" data-k="cur">0.628</td><td class="n" data-k="cur_rank">143</td><td class="n" data-k="prev">0.601</td><td class="n" data-k="prev_rank">146</td></tr><tr data-iso="UGA"><td data-k="country">Uganda</td><td class="n" data-k="cur">0.582</td><td class="n" data-k="cur_rank">157</td><td class="n" data-k="prev">0.550</td><td class="n" data-k="prev_rank">159</td></tr><tr data-iso="RWA"><td data-k="country">Rwanda</td><td class="n" data-k="cur">0.578</td><td class="n" data-k="cur_rank">159</td><td class="n" data-k="prev">0.548</td><td class="n" data-k="prev_rank">161</td></tr><tr data-iso="NGA"><td data-k="country">Nigeria</td><td class="n" data-k="cur">0.560</td><td class="n" data-k="cur_rank">164</td><td class="n" data-k="prev">0.548</td><td class="n" data-k="prev_rank">161</td></tr><tr data-iso="TZA"><td data-k="country">Tanzania (United Republic of)</td><td class="n" data-k="cur">0.555</td><td class="n" data-k="cur_rank">165</td><td class="n" data-k="prev">0.532</td><td class="n" data-k="prev_rank">167</td></tr><tr data-iso="SEN"><td data-k="country">Senegal</td><td class="n" data-k="cur">0.530</td><td class="n" data-k="cur_rank">169</td><td class="n" data-k="prev">0.517</td><td class="n" data-k="prev_rank">169</td></tr><tr data-iso="ETH"><td data-k="country">Ethiopia</td><td class="n" data-k="cur">0.497</td><td class="n" data-k="cur_rank">180</td><td class="n" data-k="prev">0.492</td><td class="n" data-k="prev_rank">176</td></tr></tbody></table></div>
+ <p class="note">Files: <a href="https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv">HDR 2025 composite indices CSV</a> and <a href="https://hdr.undp.org/sites/default/files/2023-24_HDR/HDR23-24_Composite_indices_complete_time_series.csv">HDR 2023/24 composite indices CSV</a>, both read 2026-10-20.</p>
+</section>
+<section id="reports">
+ <div class="eyebrow">Save this · Checked 2026-10-20</div>
+ <h2>Ten UN flagship reports. The latest edition of each.</h2>
+ <p class="lede">A row is kept only when the edition label and the date appear word for word in a sentence on the publisher&#x27;s own page. The proof under each report is that sentence, copied from the page.</p>
+ <div class="row"><a class="btn" href="assets/w02/reports.csv" download>Download the table as CSV</a><a class="btn" href="#reports">Link to this table</a></div>
+ <div class="tablewrap"><table class="reports"><thead><tr><th>Report and proof</th><th>Publisher</th><th>Edition</th><th>Published</th></tr></thead><tbody><tr id="report-hdr" data-row="hdr"><td class="rep"><a href="https://hdr.undp.org/data-center/documentation-and-downloads" data-k="report">Human Development Report</a><ul class="proofs"><li><q class="proof">06 May 2025 Update: HDR 2025 data update</q> <a href="https://hdr.undp.org/data-center/documentation-and-downloads">hdr.undp.org</a></li><li><q class="proof">Explore Towards the 2026 Human Development Report Please find out more about the theme, the composition of the Advisory Board, and the consultations informing the preparation of the 2026 Human Development Report.</q> <a href="https://hdr.undp.org/">hdr.undp.org</a></li></ul></td><td data-k="publisher">UNDP</td><td class="n" data-k="edition">2025</td><td class="n nw" data-k="shown">6 May 2025</td></tr><tr id="report-sdgr" data-row="sdgr"><td class="rep"><a href="https://unstats.un.org/sdgs/report/2026/" data-k="report">Sustainable Development Goals Report</a><ul class="proofs"><li><q class="proof">7 July 2026: The Sustainable Development Goals Report 2026 shows</q> <a href="https://unstats.un.org/sdgs/report/2026/">unstats.un.org</a></li></ul></td><td data-k="publisher">UN DESA</td><td class="n" data-k="edition">2026</td><td class="n nw" data-k="shown">7 Jul 2026</td></tr><tr id="report-wpp" data-row="wpp"><td class="rep"><a href="https://www.un.org/development/desa/pd/world-population-prospects-2024" data-k="report">World Population Prospects</a><ul class="proofs"><li><q class="proof">World Population Prospects 2024 is the twenty-eighth edition of the official United Nations population estimates and projections.</q> <a href="https://www.un.org/development/desa/pd/">un.org</a></li><li><q class="proof">Broadcast on UN WebTV, 11 July 2024</q> <a href="https://www.un.org/development/desa/pd/world-population-prospects-2024">un.org</a></li></ul></td><td data-k="publisher">UN DESA</td><td class="n" data-k="edition">2024</td><td class="n nw" data-k="shown">11 Jul 2024</td></tr><tr id="report-sofi" data-row="sofi"><td class="rep"><a href="https://www.fao.org/publications/fao-flagship-publications/the-state-of-food-security-and-nutrition-in-the-world/en" data-k="report">State of Food Security and Nutrition in the World</a><ul class="proofs"><li><q class="proof">JUST RELEASED The State of Food Security and Nutrition in the World 2026</q> <a href="https://www.fao.org/publications/fao-flagship-publications/the-state-of-food-security-and-nutrition-in-the-world/en">fao.org</a></li><li><q class="proof">fao.embargodate: 2026-07-21T09:00:00Z</q> <a href="https://openknowledge.fao.org/server/api/pid/find?id=20.500.14283/cd8306en">openknowledge.fao.org</a></li></ul></td><td data-k="publisher">FAO and partners</td><td class="n" data-k="edition">2026</td><td class="n nw" data-k="shown">21 Jul 2026</td></tr><tr id="report-wesp" data-row="wesp"><td class="rep"><a href="https://desapublications.un.org/publications/world-economic-situation-and-prospects-2026" data-k="report">World Economic Situation and Prospects</a><ul class="proofs"><li><q class="proof">World Economic Situation and Prospects 2026 Publication Date: January 2026</q> <a href="https://desapublications.un.org/publications/world-economic-situation-and-prospects-2026">desapublications.un.org</a></li></ul></td><td data-k="publisher">UN DESA</td><td class="n" data-k="edition">2026</td><td class="n nw" data-k="shown">Jan 2026</td></tr><tr id="report-whs" data-row="whs"><td class="rep"><a href="https://www.who.int/data/gho/publications/world-health-statistics" data-k="report">World Health Statistics</a><ul class="proofs"><li><q class="proof">13 May 2026 World health statistics 2026: monitoring health for the SDGs</q> <a href="https://www.who.int/data/gho/publications/world-health-statistics">who.int</a></li></ul></td><td data-k="publisher">WHO</td><td class="n" data-k="edition">2026</td><td class="n nw" data-k="shown">13 May 2026</td></tr><tr id="report-sowc" data-row="sowc"><td class="rep"><a href="https://www.unicef.org/reports/state-of-worlds-children/2025" data-k="report">State of the World&#x27;s Children</a><ul class="proofs"><li><q class="proof">The State of the World’s Children 2025 Ending child poverty: Our shared imperative Read the 2025 report</q> <a href="https://www.unicef.org/reports/state-of-worlds-children">unicef.org</a></li><li><q class="proof">Publication date November 2025</q> <a href="https://www.unicef.org/reports/state-of-worlds-children/2025">unicef.org</a></li></ul></td><td data-k="publisher">UNICEF</td><td class="n" data-k="edition">2025</td><td class="n nw" data-k="shown">Nov 2025</td></tr><tr id="report-ilo" data-row="ilo"><td class="rep"><a href="https://www.ilo.org/publications/flagship-reports/employment-and-social-trends-2026" data-k="report">Employment and Social Trends</a><ul class="proofs"><li><q class="proof">Employment and Social Trends 2026 | International Labour Organization</q> <a href="https://www.ilo.org/publications/flagship-reports/employment-and-social-trends-2026">ilo.org</a></li><li><q class="proof">Publication details Date 14 January 2026</q> <a href="https://www.ilo.org/publications/flagship-reports/employment-and-social-trends-2026">ilo.org</a></li></ul></td><td data-k="publisher">ILO</td><td class="n" data-k="edition">2026</td><td class="n nw" data-k="shown">14 Jan 2026</td></tr><tr id="report-wir" data-row="wir"><td class="rep"><a href="https://unctad.org/topic/investment/world-investment-report" data-k="report">World Investment Report</a><ul class="proofs"><li><q class="proof">Latest editions World Investment Report 2026: International investment in a turbulent era 07 Jul 2026</q> <a href="https://unctad.org/topic/investment/world-investment-report">unctad.org</a></li></ul></td><td data-k="publisher">UNCTAD</td><td class="n" data-k="edition">2026</td><td class="n nw" data-k="shown">7 Jul 2026</td></tr><tr id="report-wmo" data-row="wmo"><td class="rep"><a href="https://wmo.int/publication-series/state-of-global-climate" data-k="report">State of the Global Climate</a><ul class="proofs"><li><q class="proof">Publication 23 March 2026 State of the Global Climate 2025</q> <a href="https://wmo.int/publication-series/state-of-global-climate">wmo.int</a></li></ul></td><td data-k="publisher">WMO</td><td class="n" data-k="edition">2025</td><td class="n nw" data-k="shown">23 Mar 2026</td></tr></tbody></table></div>
+ <p class="note">Left out because the edition and the date could not both be read on the publisher's page: Emissions Gap Report (UNEP) and Global Trends (UNHCR).</p>
+</section>
+<section id="prompt">
+ <div class="eyebrow">Copy and paste</div>
+ <h2>Paste this before you ask.</h2>
+ <p class="lede">Works in any assistant. Swap in the report you need.</p>
+ <pre class="wrapt" id="prompt-text" data-k="prompt">Before you give any figure from a UN report, tell me which edition it comes from and when that edition was published. Read the publisher&#x27;s own page and the current data file first. If you can&#x27;t open them now, say &quot;I can&#x27;t check the current edition&quot; and give me the link instead of a number. Do not answer from memory.</pre>
+ <div class="row"><button type="button" class="btn" id="copy-prompt">Copy the prompt</button></div>
+</section>
+<script>
+document.getElementById('copy-prompt').onclick=e=>{const t=document.getElementById('prompt-text').textContent;
+ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>e.target.textContent='Copied',()=>{
+ const r=document.createRange();r.selectNodeContents(document.getElementById('prompt-text'));const s=getSelection();s.removeAllRanges();s.addRange(r)})};
+</script>
+<section>
+ <div class="eyebrow">Share it</div>
+ <h2>One chart, and a vertical cut</h2>
+ <p class="lede">The eight-country chart as a single image and the same slides at full phone height. Free to repost with the source line.</p>
+ <div class="pair2">
+  <a href="assets/w02/share_chart.jpg"><img src="assets/w02/share_chart.jpg" alt="HDI in eight countries. Ghana and Kenya tie at 143." loading="lazy"></a>
+  <video src="assets/w02/motion_9x16.mp4" poster="assets/w02/slide916_01.jpg" controls muted playsinline preload="metadata" aria-label="W02 as a vertical video"></video>
+ </div>
+</section>
+<section>
+ <div class="eyebrow">Sources</div>
+ <h2>Where every number comes from</h2>
+ <ul class="note"><li>HDI values and ranks: <a href="https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv">UNDP HDR 2025 composite indices CSV</a> (2023 data) and <a href="https://hdr.undp.org/sites/default/files/2023-24_HDR/HDR23-24_Composite_indices_complete_time_series.csv">UNDP HDR 2023/24 composite indices CSV</a> (2022 data), both read 2026-10-20</li><li>Report editions and dates: the publisher's own page for each report, linked in the <a href="#reports">table above</a>, checked 2026-10-20</li><li>Claude's answers: recorded word for word on 2026-10-20. The no-skill runs had no tools and no skill. The with-skill run had the latest-edition skill and could read web pages. All of them are in the <a href="tests.html">test log</a></li></ul>
+</section>
+<section>
+ <div class="eyebrow">Make it yours</div>
+ <h2>Ask for a report figure, get the edition</h2>
+ <p class="lede">The latest-edition skill behind this week is free. It opens the publisher's page and the current file before it answers. Type <code>/latest-edition Human Development Report, HDI for Ghana</code> in Claude. No comment needed.</p>
+ <div class="row"><a class="btn primary" href="skills.html#latest-edition">Get the latest-edition skill</a><a class="btn" href="assets/latest-edition.SKILL.md" download>Download SKILL.md</a></div>
+</section>
+<section id="join">
+ <div class="eyebrow">Join</div>
+ <h2>Get next week's test</h2>
+ <p class="lede">A method post every Tuesday and one chart from UN data every Thursday. Free, and you can leave any time.</p>
+ <div class="row"><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a><a class="btn" href="join.html">What you get</a></div>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>

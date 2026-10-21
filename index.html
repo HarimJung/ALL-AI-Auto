@@ -8,7 +8,7 @@
 <meta property="og:title" content="Claude for SDG: AI that quotes the UN source">
 <meta property="og:description" content="Weekly, tested ways to make AI quote the official UN source, with free skills and indicator cards checked against the SDG Global Database.">
 <meta property="og:url" content="https://sdgai.org/">
-<meta property="og:image" content="https://sdgai.org/assets/w01/slide_01.jpg">
+<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -117,6 +117,25 @@ code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2
 .skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
 details summary{cursor:pointer;font-weight:800}
 details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
@@ -124,34 +143,34 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Claude for SDG", "url": "https://sdgai.org/", "description": "Weekly, tested ways to make AI quote the official UN source.", "inLanguage": "en", "author": {"@type": "Person", "name": "Harim Jung"}, "potentialAction": {"@type": "SearchAction", "target": "https://sdgai.org/indicators.html?q={search_term_string}", "query-input": "required name=search_term_string"}}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w01.html">This week</a><a href="weeks.html">Weeks</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Claude for SDG", "url": "https://sdgai.org/", "description": "Weekly, tested ways to make AI quote the official UN source.", "inLanguage": "en", "author": {"@type": "Person", "name": "Harim Jung"}, "potentialAction": {"@type": "SearchAction", "target": "https://sdgai.org/indicators.html?q={search_term_string}", "query-input": "required name=search_term_string"}}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
 <header class="hero">
  <div>
   <div class="eyebrow">A community for people who report on the SDGs</div>
   <h1>Make AI <span>read the UN source</span> before it answers.</h1>
   <p class="lede">Every week: one method that makes Claude read the official UN source before it answers, tested in public, with a free skill you can use the same day.</p>
-  <div class="row"><a class="btn primary" href="w01.html">See this week's test</a><a class="btn" href="skills.html">Get the free skill</a></div>
+  <div class="row"><a class="btn primary" href="w02.html">See this week's test</a><a class="btn" href="skills.html">Get the free skill</a></div>
  </div>
  <div class="duo" aria-label="What Claude said without the skill, next to the official value">
-  <div class="said"><span class="small">Claude, no skill, no tools</span><div class="big dim">38%</div><q>From memory, the latest figure I recall for Ghana is about 38% of the population using safely…</q></div>
-  <div class="truth"><span class="small">SDG Global Database</span><div class="big">42.9%</div><span class="small" style="text-transform:none">Ghana · 2024 · Estimated data</span></div>
+  <div class="said"><span class="small">Claude, no skill, no tools</span><div class="big dim">0.602</div><q>the latest report I&#x27;m confident about is the 2025 Human Development Report (released May 2025)…</q></div>
+  <div class="truth"><span class="small">UNDP HDR 2025 CSV</span><div class="big">0.628</div><span class="small" style="text-transform:none">Ghana · rank 143 · data year 2023</span></div>
  </div>
 </header>
 <section>
- <div class="eyebrow">This week · W01</div>
+ <div class="eyebrow">This week · W02</div>
  <div class="drop">
-  <img src="assets/w01/slide_01.jpg" alt="W01 slide 1: I asked Claude for Ghana&#x27;s water figure. Memory 38%. Database 42.9%.">
+  <img src="assets/w02/slide_01.jpg" alt="W02 slide 1: I asked Claude for Ghana&#x27;s HDI. Memory 0.602. Report 0.628.">
   <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
-   <h2>One indicator code in, one citable card out</h2>
-   <p class="lede">Ghana and Kenya, indicator 6.1.1. What Claude said from memory, what the database says, and an eight-country dashboard built by the same skill.</p>
-   <div class="row"><a class="btn" href="w01.html">Open W01</a><a class="btn" href="weeks.html">All weeks</a></div>
+   <h2>Ask for a UN report figure, get the edition it came from</h2>
+   <p class="lede">Ghana and Kenya, Human Development Index. What Claude said from memory, what the HDR 2025 file says, and the latest edition of ten UN flagship reports, each checked on the publisher&#x27;s own page.</p>
+   <div class="row"><a class="btn" href="w02.html">Open W02</a><a class="btn" href="weeks.html">All weeks</a></div>
   </div>
  </div>
 </section>
 <section>
  <div class="eyebrow">AI vs source</div>
  <h2>What it said, next to what the source says</h2>
- <div class="vs"><a class="vsc" href="tests.html#w01-value_ghana"><span class="h">SDG 6.1.1 · Ghana</span><div><span class="small">Claude from memory</span><div class="big dim mid">38%</div></div><div><span class="small">SDG Global Database</span><div class="big mid">42.9%</div></div></a><a class="vsc" href="tests.html#w01-value_kenya"><span class="h">SDG 6.1.1 · Kenya</span><div><span class="small">Claude from memory</span><div class="big dim mid">30–40%</div></div><div><span class="small">SDG Global Database</span><div class="big mid dim mid">NOT IN SOURCE</div></div></a></div>
+ <div class="vs"><a class="vsc" href="tests.html#w02-c1_value"><span class="h">HDI · Ghana · W02</span><div><span class="small">Claude from memory</span><div class="big dim mid">0.602</div></div><div><span class="small">UNDP HDR 2025 CSV</span><div class="big mid">0.628</div></div></a><a class="vsc" href="tests.html#w02-c1_value_kenya"><span class="h">HDI · Kenya · W02</span><div><span class="small">Claude from memory</span><div class="big dim mid">0.613</div></div><div><span class="small">UNDP HDR 2025 CSV</span><div class="big mid">0.628</div></div></a><a class="vsc" href="tests.html#w01-value_ghana"><span class="h">SDG 6.1.1 · Ghana · W01</span><div><span class="small">Claude from memory</span><div class="big dim mid">38%</div></div><div><span class="small">SDG Global Database</span><div class="big mid">42.9%</div></div></a><a class="vsc" href="tests.html#w01-value_kenya"><span class="h">SDG 6.1.1 · Kenya · W01</span><div><span class="small">Claude from memory</span><div class="big dim mid">30–40%</div></div><div><span class="small">SDG Global Database</span><div class="big mid dim mid">NOT IN SOURCE</div></div></a></div>
  <div class="row"><a class="btn" href="tests.html">Open the test log</a></div>
 </section>
 <section>
@@ -159,7 +178,7 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
  <h2>Three rules, every week</h2>
  <div class="steps">
   <div class="step"><span class="n">Test</span><h3>Ask it plainly first</h3><p>We ask Claude with no tools and no skill, and keep the answer word for word.</p></div>
-  <div class="step"><span class="n">Read</span><h3>Then make it read</h3><p>A skill points it at the official metadata and the SDG Global Database. No value there means no value in the answer.</p></div>
+  <div class="step"><span class="n">Read</span><h3>Then make it read</h3><p>A skill points it at the official source and the current data file. No value there means no value in the answer.</p></div>
   <div class="step"><span class="n">Check</span><h3>Then check every figure</h3><p>Each number on the post is matched to the source file before it goes out.</p></div>
  </div>
 </section>
@@ -176,4 +195,4 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
  <p class="lede">A method post every Tuesday and one chart from UN data every Thursday. Free, and you can leave any time.</p>
  <div class="row"><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a><a class="btn" href="join.html">What you get</a></div>
  <p class="note">Run by Harim Jung. <a href="about.html">About this site and how the checks work</a>.</p>
-</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database or the SDG Metadata Repository, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>
