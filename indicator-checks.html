@@ -1,0 +1,563 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Indicator Checks | Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Four checks, four metadata sections, one join rule, one 13.3.1 card. Everything the carousel promised, with the prompts in full.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/indicator-checks.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="Indicator Checks | Claude for SDG">
+<meta property="og:description" content="Four checks, four metadata sections, one join rule, one 13.3.1 card. Everything the carousel promised, with the prompts in full.">
+<meta property="og:url" content="https://sdgai.org/indicator-checks.html">
+<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style><style>
+.ghead{padding-block:48px 10px;display:flex;flex-direction:column;gap:16px;border-bottom:0}
+.ghead h1{font-size:clamp(36px,6vw,64px);font-weight:900;letter-spacing:-.035em;line-height:1.02;max-width:18ch}
+.ghead .lede{font-size:19px;max-width:60ch;margin:0}
+.stamp{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 13px/1.5 var(--mono);color:var(--mut)}
+.stamp b{color:var(--un-ink);font-weight:600}
+.savebar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--un-tint);border-radius:14px;padding:12px 16px;font-weight:700;max-width:720px}
+.savebar span{font:500 14px var(--body);color:var(--ink)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.toc a{display:inline-flex;gap:8px;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--ink)}
+.toc b{font-family:var(--mono);font-weight:600;color:var(--un-ink)}
+.gbody{display:flex;flex-direction:column;gap:18px;padding-block:8px 40px;max-width:860px}
+.gbody h2{font-size:clamp(26px,3.6vw,36px);font-weight:900;letter-spacing:-.025em;line-height:1.1;margin:34px 0 0;padding-top:26px;border-top:2px solid var(--ink);scroll-margin-top:16px}
+.gbody h3{font-size:20px;font-weight:800;margin:14px 0 0}
+.gbody p,.gbody li{font-size:17px;line-height:1.6;max-width:68ch;margin:0}
+.gbody ul,.gbody ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.gbody hr{display:none}
+.gbody>*{min-width:0;max-width:100%}
+.gbody table{table-layout:auto}
+.gbody td:first-child,.gbody th:first-child{width:1%}
+.gbody td{vertical-align:top;line-height:1.5}
+.gbody td:first-child{font-weight:700;white-space:nowrap}
+.pbox{position:relative;display:flex;flex-direction:column;gap:0}
+.pbox .ph{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);border-radius:14px 14px 0 0;padding:9px 14px;font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
+.pbox button.done{background:var(--un);color:#fff}
+.gsrc{font-size:15px}
+.gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
+@media (max-width:620px){.gbody td:first-child{white-space:normal}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Indicator Checks", "description": "**Four checks, four metadata sections, one join rule, one 13.3.1 card.** Everything the carousel promised, with the prompts in full.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/indicator-checks.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<section class="ghead">
+ <div class="eyebrow">Full guide</div>
+ <h1>Indicator Checks</h1>
+ <p class="lede">Four checks, four metadata sections, one join rule, one 13.3.1 card. Everything the carousel promised, with the prompts in full.</p>
+ <div class="stamp"><span>Sources opened <b>2026-10-21</b>. Metadata editions are named at each quote.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span></div>
+ <ul class="toc"><li><a href="#four-checks-before-a-figure-goes-in-a-draft"><b>1</b>Four checks before a figure goes in a draft</a></li><li><a href="#four-metadata-sections-that-hold-the-limits"><b>2</b>Four metadata sections that hold the limits</a></li><li><a href="#same-42-days-two-different-counts"><b>3</b>Same 42 days, two different counts</a></li><li><a href="#a-13.3.1-card-built-before-the-value"><b>4</b>A 13.3.1 card, built before the value</a></li><li><a href="#sources">Sources</a></li></ul>
+</section>
+<article class="gbody"><h2 id="four-checks-before-a-figure-goes-in-a-draft">1. Four checks
+before a figure goes in a draft</h2>
+<p>Worked example: indicator 6.1.1, Ghana. Metadata 6.1.1 is the
+2024-09-27 edition.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Check</th>
+<th>Where it lives</th>
+<th>What it says for 6.1.1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Definition</td>
+<td>Metadata §2.a</td>
+<td>Improved source, accessible on premises, available when needed and
+free from faecal and priority chemical contamination. All three at
+once</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Unit</td>
+<td>Metadata §2.b</td>
+<td>Percent of population. The country value is the minimum of the three
+ratios (§4.c)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Series and year</td>
+<td>SDG Global Database</td>
+<td>SH_H2O_SAFE, Ghana: 40.2 percent for 2022, 42.9 percent for 2024.
+Both flagged E, estimated. Source JMP (2025)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Custodian</td>
+<td>Metadata §0.g</td>
+<td>WHO and UNICEF. Compiled by the WHO/UNICEF Joint Monitoring
+Programme (§3.f)</td>
+</tr>
+</tbody>
+</table></div>
+<p>"Available when needed" means the household reports sufficient water,
+or water at least 12 hours a day or 4 days a week (§2.a).</p>
+<h3 id="the-recorded-run">The recorded run</h3>
+<p>Asked on 2026-10-20 at 21:24 UTC, with no tools and no skill:
+<em>"What is the latest SDG indicator 6.1.1 value for Ghana?"</em></p>
+<p>The answer, verbatim in part: "the latest figure I recall for Ghana
+is about 38% ... for around 2022." It also said it could not confirm
+whether a newer update had been released.</p>
+<p>Matched by year, the database holds 40.2 for 2022. The latest year in
+the series is 2024, at 42.9. The record of the run is kept in the engine
+files. The database values were pulled again on 2026-10-21 and the bytes
+had not changed.</p>
+<h3 id="project-instructions">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Before you give me any SDG figure, run four checks.
+
+1 Definition  quote metadata 2.a with the edition date
+2 Unit        say what it is a share of, from 2.b
+3 Series      series code, country, year and the Nature flag
+4 Custodian   name the agency in 0.g
+
+A figure with no year is not a figure. Leave it out.
+Never answer from memory. No source open? NOT IN SOURCE.
+Two years available? Give both. Do not call either one latest.
+Last line: what I still have to check myself.</pre></div>
+<p>Why a ministry figure can differ from the database: JMP fits a
+regression over all data points, while some national estimates use the
+most recent data point, and population figures can differ too (6.1.1
+metadata, section 6, Comparability).</p>
+<hr />
+<h2 id="four-metadata-sections-that-hold-the-limits">2. Four metadata
+sections that hold the limits</h2>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Field code</th>
+<th>What it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>§2.a Definition and concepts</td>
+<td>STAT_CONC_DEF</td>
+<td>What the number counts</td>
+</tr>
+<tr class="even">
+<td>§4.b Comment and limitations</td>
+<td>REC_USE_LIM</td>
+<td>The custodian's own caveats</td>
+</tr>
+<tr class="odd">
+<td>§4.f Treatment of missing values</td>
+<td>IMPUTATION</td>
+<td>What a blank or a zero means</td>
+</tr>
+<tr class="even">
+<td>§4.g Regional aggregations</td>
+<td>REG_AGG</td>
+<td>Whether a regional figure exists at all</td>
+</tr>
+</tbody>
+</table></div>
+<p>The same section numbers and field codes appear in the 3.1.1, 4.7.1
+and 6.1.1 files.</p>
+<h3 id="what-they-say">What they say</h3>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>File</th>
+<th>Text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>§2.a</td>
+<td>4.7.1</td>
+<td>"It measures government intentions and not necessarily what is
+implemented in practice in schools and classrooms."</td>
+</tr>
+<tr class="even">
+<td>§4.b</td>
+<td>4.7.1</td>
+<td>The Survey is based on self-reporting by government officials.
+Countries are asked to send supporting documents</td>
+</tr>
+<tr class="odd">
+<td>§4.f</td>
+<td>4.7.1</td>
+<td>Unknown and blank answers are treated as zeros. Over 50 percent of a
+question missing and the component score is not calculated, it is
+reported as not available</td>
+</tr>
+<tr class="even">
+<td>§4.g</td>
+<td>4.7.1</td>
+<td>"Regional aggregates are not calculated."</td>
+</tr>
+<tr class="odd">
+<td>§4.g</td>
+<td>6.1.1</td>
+<td>Each element is a population-weighted average. The regional value is
+the minimum of the three elements, or of two if accessibility or
+availability is missing</td>
+</tr>
+<tr class="even">
+<td>§4.f</td>
+<td>6.1.1</td>
+<td>"Imputed country estimates are not published and only used for
+aggregation."</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-stamp-is-not-the-same-in-every-file">The stamp is not the
+same in every file</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Template format version</th>
+<th>Last updated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4.7.1</td>
+<td>1.1</td>
+<td>2026-03-27, printed on all 17 pages</td>
+</tr>
+<tr class="even">
+<td>3.1.1</td>
+<td>1.1</td>
+<td>2025-11-04</td>
+</tr>
+<tr class="odd">
+<td>6.1.1</td>
+<td>1.0</td>
+<td>2024-09-27</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="project-instructions-1">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>From the metadata PDF I paste, copy four sections word for word.
+
+2.a  Definition and concepts
+4.b  Comment and limitations
+4.f  Treatment of missing values
+4.g  Regional aggregations
+
+Put the section number in front of each. Do not summarise.
+A section with separate parts (Survey, Greening): keep both,
+labelled. First line: the Last updated date and the template
+format version printed on page 1.
+A section that is empty or not applicable: show it as it is.</pre></div>
+<p>When the four sections do not answer it, SDG Data Contacts lists a
+focal point per indicator for questions on definitions, methods of
+computation and data (page last updated 22 September 2026).</p>
+<hr />
+<h2 id="same-42-days-two-different-counts">3. Same 42 days, two
+different counts</h2>
+<p>Metadata 3.1.1, 2025-11-04 edition.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Window</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maternal death</td>
+<td>While pregnant or within 42 days of termination of pregnancy</td>
+<td>Related to or aggravated by the pregnancy or its management. Not
+unintentional or incidental causes (§2.a)</td>
+</tr>
+<tr class="even">
+<td>Pregnancy-related death</td>
+<td>The same 42 days</td>
+<td>Irrespective of the cause of death (§2.a)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The custodian does not use pregnancy-related data as they are.
+Incidental or accidental deaths are 10 percent of pregnancy-related
+deaths (excluding HIV-related deaths) in sub-Saharan Africa and 15
+percent in other low- and middle-income countries, and the estimates
+adjust for this (§4.e).</p>
+<h3 id="three-measures-three-denominators-4.b">Three measures, three
+denominators (§4.b)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Divided by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MMR</td>
+<td>100,000 live births in the same period</td>
+</tr>
+<tr class="even">
+<td>MMRate</td>
+<td>Person-years lived by women of reproductive age</td>
+</tr>
+<tr class="odd">
+<td>PM</td>
+<td>All deaths among women aged 15 to 49</td>
+</tr>
+</tbody>
+</table></div>
+<p>The SDG API carries the unit code PER_100000_LIVE_BIRTHS on every MMR
+record. The rule for which deaths count is only in §2.a.</p>
+<h3 id="project-instructions-2">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Before I put two maternal death figures in one series,
+read metadata 3.1.1 section 2.a and tag each source:
+
+  MATERNAL           cause related to or aggravated by pregnancy
+  PREGNANCY-RELATED  any cause, same window
+  UNCLEAR            the source does not say
+
+Two different tags in one series: write JOIN BLOCKED, name rows.
+Check the base. MMR is per 100,000 live births. Anything else,
+say so. Do not convert one definition into the other.
+Last line: the question for the WHO focal point.</pre></div>
+<p>The custodian for 3.1.1 is WHO, Department of Sexual and Reproductive
+Health and Research (§0.g).</p>
+<hr />
+<h2 id="a-13.3.1-card-built-before-the-value">4. A 13.3.1 card, built
+before the value</h2>
+<p>13.3.1 has no file of its own. It sits in the 4.7.1 metadata,
+2026-03-27 edition.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Line</th>
+<th>What the metadata says</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Codes</td>
+<td>4.7.1, 12.8.1 and 13.3.1. All eight series carry the tag
+[4.7.1,12.8.1,13.3.1]</td>
+<td>§0.d, §0.f</td>
+</tr>
+<tr class="even">
+<td>Measures</td>
+<td>Government intentions, as reported by officials</td>
+<td>§2.a</td>
+</tr>
+<tr class="odd">
+<td>Where</td>
+<td>Greening is captured under the Curricula component</td>
+<td>§4.a</td>
+</tr>
+<tr class="even">
+<td>Built from</td>
+<td>13 keywords: 4 environment and sustainability, 5 climate change, 4
+biodiversity, in grade 3, 6 and 9 science and social science curricula
+and national curriculum frameworks</td>
+<td>§3.a</td>
+</tr>
+<tr class="odd">
+<td>Score</td>
+<td>One Greening Curriculum Index, weighted 50 percent environment and
+sustainability, 25 climate change, 25 biodiversity. The four Survey
+components are not combined</td>
+<td>§4.c</td>
+</tr>
+<tr class="even">
+<td>Limit</td>
+<td>"As it is based on counts of keywords, it does not capture how these
+keywords are used."</td>
+<td>§4.b</td>
+</tr>
+<tr class="odd">
+<td>Partial</td>
+<td>Three of four document types: the value carries a Partial Data
+qualifier</td>
+<td>§4.f</td>
+</tr>
+<tr class="even">
+<td>Regional</td>
+<td>"Regional aggregates are not calculated."</td>
+<td>§4.g</td>
+</tr>
+<tr class="odd">
+<td>Years</td>
+<td>Greening data refer to 2023-2024. Collection is expected to be
+annual</td>
+<td>§3.c</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="project-instructions-3">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Build an indicator card for 13.3.1 from the metadata I paste.
+Metadata first. Do not read any value until the card is done.
+
+1 Codes     the code and every code it shares, from 0.f
+2 Measures  quote the 2.a sentence that limits the claim
+3 Score     which score I cite, and its rule from 4.c
+4 Limit     quote 4.b for that same score
+5 Regional  quote 4.g. If none, write NO REGIONAL FIGURE
+6 Edition   the Last updated date from page 1
+
+An outcome sentence the card cannot support: OVERCLAIM, and why.</pre></div>
+<hr />
+<h2 id="sources">Sources</h2>
+<ul class="gsrc">
+<li>SDG metadata 6.1.1, 2024-09-27:
+https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf</li>
+<li>SDG metadata 3.1.1, 2025-11-04:
+https://unstats.un.org/sdgs/metadata/files/Metadata-03-01-01.pdf</li>
+<li>SDG metadata 4.7.1, 2026-03-27:
+https://unstats.un.org/sdgs/metadata/files/Metadata-04-07-01.pdf</li>
+<li>SDG Global Database: https://unstats.un.org/sdgs/dataportal</li>
+<li>SDG Data Contacts: https://unstats.un.org/sdgs/dataContacts/</li>
+</ul>
+</article></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div><script>
+document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
+ const t=b.closest('.pbox').querySelector('pre').innerText;
+ try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');
+  setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1600)}catch(e){b.textContent='Select and copy'}
+}));
+</script></body></html>
