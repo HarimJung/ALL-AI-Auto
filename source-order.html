@@ -1,0 +1,486 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>The Source Order | Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Four steps, four blocks, three columns, four branches. Everything the carousels promised, with the prompts in full and the recorded answers.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/source-order.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="The Source Order | Claude for SDG">
+<meta property="og:description" content="Four steps, four blocks, three columns, four branches. Everything the carousels promised, with the prompts in full and the recorded answers.">
+<meta property="og:url" content="https://sdgai.org/source-order.html">
+<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style><style>
+.ghead{padding-block:48px 10px;display:flex;flex-direction:column;gap:16px;border-bottom:0}
+.ghead h1{font-size:clamp(36px,6vw,64px);font-weight:900;letter-spacing:-.035em;line-height:1.02;max-width:18ch}
+.ghead .lede{font-size:19px;max-width:60ch;margin:0}
+.stamp{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 13px/1.5 var(--mono);color:var(--mut)}
+.stamp b{color:var(--un-ink);font-weight:600}
+.savebar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--un-tint);border-radius:14px;padding:12px 16px;font-weight:700;max-width:720px}
+.savebar span{font:500 14px var(--body);color:var(--ink)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.toc a{display:inline-flex;gap:8px;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--ink)}
+.toc b{font-family:var(--mono);font-weight:600;color:var(--un-ink)}
+.gbody{display:flex;flex-direction:column;gap:18px;padding-block:8px 40px;max-width:860px}
+.gbody h2{font-size:clamp(26px,3.6vw,36px);font-weight:900;letter-spacing:-.025em;line-height:1.1;margin:34px 0 0;padding-top:26px;border-top:2px solid var(--ink);scroll-margin-top:16px}
+.gbody h3{font-size:20px;font-weight:800;margin:14px 0 0}
+.gbody p,.gbody li{font-size:17px;line-height:1.6;max-width:68ch;margin:0}
+.gbody ul,.gbody ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.gbody hr{display:none}
+.gbody>*{min-width:0;max-width:100%}
+.gbody table{table-layout:auto}
+.gbody td:first-child,.gbody th:first-child{width:1%}
+.gbody td{vertical-align:top;line-height:1.5}
+.gbody td:first-child{font-weight:700;white-space:nowrap}
+.pbox{position:relative;display:flex;flex-direction:column;gap:0}
+.pbox .ph{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);border-radius:14px 14px 0 0;padding:9px 14px;font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
+.pbox button.done{background:var(--un);color:#fff}
+.gsrc{font-size:15px}
+.gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
+@media (max-width:620px){.gbody td:first-child{white-space:normal}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Source Order", "description": "**Four steps, four blocks, three columns, four branches.** Everything the carousels promised, with the prompts in full and the recorded answers.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/source-order.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<section class="ghead">
+ <div class="eyebrow">Full guide</div>
+ <h1>The Source Order</h1>
+ <p class="lede">Four steps, four blocks, three columns, four branches. Everything the carousels promised, with the prompts in full and the recorded answers.</p>
+ <div class="stamp"><span>Sources opened <b>2026-10-21</b>. Metadata editions and decision dates are named at each quote.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span></div>
+ <ul class="toc"><li><a href="#four-steps-and-the-value-is-the-third"><b>1</b>Four steps, and the value is the third</a></li><li><a href="#four-blocks-and-what-each-one-permits"><b>2</b>Four blocks, and what each one permits</a></li><li><a href="#the-acronym-map-three-columns"><b>3</b>The acronym map, three columns</a></li><li><a href="#four-climate-branches-and-education-first"><b>4</b>Four climate branches, and Education first</a></li><li><a href="#before-you-send"><b>5</b>Before you send</a></li><li><a href="#sources">Sources</a></li></ul>
+</section>
+<article class="gbody"><h2 id="four-steps-and-the-value-is-the-third">1. Four steps, and the value is the third</h2>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Question</th>
+<th>Where</th>
+<th>What you may do with it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 Frame</td>
+<td>What we agreed to measure</td>
+<td>SDG Indicators Home</td>
+<td>Name the code and title. No value</td>
+</tr>
+<tr class="even">
+<td>2 Define</td>
+<td>What the number counts</td>
+<td>Metadata Repository, one PDF per indicator</td>
+<td>Quote it with § and the edition date</td>
+</tr>
+<tr class="odd">
+<td>3 Value</td>
+<td>The figure itself</td>
+<td>Global Database</td>
+<td>Cite it, with series code, year and Nature flag</td>
+</tr>
+<tr class="even">
+<td>4 Place</td>
+<td>What it means here</td>
+<td>UN Data Commons for the SDGs</td>
+<td>Read it. Never the cited figure</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="why-the-order-is-not-a-habit">Why the order is not a habit</h3>
+<p>The UNSD Metadata Repository page states it directly: "Please note that no data are published in the Global SDG Indicators Database until the corresponding metadata is approved by the IAEG-SDGs." The same page says the timeline for review and approval can span up to 12 weeks or more. Definition comes before value because that is the order the value went through to reach the database.</p>
+<p>The complete metadata set on that page is dated as of 1 October 2026. The file name is fixed: <code>Metadata-&lt;goal&gt;-&lt;target&gt;-&lt;indicator&gt;.pdf</code>, two digits each, zero padded. The Sources list below has three. Give Claude that URL. Do not ask it to find one.</p>
+<h3 id="the-recorded-run">The recorded run</h3>
+<p>Asked on 2026-10-21 at 02:46 UTC, with no tools: <em>"What is the latest SDG indicator 4.7.1 value for Kenya?"</em></p>
+<p>The answer opened with "I don't know a specific published 4.7.1 value for Kenya, and I won't make one up." It closed with "For the latest figure, check the UNESCO Institute for Statistics data browser or the UN SDG Global Database."</p>
+<p>It did not invent a number. It still sent me to look for one figure. The 4.7.1 metadata (2026-03-27 edition) lists 8 series under that code in §0.d:</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Survey component, SE_GCEDESD_</th>
+<th>Greening score, SE_SGE_</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NEP national education policies</td>
+<td>ENVSUST environment and sustainability</td>
+</tr>
+<tr class="even">
+<td>CUR curricula</td>
+<td>CLIMCH climate change</td>
+</tr>
+<tr class="odd">
+<td>TED teacher education</td>
+<td>BIODIV biodiversity</td>
+</tr>
+<tr class="even">
+<td>SAS student assessment</td>
+<td>OVERALL all three areas</td>
+</tr>
+</tbody>
+</table></div>
+<p>§4.c: "The component scores all lie between zero and one and are presented as a dashboard of four scores. They are not combined to create a single overall score for the indicator." §2.a: "It measures government intentions and not necessarily what is implemented in practice in schools and classrooms."</p>
+<h3 id="the-6.1.1-catch-in-4.c-and-4.g">The 6.1.1 catch, in §4.c and §4.g</h3>
+<p>Metadata 6.1.1, 2024-09-27 edition. §4.c: "To calculate the proportion of the population using safely managed drinking water services, three ratios must be calculated". The country value is the minimum of the three. §4.g applies the same rule to regions: the value is calculated "by taking a minimum of the three elements, or of two elements if either accessibility or availability is missing." Read the value first and it looks like an average.</p>
+<h3 id="project-instructions">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Work in this order. Do not skip a step.
+
+1 FRAME   indicator code and official title
+2 DEFINE  quote metadata 2.a with the edition date
+3 VALUE   series code, country, year, Nature flag
+4 PLACE   one line of context, never the cited figure
+
+Asked for a value before 2 is quoted? Quote 2.a first.
+One code with several series? List them all. Pick none.
+Could not open a source? NOT ACCESSIBLE. Leave the gap.</pre></div>
+<hr />
+<h2 id="four-blocks-and-what-each-one-permits">2. Four blocks, and what each one permits</h2>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Block</th>
+<th>What it holds</th>
+<th>Where</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 Framework</td>
+<td>Codes, titles, targets</td>
+<td>SDG Indicators Home</td>
+<td>Name it. No value</td>
+</tr>
+<tr class="even">
+<td>2 Methodology</td>
+<td>What the number counts</td>
+<td>Metadata Repository</td>
+<td>Quote with § and date</td>
+</tr>
+<tr class="odd">
+<td>3 Values</td>
+<td>The figure</td>
+<td>Global Database, SDG API</td>
+<td>Cite it</td>
+</tr>
+<tr class="even">
+<td>4 Context and owner</td>
+<td>Background, and who to ask</td>
+<td>Data Commons, Data Contacts</td>
+<td>Read it. Never cite it</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Block 1.</strong> The global indicator framework was adopted by the General Assembly on 6 July 2017, in the resolution on the work of the Statistical Commission pertaining to the 2030 Agenda.</p>
+<p><strong>Block 3 has values you never see.</strong> 6.1.1 §4.f: regional and global estimates are calculated when non-imputed data cover at least 30 percent of the population using improved drinking water sources in the region. "Imputed country estimates are not published and only used for aggregation."</p>
+<p><strong>Block 4 has a person.</strong> UNSD Data Contacts lists a focal point for each indicator, nominated by the custodian, for questions on definitions, methods of computation and data. The page gives its next planned major update as December 2026.</p>
+<h3 id="the-recorded-run-placing-a-link">The recorded run: placing a link</h3>
+<p>Asked on 2026-10-21 at 02:46 UTC, with no tools, using the prompt below and the UNICEF SDG data page. The answer in part:</p>
+<blockquote>
+<p>"<strong>Block: 4 Context.</strong> I'm going from memory and haven't opened the page." "<strong>May I cite a number from it? Only alongside Block 3.</strong>" "<strong>NOT OFFICIAL?</strong> No. UNICEF is a UN agency and a formal SDG custodian for those indicators, so this counts as an official source."</p>
+</blockquote>
+<p>It said it had not opened the page. The block call matches how I use thematic portals. I compare against them and cite the Global Database.</p>
+<h3 id="prompt">Prompt</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Here is a source someone sent me. Place it in exactly one block:
+  1 Framework    what we agreed to measure
+  2 Methodology  what the number counts
+  3 Values       the figure itself
+  4 Context      background, or who owns it
+
+Then answer two things:
+  - may I cite a number from it? yes / no / only alongside Block 3
+  - if it is not an official UN or custodian source, say NOT OFFICIAL and stop.
+
+&lt;paste the link&gt;</pre></div>
+<hr />
+<h2 id="the-acronym-map-three-columns">3. The acronym map, three columns</h2>
+<p>Column 1 is the acronym as your team writes it. Column 2 is the official expansion, quoted. Column 3 is what it means for your team, and only you can fill it.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Acronym</th>
+<th>Official expansion</th>
+<th>What it means for us</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PCCB</td>
+<td>Paris Committee on Capacity-building</td>
+<td>Climate side</td>
+<td>Decision 1/CP.21, paragraph 71</td>
+</tr>
+<tr class="even">
+<td>HLG-PCCB</td>
+<td>High-level Group for Partnership, Coordination and Capacity-Building for statistics for the 2030 Agenda</td>
+<td>Statistics side, created 6 March 2015 by the Statistical Commission</td>
+<td>UNSD HLG-PCCB page</td>
+</tr>
+<tr class="odd">
+<td>ACE</td>
+<td>Action for Climate Empowerment</td>
+<td>Article 12 of the Paris Agreement</td>
+<td>Decision 17/CMA.1, paragraph 1</td>
+</tr>
+<tr class="even">
+<td>BTR</td>
+<td>biennial transparency report</td>
+<td>First one due by 31 December 2024</td>
+<td>Decision 18/CMA.1, paragraph 3</td>
+</tr>
+<tr class="odd">
+<td>MMR</td>
+<td>maternal mortality ratio</td>
+<td>Per 100 000 live births, SDG 3.1.1</td>
+<td>Metadata 3.1.1 §4.b</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>One acronym, two decisions.</strong> The BTR deadline sits in 18/CMA.1, paragraph 3. The biennial part of the name comes from 1/CP.21, paragraph 90: Parties "shall submit the information" referred to in Article 13 "no less frequently than on a biennial basis", with discretion for least developed countries and small island developing States.</p>
+<p><strong>One pair, two denominators.</strong> 3.1.1 §4.b, 2025-11-04 edition: "The maternal mortality ratio (MMR) is defined as the number of maternal deaths during a given time period per 100 000 live births during the same time period." And: "By contrast, the maternal mortality rate (MMRate) is calculated as the number of maternal deaths divided by person-years lived by women of reproductive age."</p>
+<h3 id="the-recorded-runs">The recorded runs</h3>
+<p>Asked on 2026-10-21 at 02:46 UTC, no tools: <em>"In UN work, what does PCCB stand for?"</em> The answer named one body: "PCCB stands for the Paris Committee on Capacity-building, which was set up to address gaps and needs in developing countries' capacity to implement the Paris Agreement." The statistics side has its own HLG-PCCB.</p>
+<p>Asked on 2026-10-21 at 02:47 UTC, no tools, with the map prompt and BTR, ACE, PCCB, MMR. It marked MMR VERIFY and wrote: "I think this is the EU Monitoring Mechanism Regulation, Regulation (EU) No 525/2013, which the Governance Regulation (EU) 2018/1999 later replaced." The maternal mortality ratio was not on its list.</p>
+<p>Asked again on 2026-10-22 at 14:37 UTC with one added line, "We work on SDG indicators and the Paris Agreement." This time it split MMR into two rows, one of them "Maternal mortality ratio (SDG indicator 3.1.1)". PCCB still came back as one row, the Paris Committee on Capacity-building. The context line fixed one row and not the other, so column 2 still gets checked against the page.</p>
+<h3 id="project-instructions-1">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Build a three-column acronym map for my team.
+
+1 Acronym             as we write it
+2 Official expansion  as the agency writes it, and which agency
+3 What it means here  leave blank, I fill this
+
+We work on SDG indicators and the Paris Agreement.
+Column 2 not quotable from an official page? VERIFY.
+Same letters in two regimes? Both rows, label each.
+No acronym I did not give you.</pre></div>
+<hr />
+<h2 id="four-climate-branches-and-education-first">4. Four climate branches, and Education first</h2>
+<p>For climate education officers. Two branches are two halves of the same report.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Branch</th>
+<th>What it settles</th>
+<th>Where it starts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 Education</td>
+<td>What is measured, and the frame</td>
+<td>UNESCO ESD page, metadata 13.3.1</td>
+</tr>
+<tr class="even">
+<td>2 Process</td>
+<td>What is owed under the Paris Agreement</td>
+<td>Article 12, decision 17/CMA.1</td>
+</tr>
+<tr class="odd">
+<td>3 Capacity</td>
+<td>Gaps and needs</td>
+<td>Paris Committee on Capacity-building, 1/CP.21 paragraph 71</td>
+</tr>
+<tr class="even">
+<td>4 Learning</td>
+<td>Courses that build the skills</td>
+<td>UN CC:Learn course catalogue</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Education, the SDG half.</strong> UNESCO: "Education for sustainable development is an integral element of SDG target 4.7." The indicator is 13.3.1. Its metadata (Last updated 2026-03-27) opens with "Target 13.3: Improve education, awareness-raising and human and institutional capacity on climate change" and carries the same §2.a sentence as 4.7.1: it measures government intentions and not necessarily what is implemented in practice in schools and classrooms. "Regional aggregates are not calculated."</p>
+<p><strong>Process, the Paris half.</strong> Decision 17/CMA.1, adopted on 15 December 2018, recalls Article 12 of the Paris Agreement on climate change education, training, public awareness, public participation and public access to information. Paragraph 1: work under Article 12 "will also be referred to as Action for Climate Empowerment". Paragraph 3: the focal points nominated under Article 6 of the Convention also serve as the Action for Climate Empowerment focal points.</p>
+<p><strong>The seam is written down.</strong> The same decision acknowledges "the importance of linkages between activities taken to support Article 6 of the Convention, Article 12 of the Paris Agreement and the Sustainable Development Goals".</p>
+<p><strong>Why Education first.</strong> The 13.3.1 definition limits every results sentence that follows it. Read Process second so the Article 12 commitments are measured against what 13.3.1 can show.</p>
+<p><strong>Learning, with a date.</strong> The UN CC:Learn course catalogue showed 66 results in English when I checked on 2026-10-21. Counts move. Keep the date or drop the number.</p>
+<h3 id="the-recorded-run-1">The recorded run</h3>
+<p>Asked on 2026-10-21 at 02:47 UTC, no tools: <em>"I am a climate change education officer in a UN country office. Which one official document should I read first, and why?"</em> It answered the Paris Agreement, and: "Article 12 on climate change education, training, public awareness and access to information is the legal basis for your role. Read it alongside the UNFCCC's Action for Climate Empowerment (ACE) framework, which turns that article into practice." Correct for the Paris half. 13.3.1 was not in the answer.</p>
+<h3 id="project-instructions-2">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>My role: ____
+My task this week: ____
+
+Use these four branches only.
+  1 Education  UNESCO ESD, SDG 13.3.1 metadata
+  2 Process    Paris Agreement Article 12, ACE
+  3 Capacity   Paris Committee on Capacity-building
+  4 Learning   UN CC:Learn
+
+Which branch answers my task, and which can I skip?
+Reading order inside it, 3 items at most.
+Task touches 13.3.1 and Article 12? Name both.
+Branch 1 says what is intended. Never use it as
+evidence of what a country did.</pre></div>
+<hr />
+<h2 id="before-you-send">5. Before you send</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Every metadata quote carries a § number and the edition date.</label></li>
+<li><label><input type="checkbox" />The value has a series code, a year and a Nature flag.</label></li>
+<li><label><input type="checkbox" />No figure came from Data Commons or from a thematic portal used in place of the Global Database.</label></li>
+<li><label><input type="checkbox" />No regional figure is read as an average unless the metadata says it is one.</label></li>
+<li><label><input type="checkbox" />Every acronym with two regimes has both rows, labelled.</label></li>
+<li><label><input type="checkbox" />Any course count or list length carries the date it was checked.</label></li>
+<li><label><input type="checkbox" />Nothing from the Education branch is written as evidence of what a country did.</label></li>
+</ul>
+<p>This guide covers order and permission. It does not choose the right indicator for your report, and it does not replace the custodian focal point.</p>
+<hr />
+<h2 id="sources">Sources</h2>
+<ul class="gsrc">
+<li>SDG Indicators Home: <a href="https://unstats.un.org/sdgs">https://unstats.un.org/sdgs</a></li>
+<li>SDG Indicator Metadata Repository: <a href="https://unstats.un.org/sdgs/metadata/">https://unstats.un.org/sdgs/metadata/</a></li>
+<li>SDG metadata 4.7.1, 2026-03-27: <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-04-07-01.pdf">https://unstats.un.org/sdgs/metadata/files/Metadata-04-07-01.pdf</a></li>
+<li>SDG metadata 6.1.1, 2024-09-27: <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf">https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf</a></li>
+<li>SDG metadata 3.1.1, 2025-11-04: <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-03-01-01.pdf">https://unstats.un.org/sdgs/metadata/files/Metadata-03-01-01.pdf</a></li>
+<li>SDG Global Database: <a href="https://unstats.un.org/sdgs/dataportal">https://unstats.un.org/sdgs/dataportal</a></li>
+<li>SDG Data Contacts: <a href="https://unstats.un.org/sdgs/dataContacts/">https://unstats.un.org/sdgs/dataContacts/</a></li>
+<li>HLG-PCCB: <a href="https://unstats.un.org/sdgs/hlg/">https://unstats.un.org/sdgs/hlg/</a></li>
+<li>Decision 1/CP.21, FCCC/CP/2015/10/Add.1: <a href="https://documents.un.org/doc/undoc/gen/g16/015/38/pdf/g1601538.pdf">https://documents.un.org/doc/undoc/gen/g16/015/38/pdf/g1601538.pdf</a></li>
+<li>Decisions 17/CMA.1 and 18/CMA.1, FCCC/PA/CMA/2018/3/Add.2: <a href="https://documents.un.org/doc/undoc/gen/g19/107/79/pdf/g1910779.pdf">https://documents.un.org/doc/undoc/gen/g19/107/79/pdf/g1910779.pdf</a></li>
+<li>UNESCO, Education for sustainable development: <a href="https://www.unesco.org/en/sustainable-development/education/need-know">https://www.unesco.org/en/sustainable-development/education/need-know</a></li>
+<li>UN CC:Learn courses: <a href="https://www.uncclearn.org/courses/">https://www.uncclearn.org/courses/</a></li>
+</ul>
+</article></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div><script>
+document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
+ const t=b.closest('.pbox').querySelector('pre').innerText;
+ try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');
+  setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1600)}catch(e){b.textContent='Select and copy'}
+}));
+</script></body></html>

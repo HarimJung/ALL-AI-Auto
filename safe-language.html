@@ -1,0 +1,566 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Safe Language | Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences. Everything the carousels promised, with the prompts in full.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/safe-language.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="Safe Language | Claude for SDG">
+<meta property="og:description" content="Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences. Everything the carousels promised, with the prompts in full.">
+<meta property="og:url" content="https://sdgai.org/safe-language.html">
+<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style><style>
+.ghead{padding-block:48px 10px;display:flex;flex-direction:column;gap:16px;border-bottom:0}
+.ghead h1{font-size:clamp(36px,6vw,64px);font-weight:900;letter-spacing:-.035em;line-height:1.02;max-width:18ch}
+.ghead .lede{font-size:19px;max-width:60ch;margin:0}
+.stamp{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 13px/1.5 var(--mono);color:var(--mut)}
+.stamp b{color:var(--un-ink);font-weight:600}
+.savebar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--un-tint);border-radius:14px;padding:12px 16px;font-weight:700;max-width:720px}
+.savebar span{font:500 14px var(--body);color:var(--ink)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.toc a{display:inline-flex;gap:8px;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--ink)}
+.toc b{font-family:var(--mono);font-weight:600;color:var(--un-ink)}
+.gbody{display:flex;flex-direction:column;gap:18px;padding-block:8px 40px;max-width:860px}
+.gbody h2{font-size:clamp(26px,3.6vw,36px);font-weight:900;letter-spacing:-.025em;line-height:1.1;margin:34px 0 0;padding-top:26px;border-top:2px solid var(--ink);scroll-margin-top:16px}
+.gbody h3{font-size:20px;font-weight:800;margin:14px 0 0}
+.gbody p,.gbody li{font-size:17px;line-height:1.6;max-width:68ch;margin:0}
+.gbody ul,.gbody ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.gbody hr{display:none}
+.gbody>*{min-width:0;max-width:100%}
+.gbody table{table-layout:auto}
+.gbody td:first-child,.gbody th:first-child{width:1%}
+.gbody td{vertical-align:top;line-height:1.5}
+.gbody td:first-child{font-weight:700;white-space:nowrap}
+.pbox{position:relative;display:flex;flex-direction:column;gap:0}
+.pbox .ph{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);border-radius:14px 14px 0 0;padding:9px 14px;font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
+.pbox button.done{background:var(--un);color:#fff}
+.gsrc{font-size:15px}
+.gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
+@media (max-width:620px){.gbody td:first-child{white-space:normal}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Safe Language", "description": "**Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences.** Everything the carousels promised, with the prompts in full.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/safe-language.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<section class="ghead">
+ <div class="eyebrow">Full guide</div>
+ <h1>Safe Language</h1>
+ <p class="lede">Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences. Everything the carousels promised, with the prompts in full.</p>
+ <div class="stamp"><span>Sources opened <b>2026-10-21</b>. Report symbols, dates and paragraph numbers are named at each quote.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span></div>
+ <ul class="toc"><li><a href="#five-checks-before-a-section-goes-out"><b>1</b>Five checks before a section goes out</a></li><li><a href="#five-quiet-overclaims-ten-sentence-pairs"><b>2</b>Five quiet overclaims, ten sentence pairs</a></li><li><a href="#the-edition-trap-ghanas-human-development-index"><b>3</b>The edition trap: Ghana&#x27;s Human Development Index</a></li><li><a href="#climate-sentences-who-said-it"><b>4</b>Climate sentences: who said it</a></li><li><a href="#sources">Sources</a></li></ul>
+</section>
+<article class="gbody"><h2 id="five-checks-before-a-section-goes-out">1. Five checks before a section goes out</h2>
+<p>What sends a report section back is rarely the writing. It is the sentence that outran its evidence. Each check below compares one word of your sentence with one word of the source.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Check</th>
+<th>Compare</th>
+<th>Example from the Secretary-General's 2026 progress report</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Category</td>
+<td>The label on the figure</td>
+<td>Para 20: on track (15%) or moderate progress (21%), together 36%. "On track" alone is 15%</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Base</td>
+<td>The denominator</td>
+<td>The 139 targets for which trend data and additional input are available. Write it out</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Edition</td>
+<td>Report symbol and date</td>
+<td>A/81/93-E/2026/73, 8 June 2026. Last year's figure comes from a different count</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Qualifier</td>
+<td>Slightly, estimated, expected</td>
+<td>Para 8: the global hunger rate declined slightly in 2024, to 8.2%</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Owner</td>
+<td>Who measured, reported, agreed or assessed it</td>
+<td>Para 135: 141 countries reported the adoption and implementation of national DRR strategies</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-recorded-run">The recorded run</h3>
+<p>Asked on 2026-10-21 at 02:46 UTC, with no tools and no skill: <em>"What share of the SDG targets are on track, according to the latest UN Secretary-General's SDG progress report?"</em></p>
+<p>The answer began: "According to the 2025 report, which is the latest one I know of, only about 18% of the assessable SDG targets are on track to be met by 2030." It added that a 2026 edition may have been published and that its figures could differ.</p>
+<p>The 2026 report, dated 8 June 2026, gives 15% on track (para 20). The 2025 report it named gave 20 per cent on track (A/80/81, para 17). In that edition 18 per cent was the share of targets with no progress, and also the share that had regressed from the 2015 baseline. The answer was fair about its doubt. A draft would still have kept the 18.</p>
+<h3 id="two-editions-two-counts">Two editions, two counts</h3>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Edition</th>
+<th>Targets with trend data</th>
+<th>On track</th>
+<th>Moderate</th>
+<th>Together</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>General Assembly A/80/81, 29 April 2025, para 17</td>
+<td>137 targets</td>
+<td>20 per cent</td>
+<td>15 per cent</td>
+<td>35 per cent</td>
+</tr>
+<tr class="even">
+<td>General Assembly A/81/93, 8 June 2026, para 20</td>
+<td>139 targets</td>
+<td>15%</td>
+<td>21%</td>
+<td>36%</td>
+</tr>
+</tbody>
+</table></div>
+<p>"Progress improved from 35% to 36%" outruns both reports. The denominator moved, and the on-track share fell. The edition dated 2 May 2024 (General Assembly A/79/79) wrote that the world is on track to achieve only 17 per cent of the targets. Quote the edition you mean and leave the trend to the custodian.</p>
+<h3 id="project-instructions">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Check every sentence of my draft against the source it cites.
+Five checks per sentence.
+
+1 Category   the same label as the source. On track is not moderate
+2 Base       the denominator, written out
+3 Edition    report symbol and date. Two editions are not a trend
+4 Qualifier  keep slightly, estimated, expected, reported
+5 Owner      who measured, reported, agreed or assessed it
+
+One row per sentence: the source line word for word,
+the check it fails, and a safe rewrite that keeps the claim.
+Never check from memory. Source not open? NOT IN SOURCE.
+Do not soften a sentence the source supports.</pre></div>
+<p>The last line matters. A checker told to look for overclaims will start trimming sentences that were fine.</p>
+<hr />
+<h2 id="five-quiet-overclaims-ten-sentence-pairs">2. Five quiet overclaims, ten sentence pairs</h2>
+<p>None of these feel like exaggeration while you write them. Each one removes or adds one word. Every safe sentence below keeps the wording of the Secretary-General's 2026 report, A/81/93-E/2026/73.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Pattern</th>
+<th>Word it changes</th>
+<th>Risky</th>
+<th>Safe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Drop the qualifier</td>
+<td>slightly</td>
+<td>Global hunger is falling again.</td>
+<td>Para 8: The global hunger rate declined slightly in 2024, to 8.2% of the world population. Undernourishment and food insecurity remain well above 2015 levels.</td>
+</tr>
+<tr class="even">
+<td>Drop the qualifier</td>
+<td>estimated</td>
+<td>56% of household wastewater is safely treated.</td>
+<td>Para 77: In 2024, an estimated 56% of global household wastewater flows were safely treated, remaining at the same level since 2020.</td>
+</tr>
+<tr class="odd">
+<td>Lose the year</td>
+<td>now</td>
+<td>Electricity is now accessible to 92% of the world.</td>
+<td>Para 81: Electricity access reached 92% in 2024.</td>
+</tr>
+<tr class="even">
+<td>Lose the year</td>
+<td>a year</td>
+<td>Disasters affect 123 million people a year.</td>
+<td>Para 134: The number of people affected by disasters averaged 123 million annually in the past decade, 2015–2024.</td>
+</tr>
+<tr class="odd">
+<td>Swap the subject</td>
+<td>water supply</td>
+<td>Donors stepped up support for water supply.</td>
+<td>Para 80: ODA commitments to the water sector rose from $10.3 billion in 2023 to $11.0 billion in 2024. Commitments for water supply and sanitation declined by 6.7%.</td>
+</tr>
+<tr class="even">
+<td>Swap the subject</td>
+<td>safe</td>
+<td>Three quarters of the world has safe drinking water.</td>
+<td>Para 76: The population using safely managed drinking water increased from 68% to 74% from 2015 to 2024.</td>
+</tr>
+<tr class="odd">
+<td>Upgrade certainty</td>
+<td>will</td>
+<td>Six more countries will meet the under-5 mortality target by 2030.</td>
+<td>Para 7: As of 2024, 134 countries had already met the target on under-5 mortality, with 6 more countries expected to do so by 2030.</td>
+</tr>
+<tr class="even">
+<td>Upgrade certainty</td>
+<td>can</td>
+<td>The world can still meet the maternal mortality target.</td>
+<td>Para 41: An annual reduction rate of 14.8%, far above historical rates, is required between 2024 and 2030 to meet the global target.</td>
+</tr>
+<tr class="odd">
+<td>Add a cause</td>
+<td>cut</td>
+<td>National DRR strategies cut disaster deaths by 65%.</td>
+<td>Para 134: From 2.11 per 100,000 population in 2005–2014 to 0.75 in 2015–2024, disaster-related deaths and missing persons dropped 65%.</td>
+</tr>
+<tr class="even">
+<td>Add a cause</td>
+<td>thanks to</td>
+<td>Disaster deaths fell thanks to our programme.</td>
+<td>Para 3: The report links the decline to sustained investment in disaster risk reduction (para 3). Your programme is not in that sentence.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two of these source lines break inside a year when the PDF text is extracted. Copy from the PDF view, never from extracted text.</p>
+<h3 id="the-claim-check-run">The claim-check run</h3>
+<p>The claim-check skill was given a five-sentence draft built from the risky column, with the page and paragraph cited for each. It had read tools and was asked on 2026-10-21 at 02:47 UTC.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Draft sentence</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>More than a third of the SDG targets are on track</td>
+<td>NOT IN SOURCES</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Global hunger is falling again, to 8.2%</td>
+<td>SUPPORTED</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Electricity is now accessible to 92%</td>
+<td>SUPPORTED</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Donors stepped up support for water supply</td>
+<td>NOT IN SOURCES</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>National DRR strategies cut disaster deaths by 65%</td>
+<td>NOT IN SOURCES</td>
+</tr>
+</tbody>
+</table></div>
+<p>It caught the category, the subject and the cause. On sentence 5 it wrote: "Para 134 does not say the strategies caused the drop." It passed the two quiet ones. Sentence 2 drops "slightly". Sentence 3 is a word-for-word copy of the report's own summary, which says "now" where the Goal 7 section says "in 2024". A checker that matches the figure, the page and the subject cannot see a missing qualifier. That part stays with you.</p>
+<h3 id="the-rewrite-run">The rewrite run</h3>
+<p>Asked on 2026-10-21 at 02:46 UTC, with no tools, to make three supported sentences "read stronger for the opening of a donor report":</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Source sentence</th>
+<th>What came back</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>... with 6 more countries expected to do so by 2030</td>
+<td>"six more are on track to join them by 2030, proof that child survival goals are within reach."</td>
+</tr>
+<tr class="even">
+<td>By 2025, 141 countries reported the adoption and implementation ...</td>
+<td>"In 2025, 141 countries had adopted and put into action national disaster risk reduction strategies"</td>
+</tr>
+<tr class="odd">
+<td>... declined slightly in 2024, to 8.2%</td>
+<td>"Global hunger edged down in 2024 to 8.2% of the world's people"</td>
+</tr>
+</tbody>
+</table></div>
+<p>It flagged two of its own additions: "protecting millions of lives" and "proof...within reach". It did not flag "expected" becoming "on track", or "reported" disappearing. The hunger line kept its qualifier.</p>
+<h3 id="project-instructions-1">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Rewrite each sentence I flag so it is safe to send.
+Keep the claim. Change only the words that outran the source.
+
+QUALIFIER  keep slightly, estimated, about, remains
+YEAR       replace now, currently and latest with the year
+SUBJECT    the same sector, group and place as the source
+CERTAINTY  expected stays expected. A projection is not a result
+CAUSE      no drove, led to or thanks to unless the source says so
+
+For each one: the pattern, the source line word for word,
+then the safe sentence. If the source cannot carry the claim,
+write CUT and say why.</pre></div>
+<hr />
+<h2 id="the-edition-trap-ghanas-human-development-index">3. The edition trap: Ghana's Human Development Index</h2>
+<p>Asked on 2026-10-20 at 23:10 UTC, with no tools and no skill, for Ghana's latest HDI value and rank, Claude said the latest report it was confident about was the 2025 Human Development Report and gave "an HDI of about 0.602". It also said it was quoting from memory and asked me to check the UNDP website. The value it gave is the one in the 2023/24 edition's file. The Human Development Report 2025 puts Ghana at 0.628.</p>
+<p>With the latest-edition skill and read tools, asked at 23:34 UTC, the same question came back as "Ghana's HDI in the latest edition, the UNDP Human Development Report 2025, is 0.628, which puts it at rank 143". It named the file it read, the composite indices CSV, row GHA, and gave the UNDP downloads page as its source.</p>
+<p>For Kenya, asked at 23:26 UTC, it recalled Kenya's HDI value as 0.601 in the 2023/2024 Human Development Report, which matches that edition, then guessed "about 0.613" for the newer report. The 2025 report gives Kenya 0.628, the same value as Ghana.</p>
+<p>The figures are right for one edition and wrong for the label on them. This is check 3 in section 1. Editions recompute past years, so a time series takes every year from one file.</p>
+<p>HDI is a UNDP index and sits outside the SDG indicator list. I tested it because most of us have quoted it.</p>
+<h3 id="paste-before-you-ask">Paste before you ask</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Before you give any figure from a UN report, tell me which edition
+it comes from and when that edition was published. Read the
+publisher&#39;s own page and the current data file first. If you can&#39;t
+open them now, say &quot;I can&#39;t check the current edition&quot; and give me
+the link instead of a number. Do not answer from memory.</pre></div>
+<p>In Claude the same rule runs as the /latest-edition skill.</p>
+<hr />
+<h2 id="climate-sentences-who-said-it">4. Climate sentences: who said it</h2>
+<p>A flagged climate sentence is usually a sentence that lost its owner. The wording can be calm and the sentence still wrong, because a country's report became a fact, or a decision became a pledge.</p>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Tag</th>
+<th>Owner</th>
+<th>Where it is written</th>
+<th>Safe verb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>REPORTED</td>
+<td>A country</td>
+<td>Biennial transparency reports and common reporting tables. The Sendai Framework Monitor</td>
+<td>reported</td>
+</tr>
+<tr class="even">
+<td>AGREED</td>
+<td>The Parties</td>
+<td>A COP or CMA decision</td>
+<td>agreed, calling for</td>
+</tr>
+<tr class="odd">
+<td>COMPILED</td>
+<td>The custodian</td>
+<td>Metadata §0.g and §3.f. UNFCCC secretariat for 13.2.2, UNDRR for 13.1.2</td>
+<td>compiled</td>
+</tr>
+<tr class="even">
+<td>ASSESSED</td>
+<td>The report author</td>
+<td>The Secretary-General's progress report, in its own voice</td>
+<td>finds, assesses</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="where-the-owner-is-written">Where the owner is written</h3>
+<p>13.1.2, national disaster risk reduction strategies, metadata Last updated 2024-12-20: - §3.b: "Data are reported by national Sendai Framework focal points in the Sendai Framework Monitor (SFM)." - §4.c: "Member States will assess the level of implementation for ten key elements of the national DRR strategy, and enter key elements scores in the Sendai Framework Monitor."</p>
+<p>13.2.2, total greenhouse gas emissions per year, metadata Last updated 2025-12-12: - §3.e: data providers are the Parties to the UNFCCC. - §4.b: "Data is limited to Parties that submit their BTRs and CRTs." - §4.f: "Availability of data depends only on what is received from Parties."</p>
+<p>The 13.2.2 file also names the rulebook: information in the BTR on the national inventory follows the modalities, procedures and guidelines in decision 18/CMA.1.</p>
+<h3 id="the-recorded-run-1">The recorded run</h3>
+<p>Asked to make one DRR sentence stronger (the rewrite run in section 2), Claude returned "In 2025, 141 countries had adopted and put into action national disaster risk reduction strategies". The source says 141 countries reported the adoption and implementation (A/81/93, para 135). The rewrite flagged the clause it added at the end of that sentence. It did not flag the word it removed.</p>
+<p>Asked with no tools how many countries have national DRR strategies, it said "about 125 countries had national disaster risk reduction strategies in place by 2023" and asked for a check against the Sendai Framework Monitor. The 2026 report gives 141 countries reported by 2025, up from 56 in 2015.</p>
+<h3 id="climate-sentence-pairs">Climate sentence pairs</h3>
+<div class="tablewrap"><table>
+
+<thead>
+<tr class="header">
+<th>Tag</th>
+<th>Risky</th>
+<th>Safe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>REPORTED</td>
+<td>141 countries have implemented DRR strategies.</td>
+<td>Para 135: By 2025, 141 countries reported the adoption and implementation of national DRR strategies, up from 56 in 2015.</td>
+</tr>
+<tr class="even">
+<td>AGREED</td>
+<td>Developed countries pledged $1.3 trillion a year.</td>
+<td>Para 137: At the twenty-ninth session of the COP, in 2024, countries agreed on a new collective quantified goal on climate finance, calling for at least $1.3 trillion annually by 2035 for developing countries, with developed countries leading by mobilizing at least $300 billion per year.</td>
+</tr>
+<tr class="odd">
+<td>ASSESSED</td>
+<td>Climate action is failing.</td>
+<td>Para 133: The Secretary-General's report finds current efforts entirely insufficient to curb emissions or fully address escalating risks.</td>
+</tr>
+<tr class="even">
+<td>ASSESSED</td>
+<td>Global warming has reached 1.43°C.</td>
+<td>Para 136: Global temperatures in 2025 were 1.43°C above pre-industrial levels. A single year, as the report gives it.</td>
+</tr>
+<tr class="odd">
+<td>Timing</td>
+<td>The finance goal is off track.</td>
+<td>Para 137: The first progress report on the goal will be issued in 2028. Until then there is no progress figure to cite.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The no-tools answer on the climate finance goal kept both owners apart: developed countries taking the lead on at least US$300 billion a year, within a wider call to reach US$1.3 trillion from all sources.</p>
+<h3 id="project-instructions-2">Project instructions</h3>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Before you check wording, tag who owns each claim.
+
+REPORTED   a country said it (BTR, CRT, Sendai Framework Monitor)
+AGREED     Parties decided it (a COP or CMA decision)
+COMPILED   the custodian put country data together (metadata 0.g)
+ASSESSED   the report author&#39;s own judgement
+
+Write the owner into the sentence: reported, agreed, finds.
+A REPORTED figure never becomes has done.
+No owner in the source? Write OWNER MISSING. Do not guess.
+Then check the wording.</pre></div>
+<p>What I have not solved: a BTR figure after technical expert review is still the Party's figure. I do not yet have a safe verb that says "reviewed" without implying "confirmed".</p>
+<hr />
+<h2 id="sources">Sources</h2>
+<ul class="gsrc">
+<li>Progress towards the Sustainable Development Goals, Report of the Secretary-General, A/81/93-E/2026/73, 8 June 2026: <a href="https://unstats.un.org/sdgs/files/report/2026/secretary-general-sdg-report-2026--EN.pdf">https://unstats.un.org/sdgs/files/report/2026/secretary-general-sdg-report-2026--EN.pdf</a></li>
+<li>The same report, General Assembly A/80/81, 29 April 2025: <a href="https://unstats.un.org/sdgs/files/report/2025/secretary-general-sdg-report-2025--EN.pdf">https://unstats.un.org/sdgs/files/report/2025/secretary-general-sdg-report-2025--EN.pdf</a></li>
+<li>The same report, General Assembly A/79/79, 2 May 2024: <a href="https://unstats.un.org/sdgs/files/report/2024/secretary-general-sdg-report-2024--EN.pdf">https://unstats.un.org/sdgs/files/report/2024/secretary-general-sdg-report-2024--EN.pdf</a></li>
+<li>SDG reports by year: <a href="https://unstats.un.org/sdgs/report/2026/">https://unstats.un.org/sdgs/report/2026/</a></li>
+<li>SDG metadata 13.1.2, 2024-12-20: <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-13-01-02.pdf">https://unstats.un.org/sdgs/metadata/files/Metadata-13-01-02.pdf</a></li>
+<li>SDG metadata 13.2.2, 2025-12-12: <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-13-02-02.pdf">https://unstats.un.org/sdgs/metadata/files/Metadata-13-02-02.pdf</a></li>
+<li>UNDP Human Development Report, documentation and downloads: <a href="https://hdr.undp.org/data-center/documentation-and-downloads">https://hdr.undp.org/data-center/documentation-and-downloads</a></li>
+</ul>
+</article></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div><script>
+document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
+ const t=b.closest('.pbox').querySelector('pre').innerText;
+ try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');
+  setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1600)}catch(e){b.textContent='Select and copy'}
+}));
+</script></body></html>
