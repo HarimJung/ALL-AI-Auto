@@ -1,0 +1,343 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>The review clock | Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Six windows, every one of them counted back from the technical expert review week. Everything the four carousels promised, with the Project instructions in full.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/review-clock.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="The review clock | Claude for SDG">
+<meta property="og:description" content="Six windows, every one of them counted back from the technical expert review week. Everything the four carousels promised, with the Project instructions in full.">
+<meta property="og:url" content="https://sdgai.org/review-clock.html">
+<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style><style>
+.ghead{padding-block:48px 10px;display:flex;flex-direction:column;gap:16px;border-bottom:0}
+.ghead h1{font-size:clamp(36px,6vw,64px);font-weight:900;letter-spacing:-.035em;line-height:1.02;max-width:18ch}
+.ghead .lede{font-size:19px;max-width:60ch;margin:0}
+.stamp{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 13px/1.5 var(--mono);color:var(--mut)}
+.stamp b{color:var(--un-ink);font-weight:600}
+.savebar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--un-tint);border-radius:14px;padding:12px 16px;font-weight:700;max-width:720px}
+.savebar span{font:500 14px var(--body);color:var(--ink)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.toc a{display:inline-flex;gap:8px;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--ink)}
+.toc b{font-family:var(--mono);font-weight:600;color:var(--un-ink)}
+.gbody{display:flex;flex-direction:column;gap:18px;padding-block:8px 40px;max-width:860px}
+.gbody h2{font-size:clamp(26px,3.6vw,36px);font-weight:900;letter-spacing:-.025em;line-height:1.1;margin:34px 0 0;padding-top:26px;border-top:2px solid var(--ink);scroll-margin-top:16px}
+.gbody h3{font-size:20px;font-weight:800;margin:14px 0 0}
+.gbody p,.gbody li{font-size:17px;line-height:1.6;max-width:68ch;margin:0}
+.gbody ul,.gbody ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.gbody hr{display:none}
+.gbody>*{min-width:0;max-width:100%}
+.gbody table{table-layout:auto}
+.gbody td:first-child,.gbody th:first-child{width:1%}
+.gbody td{vertical-align:top;line-height:1.5}
+.gbody td:first-child{font-weight:700;white-space:nowrap}
+.pbox{position:relative;display:flex;flex-direction:column;gap:0}
+.pbox .ph{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);border-radius:14px 14px 0 0;padding:9px 14px;font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
+.pbox button.done{background:var(--un);color:#fff}
+.ba2{max-width:860px;display:flex;flex-direction:column;gap:14px}
+.win2{border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--card);
+  box-shadow:0 18px 0 -6px rgba(20,26,33,.05),0 30px 60px -28px rgba(20,26,33,.35)}
+.w2bar{display:flex;align-items:center;gap:8px;height:46px;padding:0 16px;background:var(--paper);border-bottom:1.5px solid var(--hair)}
+.w2bar i{width:10px;height:10px;border-radius:50%;background:var(--hair)}
+.w2bar span{margin-left:10px;font-weight:800;font-size:15px}
+.w2bar em{margin-left:auto;font:600 12.5px var(--mono);font-style:normal;color:var(--mut);
+  background:var(--hair);border-radius:999px;padding:4px 11px}
+.ba2.on .w2bar em{color:#fff;background:#3F7E44}
+.w2q{margin:0;padding:16px 20px 12px;font:600 15px var(--mono);color:var(--mut);line-height:1.5;border-bottom:1.5px dashed var(--hair)}
+.w2rows{padding:8px 20px 18px;display:flex;flex-direction:column}
+.w2row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair)}
+.w2row:last-child{border-bottom:0}
+.w2k{flex:1;font-size:17px;font-weight:700}
+.w2v{font-size:26px;font-weight:900;letter-spacing:-.02em;border:0;background:none;padding:0;border-radius:0}
+.w2v.pre{color:var(--mut)}
+.w2v.pre.wrong{color:#B23B2E;text-decoration:line-through;text-decoration-thickness:2px}
+.w2v.post{display:none;color:#2d7a3f}
+.ba2.on .w2v.pre{display:none}
+.ba2.on .w2v.post{display:inline}
+.w2chip{display:none;font:600 12.5px var(--mono);color:#fff;background:var(--un);border-radius:999px;padding:4px 10px}
+.ba2.on .w2chip{display:inline-block}
+.ba2btn{align-self:flex-start;border:0;border-radius:999px;background:var(--un);color:#fff;
+  font:800 16px var(--body);padding:13px 24px;cursor:pointer;box-shadow:0 4px 0 var(--un-sm)}
+.ba2.on .ba2btn{background:var(--ink);box-shadow:0 4px 0 #000}
+.ba2cap{margin:0;font-size:16.5px;font-weight:700;line-height:1.5}
+.ba2 .src{font:500 13px var(--mono);color:var(--mut)}
+.gsrc{font-size:15px}
+.gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
+@media (max-width:620px){.gbody td:first-child{white-space:normal}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The review clock", "description": "**Six windows, every one of them counted back from the technical expert review week.** Everything the four carousels promised, with the Project instructions in full.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/review-clock.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<section class="ghead">
+ <div class="eyebrow">Full guide</div>
+ <h1>The review clock</h1>
+ <p class="lede">Six windows, every one of them counted back from the technical expert review week. Everything the four carousels promised, with the Project instructions in full.</p>
+ <div class="stamp"><span>Sources opened <b>2026-10-23</b>. Both documents are linked at the end of the page.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span></div>
+ <ul class="toc"><li><a href="#the-six-windows"><b>1</b>The six windows</a></li><li><a href="#the-same-question-with-and-without-the-source"><b>2</b>The same question, with and without the source</a></li><li><a href="#why-counting-from-december-goes-wrong"><b>3</b>Why counting from December goes wrong</a></li><li><a href="#project-instructions"><b>4</b>Project instructions</a></li><li><a href="#what-this-page-does-not-do"><b>5</b>What this page does not do</a></li><li><a href="#sources">Sources</a></li></ul>
+</section>
+<article class="gbody"><h2 id="the-six-windows">1. The six windows</h2>
+<p>Decision 18/CMA.1, annex, paragraph 162 sets the procedure for in-country, centralized and desk reviews. Every window in it is measured from the technical expert review week. None of them is measured from the day you submit.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>When</th>
+<th>What happens</th>
+<th>Whose job</th>
+<th>Paragraph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14 weeks before</td>
+<td>Review week dates agreed</td>
+<td>para. 162(a)</td>
+<td></td>
+</tr>
+<tr>
+<td>10 weeks before</td>
+<td>Review team composed</td>
+<td>para. 162(b)</td>
+<td></td>
+</tr>
+<tr>
+<td>4 weeks before</td>
+<td>Preliminary questions arrive</td>
+<td>para. 162(c)</td>
+<td></td>
+</tr>
+<tr>
+<td>The review week</td>
+<td>Draft areas of improvement</td>
+<td>para. 162(d)</td>
+<td></td>
+</tr>
+<tr>
+<td>2 months after</td>
+<td>Draft review report for comment</td>
+<td>para. 162(e)</td>
+<td></td>
+</tr>
+<tr>
+<td>1 month after that</td>
+<td>Your comments due</td>
+<td>para. 162(f)</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>The words matter as much as the counts.</p>
+<ul>
+<li>162(a) The secretariat shall "agree with the Party the dates of the technical expert review week at least 14 weeks prior to the technical expert review week". You are in that conversation. If you are not ready for it, you agree to dates anyway.</li>
+<li>162(b) The secretariat "shall compose a technical expert review team at least 10 weeks prior to the technical expert review week".</li>
+<li>162(c) The team "should communicate any preliminary questions to the Party at least four weeks prior". Your answer is due "within two weeks of the request", and developing country Parties that need flexibility "are instead encouraged to provide the information within three weeks of the request".</li>
+<li>162(e) The draft review report comes to you "within two months of the technical expert review week".</li>
+<li>162(f) You are "given up to one month from its receipt to provide comments", with three months available to Parties that need flexibility.</li>
+<li>162(h) The whole report is to be complete "no later than 12 months from the start" of the review.</li>
+</ul>
+<h2 id="the-same-question-with-and-without-the-source">2. The same question, with and without the source</h2>
+<p>I asked for this clock with no source open, then with the stored decision text in front of me. The run is recorded.</p>
+<div class="ba2" data-ba2="">
+<div class="win2">
+<div class="w2bar">
+<i></i><i></i><i></i><span>Claude</span><em data-on="stored source open">no tools open</em>
+</div>
+<p class="w2q">
+Working backwards from the technical expert review week, what deadlines do the secretariat, the review team and the Party each have to meet?
+</p>
+<div class="w2rows">
+<div class="w2row">
+<span class="w2k">Review week dates agreed</span><span class="w2v pre">far enough ahead</span><span class="w2v post">at least 14 weeks prior</span><span class="w2chip">para. 162(a)</span>
+</div>
+<div class="w2row">
+<span class="w2k">Preliminary questions</span><span class="w2v pre">ahead of the session</span><span class="w2v post">at least four weeks prior</span><span class="w2chip">para. 162(c)</span>
+</div>
+<div class="w2row">
+<span class="w2k">Draft review report</span><span class="w2v pre wrong">roughly three months</span><span class="w2v post">within two months</span><span class="w2chip">para. 162(e)</span>
+</div>
+</div>
+</div>
+<button class="ba2btn" data-on="Ask again with no tools">
+Open the stored source
+</button>
+<p class="ba2cap" data-on="Read off decision 18/CMA.1, annex, paragraph 162. Every window has a number now.">
+Asked with no tools open, 2026-10-23. The shape is right and not one window has a number.
+</p>
+</div>
+<p>The run itself says to treat its day counts as orders of magnitude. That is the honest part. The part that costs you is the shape that is almost right, because a shape that is almost right does not get checked.</p>
+<h2 id="why-counting-from-december-goes-wrong">3. Why counting from December goes wrong</h2>
+<p>The deadline and the clock are two different things.</p>
+<p>31 December 2026 is when the report is due. Paragraph 162 starts running at the review week, which is scheduled after you submit. A desk that counts from December sees one date. A desk that counts from the review week sees six.</p>
+<p>The cycle is not pending. FCCC/PA/CMA/2026/10, paragraph 5, says "the first BTR2 was submitted on 8 August 2026, before the deadline of 31 December 2026". The same paragraph says a total of 136 Parties had submitted BTR1s as at 31 August 2026, and that 88 of them had submitted by the 31 December 2024 deadline.</p>
+<h2 id="project-instructions">4. Project instructions</h2>
+<p>Paste this into a Claude Project, not into a chat. It answers in one order and it quotes the paragraph it used.</p>
+<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>I run transparency reporting for one Party. Work backwards
+from the review week, never forward from the submission date.
+
+For every task I give you, answer in this order.
+1 Window    which para. 162 window it falls in
+2 Owner     secretariat, review team or us
+3 Trigger   what has to exist before the window opens
+4 Provision the MPG paragraph, quoted
+
+Rules.
+Quote the MPGs from the file I paste. Never from memory.
+No paragraph number? Write NOT IN THE MPGS.
+Deadlines change each cycle. Ask me for the cycle dates.
+Last line: what I have to confirm with the secretariat.</pre></div>
+<p>The Project cannot know your cycle dates. It asks for them. That is deliberate, because the dates move every cycle and the rules do not.</p>
+<h2 id="what-this-page-does-not-do">5. What this page does not do</h2>
+<p>It does not tell you whether your evidence is good enough. It sorts the clock, not the content. It also does not cover the simplified review of a national inventory report in a year when no biennial transparency report is due. That is paragraph 161, and it is a different page.</p>
+<h2 id="sources">Sources</h2>
+<ul class="gsrc">
+<li>Decision 18/CMA.1, annex, paragraph 162. <a href="https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2018/3/Add.2&amp;l=en&amp;t=pdf">FCCC/PA/CMA/2018/3/Add.2, 19 March 2019</a></li>
+<li><a href="https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf">FCCC/PA/CMA/2026/10, 21 October 2026</a>, paragraph 5</li>
+</ul>
+</article></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div><script>
+document.querySelectorAll('[data-ba2]').forEach(ba=>{
+ const b=ba.querySelector('.ba2btn'),cap=ba.querySelector('.ba2cap');
+ const t1=b.dataset.on,t0=b.textContent,c1=cap.dataset.on,c0=cap.textContent;
+ const em=ba.querySelector('.w2bar em'),e1=em.dataset.on,e0=em.textContent;
+ b.addEventListener('click',()=>{const on=ba.classList.toggle('on');
+  b.textContent=on?t1:t0;cap.textContent=on?c1:c0;em.textContent=on?e1:e0;});
+});
+document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
+ const t=b.closest('.pbox').querySelector('pre').innerText;
+ try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');
+  setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1600)}catch(e){b.textContent='Select and copy'}
+}));
+</script></body></html>
