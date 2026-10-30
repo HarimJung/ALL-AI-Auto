@@ -32,8 +32,10 @@ The publisher's own page for the report, then the data file linked from that pag
 | World Investment Report | UNCTAD | `https://unctad.org/topic/investment/world-investment-report` |
 | State of the Global Climate | WMO | `https://wmo.int/publication-series/state-of-global-climate` |
 
-For the HDI the data file is the composite indices time series CSV linked from the downloads page
-(`HDR25_Composite_indices_complete_time_series.csv` for the 2025 edition). The value is in column `hdi_<year>`, the rank in `hdi_rank_<year>`.
+For the HDI the data file is the composite indices time series CSV linked from the downloads page.
+Do not hard-code the file name. It carries the edition in its prefix, so read it off the page you just
+opened (checked on 2026-10-25: the file was named `HDR<YY>_Composite_indices_complete_time_series.csv`).
+The value is in column `hdi_<year>`, the rank in `hdi_rank_<year>`.
 
 ## Steps
 
@@ -64,5 +66,4 @@ Source: <URL> · read <today's date>
 
 ## Running it as code
 
-`engines/ai/reports_table.py` in the claude-for-sdg repository opens each publisher page above, keeps a copy with its SHA-256 and keeps a row only when the edition and date are written on the page.
-`engines/ai/hdi_card.py` reads the current and the previous HDR CSV side by side.
+`engines/material/` in the claude-for-sdg repository keeps a copy of each publisher page with its SHA-256 and accepts an edition or a date only when it is written in the quoted sentence of that stored page.
