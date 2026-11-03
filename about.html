@@ -8,7 +8,7 @@
 <meta property="og:title" content="About | Claude for SDG">
 <meta property="og:description" content="Who runs Claude for SDG, how each figure is matched to the official UN source, and why the site is independent.">
 <meta property="og:url" content="https://sdgai.org/about.html">
-<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta property="og:image" content="">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -109,6 +109,23 @@ ul.note{margin:0;padding-left:20px}
 .wk:hover{border-color:var(--ink)}
 .wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
 .wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
 .chips a:hover{border-color:var(--ink)}
@@ -139,11 +156,11 @@ pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:7
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
-@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
-</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
 <section>
  <div class="eyebrow">About</div>
  <h1 class="page">Who runs Claude for SDG</h1>
@@ -166,5 +183,5 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
  <div class="eyebrow">Independence</div>
  <h2>Not affiliated</h2>
  <p class="lede">Claude for SDG is an independent community project. It is not affiliated with Anthropic or the United Nations, and it does not speak for any agency. Views are my own.</p>
- <div class="row"><a class="btn primary" href="join.html">Join</a><a class="btn" href="tests.html">Read the test log</a></div>
-</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>
+ <div class="row"><a class="btn primary" href="join.html">Join</a></div>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div></body></html>

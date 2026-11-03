@@ -8,7 +8,7 @@
 <meta property="og:title" content="Safe Language | Claude for SDG">
 <meta property="og:description" content="Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences. Everything the carousels promised, with the prompts in full.">
 <meta property="og:url" content="https://sdgai.org/safe-language.html">
-<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta property="og:image" content="">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -109,6 +109,23 @@ ul.note{margin:0;padding-left:20px}
 .wk:hover{border-color:var(--ink)}
 .wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
 .wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
 .chips a:hover{border-color:var(--ink)}
@@ -139,7 +156,7 @@ pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:7
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
-@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
@@ -171,16 +188,60 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 .pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
 .pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
 .pbox button.done{background:var(--un);color:#fff}
+.ba2{max-width:860px;display:flex;flex-direction:column;gap:14px}
+.win2{border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--card);
+  box-shadow:0 18px 0 -6px rgba(20,26,33,.05),0 30px 60px -28px rgba(20,26,33,.35)}
+.w2bar{display:flex;align-items:center;gap:8px;height:46px;padding:0 16px;background:var(--paper);border-bottom:1.5px solid var(--hair)}
+.w2bar i{width:10px;height:10px;border-radius:50%;background:var(--hair)}
+.w2bar span{margin-left:10px;font-weight:800;font-size:15px}
+.w2bar em{margin-left:auto;font:600 12.5px var(--mono);font-style:normal;color:var(--mut);
+  background:var(--hair);border-radius:999px;padding:4px 11px}
+.ba2.on .w2bar em{color:#fff;background:#3F7E44}
+.w2q{margin:0;padding:16px 20px 12px;font:600 15px var(--mono);color:var(--mut);line-height:1.5;border-bottom:1.5px dashed var(--hair)}
+.w2rows{padding:8px 20px 18px;display:flex;flex-direction:column}
+.w2row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair)}
+.w2row:last-child{border-bottom:0}
+.w2k{flex:1;font-size:17px;font-weight:700}
+.w2v{font-size:26px;font-weight:900;letter-spacing:-.02em;border:0;background:none;padding:0;border-radius:0}
+.w2v.pre{color:var(--mut)}
+.w2v.pre.wrong{color:#B23B2E;text-decoration:line-through;text-decoration-thickness:2px}
+.w2v.post{display:none;color:#2d7a3f}
+.ba2.on .w2v.pre{display:none}
+.ba2.on .w2v.post{display:inline}
+.w2chip{display:none;font:600 12.5px var(--mono);color:#fff;background:var(--un);border-radius:999px;padding:4px 10px}
+.ba2.on .w2chip{display:inline-block}
+.ba2btn{align-self:flex-start;border:0;border-radius:999px;background:var(--un);color:#fff;
+  font:800 16px var(--body);padding:13px 24px;cursor:pointer;box-shadow:0 4px 0 var(--un-sm)}
+.ba2.on .ba2btn{background:var(--ink);box-shadow:0 4px 0 #000}
+.ba2cap{margin:0;font-size:16.5px;font-weight:700;line-height:1.5}
+.ba2 .src{font:500 13px var(--mono);color:var(--mut)}
 .gsrc{font-size:15px}
 .gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
 @media (max-width:620px){.gbody td:first-child{white-space:normal}}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Safe Language", "description": "**Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences.** Everything the carousels promised, with the prompts in full.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/safe-language.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+.savebar a{margin-left:auto;font:700 14px var(--body);color:var(--un-ink)}
+.gwrap{display:grid;grid-template-columns:1fr;gap:40px}
+.gmain{min-width:0}
+.gside{display:none}
+@media (min-width:1080px){
+ .gwrap{grid-template-columns:230px minmax(0,1fr)}
+ .gside{display:block;position:sticky;top:20px;align-self:start;padding-top:56px;max-height:calc(100vh - 40px);overflow:auto}
+ .gside>b{font-size:14px;font-weight:800}
+ .gside ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+ .gside a{display:grid;grid-template-columns:22px 1fr;gap:6px;padding:8px 0;font-size:14px;line-height:1.35;color:var(--mut);text-decoration:none;border-bottom:1px solid var(--hair)}
+ .gside a:hover{color:var(--ink)}
+ .gside a b{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+ .ghead .toc{display:none}
+}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Safe Language", "description": "**Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences.** Everything the carousels promised, with the prompts in full.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/safe-language.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<div class="gwrap">
+<aside class="gside"><b>In this guide</b><ol><li><a href="#five-checks-before-a-section-goes-out"><b>1</b><span>Five checks before a section goes out</span></a></li><li><a href="#five-quiet-overclaims-ten-sentence-pairs"><b>2</b><span>Five quiet overclaims, ten sentence pairs</span></a></li><li><a href="#the-edition-trap-ghanas-human-development-index"><b>3</b><span>The edition trap: Ghana&#x27;s Human Development Index</span></a></li><li><a href="#climate-sentences-who-said-it"><b>4</b><span>Climate sentences: who said it</span></a></li><li><a href="#sources"><b>·</b><span>Sources</span></a></li></ol></aside>
+<div class="gmain">
 <section class="ghead">
- <div class="eyebrow">Full guide</div>
+ <div class="eyebrow">Claude Cheat Keys for UN Reporting &amp; Briefing</div>
  <h1>Safe Language</h1>
  <p class="lede">Five checks, five quiet overclaims, one edition trap and four owner tags for climate sentences. Everything the carousels promised, with the prompts in full.</p>
- <div class="stamp"><span>Sources opened <b>2026-10-21</b>. Report symbols, dates and paragraph numbers are named at each quote.</span></div>
- <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span></div>
+ <div class="stamp"><span><b>12 min</b> read</span><span><b>4</b> sections</span><span>Sources opened <b>2026-10-21</b>. Report symbols, dates and paragraph numbers are named at each quote.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span><a href="#first-prompt">Jump to the first prompt</a></div>
  <ul class="toc"><li><a href="#five-checks-before-a-section-goes-out"><b>1</b>Five checks before a section goes out</a></li><li><a href="#five-quiet-overclaims-ten-sentence-pairs"><b>2</b>Five quiet overclaims, ten sentence pairs</a></li><li><a href="#the-edition-trap-ghanas-human-development-index"><b>3</b>The edition trap: Ghana&#x27;s Human Development Index</a></li><li><a href="#climate-sentences-who-said-it"><b>4</b>Climate sentences: who said it</a></li><li><a href="#sources">Sources</a></li></ul>
 </section>
 <article class="gbody"><h2 id="five-checks-before-a-section-goes-out">1. Five checks before a section goes out</h2>
@@ -188,7 +249,7 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>#</th>
 <th>Check</th>
 <th>Compare</th>
@@ -196,31 +257,31 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>Category</td>
 <td>The label on the figure</td>
 <td>Para 20: on track (15%) or moderate progress (21%), together 36%. "On track" alone is 15%</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>Base</td>
 <td>The denominator</td>
 <td>The 139 targets for which trend data and additional input are available. Write it out</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>Edition</td>
 <td>Report symbol and date</td>
 <td>A/81/93-E/2026/73, 8 June 2026. Last year's figure comes from a different count</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>Qualifier</td>
 <td>Slightly, estimated, expected</td>
 <td>Para 8: the global hunger rate declined slightly in 2024, to 8.2%</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>Owner</td>
 <td>Who measured, reported, agreed or assessed it</td>
@@ -236,7 +297,7 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Edition</th>
 <th>Targets with trend data</th>
 <th>On track</th>
@@ -245,14 +306,14 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>General Assembly A/80/81, 29 April 2025, para 17</td>
 <td>137 targets</td>
 <td>20 per cent</td>
 <td>15 per cent</td>
 <td>35 per cent</td>
 </tr>
-<tr class="even">
+<tr>
 <td>General Assembly A/81/93, 8 June 2026, para 20</td>
 <td>139 targets</td>
 <td>15%</td>
@@ -263,7 +324,7 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 </table></div>
 <p>"Progress improved from 35% to 36%" outruns both reports. The denominator moved, and the on-track share fell. The edition dated 2 May 2024 (General Assembly A/79/79) wrote that the world is on track to achieve only 17 per cent of the targets. Quote the edition you mean and leave the trend to the custodian.</p>
 <h3 id="project-instructions">Project instructions</h3>
-<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Check every sentence of my draft against the source it cites.
+<div class="pbox" id="first-prompt"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Check every sentence of my draft against the source it cites.
 Five checks per sentence.
 
 1 Category   the same label as the source. On track is not moderate
@@ -283,7 +344,7 @@ Do not soften a sentence the source supports.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Pattern</th>
 <th>Word it changes</th>
 <th>Risky</th>
@@ -291,61 +352,61 @@ Do not soften a sentence the source supports.</pre></div>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Drop the qualifier</td>
 <td>slightly</td>
 <td>Global hunger is falling again.</td>
 <td>Para 8: The global hunger rate declined slightly in 2024, to 8.2% of the world population. Undernourishment and food insecurity remain well above 2015 levels.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Drop the qualifier</td>
 <td>estimated</td>
 <td>56% of household wastewater is safely treated.</td>
 <td>Para 77: In 2024, an estimated 56% of global household wastewater flows were safely treated, remaining at the same level since 2020.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Lose the year</td>
 <td>now</td>
 <td>Electricity is now accessible to 92% of the world.</td>
 <td>Para 81: Electricity access reached 92% in 2024.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Lose the year</td>
 <td>a year</td>
 <td>Disasters affect 123 million people a year.</td>
 <td>Para 134: The number of people affected by disasters averaged 123 million annually in the past decade, 2015–2024.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Swap the subject</td>
 <td>water supply</td>
 <td>Donors stepped up support for water supply.</td>
 <td>Para 80: ODA commitments to the water sector rose from $10.3 billion in 2023 to $11.0 billion in 2024. Commitments for water supply and sanitation declined by 6.7%.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Swap the subject</td>
 <td>safe</td>
 <td>Three quarters of the world has safe drinking water.</td>
 <td>Para 76: The population using safely managed drinking water increased from 68% to 74% from 2015 to 2024.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Upgrade certainty</td>
 <td>will</td>
 <td>Six more countries will meet the under-5 mortality target by 2030.</td>
 <td>Para 7: As of 2024, 134 countries had already met the target on under-5 mortality, with 6 more countries expected to do so by 2030.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Upgrade certainty</td>
 <td>can</td>
 <td>The world can still meet the maternal mortality target.</td>
 <td>Para 41: An annual reduction rate of 14.8%, far above historical rates, is required between 2024 and 2030 to meet the global target.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Add a cause</td>
 <td>cut</td>
 <td>National DRR strategies cut disaster deaths by 65%.</td>
 <td>Para 134: From 2.11 per 100,000 population in 2005–2014 to 0.75 in 2015–2024, disaster-related deaths and missing persons dropped 65%.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Add a cause</td>
 <td>thanks to</td>
 <td>Disaster deaths fell thanks to our programme.</td>
@@ -359,34 +420,34 @@ Do not soften a sentence the source supports.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>#</th>
 <th>Draft sentence</th>
 <th>Verdict</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>More than a third of the SDG targets are on track</td>
 <td>NOT IN SOURCES</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>Global hunger is falling again, to 8.2%</td>
 <td>SUPPORTED</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>Electricity is now accessible to 92%</td>
 <td>SUPPORTED</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>Donors stepped up support for water supply</td>
 <td>NOT IN SOURCES</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>National DRR strategies cut disaster deaths by 65%</td>
 <td>NOT IN SOURCES</td>
@@ -399,21 +460,21 @@ Do not soften a sentence the source supports.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Source sentence</th>
 <th>What came back</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>... with 6 more countries expected to do so by 2030</td>
 <td>"six more are on track to join them by 2030, proof that child survival goals are within reach."</td>
 </tr>
-<tr class="even">
+<tr>
 <td>By 2025, 141 countries reported the adoption and implementation ...</td>
 <td>"In 2025, 141 countries had adopted and put into action national disaster risk reduction strategies"</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>... declined slightly in 2024, to 8.2%</td>
 <td>"Global hunger edged down in 2024 to 8.2% of the world's people"</td>
 </tr>
@@ -453,7 +514,7 @@ the link instead of a number. Do not answer from memory.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Tag</th>
 <th>Owner</th>
 <th>Where it is written</th>
@@ -461,25 +522,25 @@ the link instead of a number. Do not answer from memory.</pre></div>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>REPORTED</td>
 <td>A country</td>
 <td>Biennial transparency reports and common reporting tables. The Sendai Framework Monitor</td>
 <td>reported</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AGREED</td>
 <td>The Parties</td>
 <td>A COP or CMA decision</td>
 <td>agreed, calling for</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>COMPILED</td>
 <td>The custodian</td>
 <td>Metadata §0.g and §3.f. UNFCCC secretariat for 13.2.2, UNDRR for 13.1.2</td>
 <td>compiled</td>
 </tr>
-<tr class="even">
+<tr>
 <td>ASSESSED</td>
 <td>The report author</td>
 <td>The Secretary-General's progress report, in its own voice</td>
@@ -498,34 +559,34 @@ the link instead of a number. Do not answer from memory.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Tag</th>
 <th>Risky</th>
 <th>Safe</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>REPORTED</td>
 <td>141 countries have implemented DRR strategies.</td>
 <td>Para 135: By 2025, 141 countries reported the adoption and implementation of national DRR strategies, up from 56 in 2015.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AGREED</td>
 <td>Developed countries pledged $1.3 trillion a year.</td>
 <td>Para 137: At the twenty-ninth session of the COP, in 2024, countries agreed on a new collective quantified goal on climate finance, calling for at least $1.3 trillion annually by 2035 for developing countries, with developed countries leading by mobilizing at least $300 billion per year.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ASSESSED</td>
 <td>Climate action is failing.</td>
 <td>Para 133: The Secretary-General's report finds current efforts entirely insufficient to curb emissions or fully address escalating risks.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>ASSESSED</td>
 <td>Global warming has reached 1.43°C.</td>
 <td>Para 136: Global temperatures in 2025 were 1.43°C above pre-industrial levels. A single year, as the report gives it.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Timing</td>
 <td>The finance goal is off track.</td>
 <td>Para 137: The first progress report on the goal will be issued in 2028. Until then there is no progress figure to cite.</td>
@@ -557,7 +618,15 @@ Then check the wording.</pre></div>
 <li>SDG metadata 13.2.2, 2025-12-12: <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-13-02-02.pdf">https://unstats.un.org/sdgs/metadata/files/Metadata-13-02-02.pdf</a></li>
 <li>UNDP Human Development Report, documentation and downloads: <a href="https://hdr.undp.org/data-center/documentation-and-downloads">https://hdr.undp.org/data-center/documentation-and-downloads</a></li>
 </ul>
-</article></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div><script>
+</article>
+</div></div></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div><script>
+document.querySelectorAll('[data-ba2]').forEach(ba=>{
+ const b=ba.querySelector('.ba2btn'),cap=ba.querySelector('.ba2cap');
+ const t1=b.dataset.on,t0=b.textContent,c1=cap.dataset.on,c0=cap.textContent;
+ const em=ba.querySelector('.w2bar em'),e1=em.dataset.on,e0=em.textContent;
+ b.addEventListener('click',()=>{const on=ba.classList.toggle('on');
+  b.textContent=on?t1:t0;cap.textContent=on?c1:c0;em.textContent=on?e1:e0;});
+});
 document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
  const t=b.closest('.pbox').querySelector('pre').innerText;
  try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');

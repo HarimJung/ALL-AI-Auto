@@ -8,7 +8,7 @@
 <meta property="og:title" content="Indicator Desk | Claude for SDG">
 <meta property="og:description" content="Four tabs, two bases, one dashboard spec, four climate layers. Everything the carousels promised, with the prompts in full.">
 <meta property="og:url" content="https://sdgai.org/indicator-desk.html">
-<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta property="og:image" content="">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -109,6 +109,23 @@ ul.note{margin:0;padding-left:20px}
 .wk:hover{border-color:var(--ink)}
 .wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
 .wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
 .chips a:hover{border-color:var(--ink)}
@@ -139,7 +156,7 @@ pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:7
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
-@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
@@ -171,23 +188,67 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 .pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
 .pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
 .pbox button.done{background:var(--un);color:#fff}
+.ba2{max-width:860px;display:flex;flex-direction:column;gap:14px}
+.win2{border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--card);
+  box-shadow:0 18px 0 -6px rgba(20,26,33,.05),0 30px 60px -28px rgba(20,26,33,.35)}
+.w2bar{display:flex;align-items:center;gap:8px;height:46px;padding:0 16px;background:var(--paper);border-bottom:1.5px solid var(--hair)}
+.w2bar i{width:10px;height:10px;border-radius:50%;background:var(--hair)}
+.w2bar span{margin-left:10px;font-weight:800;font-size:15px}
+.w2bar em{margin-left:auto;font:600 12.5px var(--mono);font-style:normal;color:var(--mut);
+  background:var(--hair);border-radius:999px;padding:4px 11px}
+.ba2.on .w2bar em{color:#fff;background:#3F7E44}
+.w2q{margin:0;padding:16px 20px 12px;font:600 15px var(--mono);color:var(--mut);line-height:1.5;border-bottom:1.5px dashed var(--hair)}
+.w2rows{padding:8px 20px 18px;display:flex;flex-direction:column}
+.w2row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair)}
+.w2row:last-child{border-bottom:0}
+.w2k{flex:1;font-size:17px;font-weight:700}
+.w2v{font-size:26px;font-weight:900;letter-spacing:-.02em;border:0;background:none;padding:0;border-radius:0}
+.w2v.pre{color:var(--mut)}
+.w2v.pre.wrong{color:#B23B2E;text-decoration:line-through;text-decoration-thickness:2px}
+.w2v.post{display:none;color:#2d7a3f}
+.ba2.on .w2v.pre{display:none}
+.ba2.on .w2v.post{display:inline}
+.w2chip{display:none;font:600 12.5px var(--mono);color:#fff;background:var(--un);border-radius:999px;padding:4px 10px}
+.ba2.on .w2chip{display:inline-block}
+.ba2btn{align-self:flex-start;border:0;border-radius:999px;background:var(--un);color:#fff;
+  font:800 16px var(--body);padding:13px 24px;cursor:pointer;box-shadow:0 4px 0 var(--un-sm)}
+.ba2.on .ba2btn{background:var(--ink);box-shadow:0 4px 0 #000}
+.ba2cap{margin:0;font-size:16.5px;font-weight:700;line-height:1.5}
+.ba2 .src{font:500 13px var(--mono);color:var(--mut)}
 .gsrc{font-size:15px}
 .gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
 @media (max-width:620px){.gbody td:first-child{white-space:normal}}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Indicator Desk", "description": "**Four tabs, two bases, one dashboard spec, four climate layers.** Everything the carousels promised, with the prompts in full.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/indicator-desk.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+.savebar a{margin-left:auto;font:700 14px var(--body);color:var(--un-ink)}
+.gwrap{display:grid;grid-template-columns:1fr;gap:40px}
+.gmain{min-width:0}
+.gside{display:none}
+@media (min-width:1080px){
+ .gwrap{grid-template-columns:230px minmax(0,1fr)}
+ .gside{display:block;position:sticky;top:20px;align-self:start;padding-top:56px;max-height:calc(100vh - 40px);overflow:auto}
+ .gside>b{font-size:14px;font-weight:800}
+ .gside ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+ .gside a{display:grid;grid-template-columns:22px 1fr;gap:6px;padding:8px 0;font-size:14px;line-height:1.35;color:var(--mut);text-decoration:none;border-bottom:1px solid var(--hair)}
+ .gside a:hover{color:var(--ink)}
+ .gside a b{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+ .ghead .toc{display:none}
+}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Indicator Desk", "description": "**Four tabs, two bases, one dashboard spec, four climate layers.** Everything the carousels promised, with the prompts in full.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/indicator-desk.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<div class="gwrap">
+<aside class="gside"><b>In this guide</b><ol><li><a href="#four-tabs-for-every-indicator-question"><b>1</b><span>Four tabs for every indicator question</span></a></li><li><a href="#two-rates-two-bases"><b>2</b><span>Two rates, two bases</span></a></li><li><a href="#spec-the-dashboard-before-the-first-tile"><b>3</b><span>Spec the dashboard before the first tile</span></a></li><li><a href="#climate-me-in-four-layers"><b>4</b><span>Climate M&amp;amp;E in four layers</span></a></li><li><a href="#sources"><b>·</b><span>Sources</span></a></li></ol></aside>
+<div class="gmain">
 <section class="ghead">
- <div class="eyebrow">Full guide</div>
+ <div class="eyebrow">Claude Cheat Keys for UN Indicators &amp; Dashboards</div>
  <h1>Indicator Desk</h1>
  <p class="lede">Four tabs, two bases, one dashboard spec, four climate layers. Everything the carousels promised, with the prompts in full.</p>
- <div class="stamp"><span>Sources opened <b>2026-10-21</b>. Metadata editions are named at each quote.</span></div>
- <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span></div>
+ <div class="stamp"><span><b>11 min</b> read</span><span><b>4</b> sections</span><span>Sources opened <b>2026-10-21</b>. Metadata editions are named at each quote.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span><a href="#first-prompt">Jump to the first prompt</a></div>
  <ul class="toc"><li><a href="#four-tabs-for-every-indicator-question"><b>1</b>Four tabs for every indicator question</a></li><li><a href="#two-rates-two-bases"><b>2</b>Two rates, two bases</a></li><li><a href="#spec-the-dashboard-before-the-first-tile"><b>3</b>Spec the dashboard before the first tile</a></li><li><a href="#climate-me-in-four-layers"><b>4</b>Climate M&amp;amp;E in four layers</a></li><li><a href="#sources">Sources</a></li></ul>
 </section>
 <article class="gbody"><h2 id="four-tabs-for-every-indicator-question">1. Four tabs for every indicator question</h2>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Tab</th>
 <th>Page</th>
 <th>What it answers</th>
@@ -195,25 +256,25 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>SDG Indicators Metadata Repository</td>
 <td>What the number counts and where it stops</td>
 <td>§2.a definition, §2.b unit, §4.b limits, §0.g custodian, the Last updated date</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>SDG Global Database</td>
 <td>The value</td>
 <td>Series code, country, year, value, the Nature flag, the source field</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>SDG API</td>
 <td>The same rows, for a script or for Claude</td>
 <td>The same fields, by series code and area code</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>SDG Data Contacts</td>
 <td>Who to ask when the metadata stops</td>
@@ -227,25 +288,25 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Section</th>
 <th>What it says</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>§2.a</td>
 <td>"Proportion of population with access to electricity is the percentage of population with access to electricity."</td>
 </tr>
-<tr class="even">
+<tr>
 <td>§3.a</td>
 <td>"Also, for the sake of consistency in methodology across countries, government and utility data are not considered."</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>§4.b</td>
 <td>The World Bank estimates demand side access rates. "This is different from the supply side access rates usually provided by governments, ministries, etc."</td>
 </tr>
-<tr class="even">
+<tr>
 <td>§4.c</td>
 <td>Survey values are reported in their original form. The model fills only the missing years</td>
 </tr>
@@ -255,39 +316,39 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 <p>Tab 2, series EG_ACS_ELEC, all areas, 2024. The source field on every row is World Bank.</p>
 <div class="tablewrap"><table>
 <thead>
-<tr class="header">
+<tr>
 <th>Country</th>
 <th>2024</th>
 <th>Nature</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Ethiopia</td>
 <td>56.6 percent</td>
 <td>M, modelled</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Ghana</td>
 <td>91.9 percent</td>
 <td>M, modelled</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Kenya</td>
 <td>77.0 percent</td>
 <td>M, modelled</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Nigeria</td>
 <td>62.5 percent</td>
 <td>M, modelled</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Rwanda</td>
 <td>72.0 percent</td>
 <td>C, country data</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Senegal</td>
 <td>82.9 percent</td>
 <td>C, country data</td>
@@ -300,34 +361,34 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th>No skill, no tools (02:44 UTC)</th>
 <th>Indicator-card skill and web tools (02:45 UTC)</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Year</td>
 <td>"about 2022–2023"</td>
 <td>2024</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Total</td>
 <td>"roughly 55–60%"</td>
 <td>72.0 percent, country data</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Urban</td>
 <td>"above 80%"</td>
 <td>88.0 percent, country data</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Rural</td>
 <td>"roughly 45–50%"</td>
 <td>65.2 percent, model estimate</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Nature</td>
 <td>"These are model estimates"</td>
 <td>C, C and M</td>
@@ -336,7 +397,7 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 </table></div>
 <p>The run without tools said it could not give exact figures from memory and asked me to check the database. The run with the skill matched the database on every value and flagged the urban series: "the 2024 total and urban rows look like a series break rather than a real fall in urban access." It also said it did not open the metadata PDF to confirm the Nature codes. That is the line I check myself.</p>
 <h3 id="project-instructions">Project instructions</h3>
-<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Build an indicator card before you give me any value.
+<div class="pbox" id="first-prompt"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Build an indicator card before you give me any value.
 Open the four tabs in this order.
 
 1 Metadata   definition 2.a, unit 2.b, limits 4.b, custodian 0.g
@@ -354,19 +415,19 @@ Last line: the Last updated date of the metadata you read.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Indicator</th>
 <th>Report line</th>
 <th>Page</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>3.2.1</td>
 <td>"The under -5 mortality rate was 37.4 deaths per 1,000 live births" in 2024</td>
 <td>8</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3.3.3</td>
 <td>Malaria incidence rose "from 59 to 64 cases per 1,000 population at risk" between 2015 and 2024</td>
 <td>9</td>
@@ -378,25 +439,25 @@ Last line: the Last updated date of the metadata you read.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Section</th>
 <th>Text</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>§0.c Indicator</td>
 <td>"Indicator 3.3.3: Malaria incidence per 1,000 population"</td>
 </tr>
-<tr class="even">
+<tr>
 <td>§0.d Series</td>
 <td>"SH_STA_MALR - Malaria incidence per 1,000 population at risk [3.3.3]"</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>§2.a Definition</td>
 <td>"Incidence of malaria is defined as the number of new cases of malaria per 1,000 people at risk each year."</td>
 </tr>
-<tr class="even">
+<tr>
 <td>§2.b Unit</td>
 <td>"Cases per 1000 population at risk."</td>
 </tr>
@@ -413,7 +474,7 @@ Last line: the Last updated date of the metadata you read.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Code</th>
 <th>Per</th>
 <th>Divided by</th>
@@ -421,25 +482,25 @@ Last line: the Last updated date of the metadata you read.</pre></div>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>3.3.3</td>
 <td>1,000</td>
 <td>population at risk</td>
 <td>§2.b, not the title</td>
 </tr>
-<tr class="even">
+<tr>
 <td>3.2.1</td>
 <td>1,000</td>
 <td>live births, as a probability</td>
 <td>§2.a</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3.7.2</td>
 <td>1,000</td>
 <td>females in the respective age group</td>
 <td>§2.a, 2025-03-28 edition</td>
 </tr>
-<tr class="even">
+<tr>
 <td>7.1.1</td>
 <td>percent</td>
 <td>population</td>
@@ -466,7 +527,7 @@ Do not write it as a share of children under five.</pre></div>
 <p>SDG Global Database, EG_ACS_ELEC, Rwanda. Source field: World Bank.</p>
 <div class="tablewrap"><table>
 <thead>
-<tr class="header">
+<tr>
 <th>Year</th>
 <th>Urban</th>
 <th>Nature</th>
@@ -475,28 +536,28 @@ Do not write it as a share of children under five.</pre></div>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>2021</td>
 <td>98.0 percent</td>
 <td>M</td>
 <td>48.7 percent</td>
 <td>M</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2022</td>
 <td>98.0 percent</td>
 <td>M</td>
 <td>50.6 percent</td>
 <td>M</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2023</td>
 <td>99.9 percent</td>
 <td>M</td>
 <td>63.9 percent</td>
 <td>M</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2024</td>
 <td>88.0 percent</td>
 <td>C</td>
@@ -513,41 +574,41 @@ Do not write it as a share of children under five.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Field</th>
 <th>Rwanda, 7.1.1</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Decision</td>
 <td>Write the decision this tile informs, in one line</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Code</td>
 <td>7.1.1, series EG_ACS_ELEC</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Unit</td>
 <td>Percent (§2.b)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Year</td>
 <td>2024, printed on the tile</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Nature</td>
 <td>Total C, urban C, rural M. Both labels shown</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Break</td>
 <td>Urban and total: survey year 2024 after modelled years</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Limit</td>
 <td>"The data are primarily compiled from national household surveys and censuses. But since these are carried out infrequently, it is difficult to understand the ground level trends for short term periods." (§4.b)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Edition</td>
 <td>Metadata 7.1.1, Last updated 2026-03-27</td>
 </tr>
@@ -572,29 +633,29 @@ An empty field stays MISSING. No tile until none is.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Layer</th>
 <th>Question it answers</th>
 <th>Open</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1 UNFCCC reporting</td>
 <td>What must the country report, and how often</td>
 <td>The transparency framework and its MPGs, decision 18/CMA.1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2 SDG 13.2.2</td>
 <td>Which emissions figure the world sees</td>
 <td>Metadata 13.2.2 and the SDG Global Database</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3 PCCB</td>
 <td>Where the capacity gaps are</td>
 <td>The PCCB toolkit to assess capacity gaps and needs</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4 UN CC:Learn</td>
 <td>Where the team gets trained</td>
 <td>UN CC:Learn courses</td>
@@ -644,7 +705,15 @@ PCCB here is the UNFCCC Paris Committee, not HLG-PCCB.</pre></div>
 <li>Paris Committee on Capacity-building (PCCB), UNFCCC. The toolkit to assess capacity gaps and needs is listed under its network activities: <a href="https://unfccc.int/process-and-meetings/bodies/constituted-bodies/paris-committee-on-capacity-building-pccb">https://unfccc.int/process-and-meetings/bodies/constituted-bodies/paris-committee-on-capacity-building-pccb</a></li>
 <li>UN CC:Learn, About: <a href="https://www.uncclearn.org/about/">https://www.uncclearn.org/about/</a></li>
 </ul>
-</article></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div><script>
+</article>
+</div></div></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div><script>
+document.querySelectorAll('[data-ba2]').forEach(ba=>{
+ const b=ba.querySelector('.ba2btn'),cap=ba.querySelector('.ba2cap');
+ const t1=b.dataset.on,t0=b.textContent,c1=cap.dataset.on,c0=cap.textContent;
+ const em=ba.querySelector('.w2bar em'),e1=em.dataset.on,e0=em.textContent;
+ b.addEventListener('click',()=>{const on=ba.classList.toggle('on');
+  b.textContent=on?t1:t0;cap.textContent=on?c1:c0;em.textContent=on?e1:e0;});
+});
 document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
  const t=b.closest('.pbox').querySelector('pre').innerText;
  try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');

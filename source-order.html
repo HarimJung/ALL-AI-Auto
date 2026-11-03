@@ -8,7 +8,7 @@
 <meta property="og:title" content="The Source Order | Claude for SDG">
 <meta property="og:description" content="Four steps, four blocks, three columns, four branches. Everything the carousels promised, with the prompts in full and the recorded answers.">
 <meta property="og:url" content="https://sdgai.org/source-order.html">
-<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta property="og:image" content="">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -109,6 +109,23 @@ ul.note{margin:0;padding-left:20px}
 .wk:hover{border-color:var(--ink)}
 .wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
 .wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
 .chips a:hover{border-color:var(--ink)}
@@ -139,7 +156,7 @@ pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:7
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
-@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
@@ -171,23 +188,67 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 .pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
 .pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
 .pbox button.done{background:var(--un);color:#fff}
+.ba2{max-width:860px;display:flex;flex-direction:column;gap:14px}
+.win2{border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--card);
+  box-shadow:0 18px 0 -6px rgba(20,26,33,.05),0 30px 60px -28px rgba(20,26,33,.35)}
+.w2bar{display:flex;align-items:center;gap:8px;height:46px;padding:0 16px;background:var(--paper);border-bottom:1.5px solid var(--hair)}
+.w2bar i{width:10px;height:10px;border-radius:50%;background:var(--hair)}
+.w2bar span{margin-left:10px;font-weight:800;font-size:15px}
+.w2bar em{margin-left:auto;font:600 12.5px var(--mono);font-style:normal;color:var(--mut);
+  background:var(--hair);border-radius:999px;padding:4px 11px}
+.ba2.on .w2bar em{color:#fff;background:#3F7E44}
+.w2q{margin:0;padding:16px 20px 12px;font:600 15px var(--mono);color:var(--mut);line-height:1.5;border-bottom:1.5px dashed var(--hair)}
+.w2rows{padding:8px 20px 18px;display:flex;flex-direction:column}
+.w2row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair)}
+.w2row:last-child{border-bottom:0}
+.w2k{flex:1;font-size:17px;font-weight:700}
+.w2v{font-size:26px;font-weight:900;letter-spacing:-.02em;border:0;background:none;padding:0;border-radius:0}
+.w2v.pre{color:var(--mut)}
+.w2v.pre.wrong{color:#B23B2E;text-decoration:line-through;text-decoration-thickness:2px}
+.w2v.post{display:none;color:#2d7a3f}
+.ba2.on .w2v.pre{display:none}
+.ba2.on .w2v.post{display:inline}
+.w2chip{display:none;font:600 12.5px var(--mono);color:#fff;background:var(--un);border-radius:999px;padding:4px 10px}
+.ba2.on .w2chip{display:inline-block}
+.ba2btn{align-self:flex-start;border:0;border-radius:999px;background:var(--un);color:#fff;
+  font:800 16px var(--body);padding:13px 24px;cursor:pointer;box-shadow:0 4px 0 var(--un-sm)}
+.ba2.on .ba2btn{background:var(--ink);box-shadow:0 4px 0 #000}
+.ba2cap{margin:0;font-size:16.5px;font-weight:700;line-height:1.5}
+.ba2 .src{font:500 13px var(--mono);color:var(--mut)}
 .gsrc{font-size:15px}
 .gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
 @media (max-width:620px){.gbody td:first-child{white-space:normal}}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Source Order", "description": "**Four steps, four blocks, three columns, four branches.** Everything the carousels promised, with the prompts in full and the recorded answers.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/source-order.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+.savebar a{margin-left:auto;font:700 14px var(--body);color:var(--un-ink)}
+.gwrap{display:grid;grid-template-columns:1fr;gap:40px}
+.gmain{min-width:0}
+.gside{display:none}
+@media (min-width:1080px){
+ .gwrap{grid-template-columns:230px minmax(0,1fr)}
+ .gside{display:block;position:sticky;top:20px;align-self:start;padding-top:56px;max-height:calc(100vh - 40px);overflow:auto}
+ .gside>b{font-size:14px;font-weight:800}
+ .gside ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+ .gside a{display:grid;grid-template-columns:22px 1fr;gap:6px;padding:8px 0;font-size:14px;line-height:1.35;color:var(--mut);text-decoration:none;border-bottom:1px solid var(--hair)}
+ .gside a:hover{color:var(--ink)}
+ .gside a b{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+ .ghead .toc{display:none}
+}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Source Order", "description": "**Four steps, four blocks, three columns, four branches.** Everything the carousels promised, with the prompts in full and the recorded answers.", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/source-order.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<div class="gwrap">
+<aside class="gside"><b>In this guide</b><ol><li><a href="#four-steps-and-the-value-is-the-third"><b>1</b><span>Four steps, and the value is the third</span></a></li><li><a href="#four-blocks-and-what-each-one-permits"><b>2</b><span>Four blocks, and what each one permits</span></a></li><li><a href="#the-acronym-map-three-columns"><b>3</b><span>The acronym map, three columns</span></a></li><li><a href="#four-climate-branches-and-education-first"><b>4</b><span>Four climate branches, and Education first</span></a></li><li><a href="#before-you-send"><b>5</b><span>Before you send</span></a></li><li><a href="#sources"><b>·</b><span>Sources</span></a></li></ol></aside>
+<div class="gmain">
 <section class="ghead">
- <div class="eyebrow">Full guide</div>
+ <div class="eyebrow">Claude Cheat Keys for UN Work</div>
  <h1>The Source Order</h1>
  <p class="lede">Four steps, four blocks, three columns, four branches. Everything the carousels promised, with the prompts in full and the recorded answers.</p>
- <div class="stamp"><span>Sources opened <b>2026-10-21</b>. Metadata editions and decision dates are named at each quote.</span></div>
- <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span></div>
+ <div class="stamp"><span><b>11 min</b> read</span><span><b>5</b> sections</span><span>Sources opened <b>2026-10-21</b>. Metadata editions and decision dates are named at each quote.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span><a href="#first-prompt">Jump to the first prompt</a></div>
  <ul class="toc"><li><a href="#four-steps-and-the-value-is-the-third"><b>1</b>Four steps, and the value is the third</a></li><li><a href="#four-blocks-and-what-each-one-permits"><b>2</b>Four blocks, and what each one permits</a></li><li><a href="#the-acronym-map-three-columns"><b>3</b>The acronym map, three columns</a></li><li><a href="#four-climate-branches-and-education-first"><b>4</b>Four climate branches, and Education first</a></li><li><a href="#before-you-send"><b>5</b>Before you send</a></li><li><a href="#sources">Sources</a></li></ul>
 </section>
 <article class="gbody"><h2 id="four-steps-and-the-value-is-the-third">1. Four steps, and the value is the third</h2>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Step</th>
 <th>Question</th>
 <th>Where</th>
@@ -195,25 +256,25 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1 Frame</td>
 <td>What we agreed to measure</td>
 <td>SDG Indicators Home</td>
 <td>Name the code and title. No value</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2 Define</td>
 <td>What the number counts</td>
 <td>Metadata Repository, one PDF per indicator</td>
 <td>Quote it with § and the edition date</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3 Value</td>
 <td>The figure itself</td>
 <td>Global Database</td>
 <td>Cite it, with series code, year and Nature flag</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4 Place</td>
 <td>What it means here</td>
 <td>UN Data Commons for the SDGs</td>
@@ -231,25 +292,25 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Survey component, SE_GCEDESD_</th>
 <th>Greening score, SE_SGE_</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>NEP national education policies</td>
 <td>ENVSUST environment and sustainability</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CUR curricula</td>
 <td>CLIMCH climate change</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>TED teacher education</td>
 <td>BIODIV biodiversity</td>
 </tr>
-<tr class="even">
+<tr>
 <td>SAS student assessment</td>
 <td>OVERALL all three areas</td>
 </tr>
@@ -259,7 +320,7 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
 <h3 id="the-6.1.1-catch-in-4.c-and-4.g">The 6.1.1 catch, in §4.c and §4.g</h3>
 <p>Metadata 6.1.1, 2024-09-27 edition. §4.c: "To calculate the proportion of the population using safely managed drinking water services, three ratios must be calculated". The country value is the minimum of the three. §4.g applies the same rule to regions: the value is calculated "by taking a minimum of the three elements, or of two elements if either accessibility or availability is missing." Read the value first and it looks like an average.</p>
 <h3 id="project-instructions">Project instructions</h3>
-<div class="pbox"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Work in this order. Do not skip a step.
+<div class="pbox" id="first-prompt"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Work in this order. Do not skip a step.
 
 1 FRAME   indicator code and official title
 2 DEFINE  quote metadata 2.a with the edition date
@@ -274,7 +335,7 @@ Could not open a source? NOT ACCESSIBLE. Leave the gap.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Block</th>
 <th>What it holds</th>
 <th>Where</th>
@@ -282,25 +343,25 @@ Could not open a source? NOT ACCESSIBLE. Leave the gap.</pre></div>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1 Framework</td>
 <td>Codes, titles, targets</td>
 <td>SDG Indicators Home</td>
 <td>Name it. No value</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2 Methodology</td>
 <td>What the number counts</td>
 <td>Metadata Repository</td>
 <td>Quote with § and date</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3 Values</td>
 <td>The figure</td>
 <td>Global Database, SDG API</td>
 <td>Cite it</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4 Context and owner</td>
 <td>Background, and who to ask</td>
 <td>Data Commons, Data Contacts</td>
@@ -335,7 +396,7 @@ Then answer two things:
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Acronym</th>
 <th>Official expansion</th>
 <th>What it means for us</th>
@@ -343,31 +404,31 @@ Then answer two things:
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>PCCB</td>
 <td>Paris Committee on Capacity-building</td>
 <td>Climate side</td>
 <td>Decision 1/CP.21, paragraph 71</td>
 </tr>
-<tr class="even">
+<tr>
 <td>HLG-PCCB</td>
 <td>High-level Group for Partnership, Coordination and Capacity-Building for statistics for the 2030 Agenda</td>
 <td>Statistics side, created 6 March 2015 by the Statistical Commission</td>
 <td>UNSD HLG-PCCB page</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ACE</td>
 <td>Action for Climate Empowerment</td>
 <td>Article 12 of the Paris Agreement</td>
 <td>Decision 17/CMA.1, paragraph 1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>BTR</td>
 <td>biennial transparency report</td>
 <td>First one due by 31 December 2024</td>
 <td>Decision 18/CMA.1, paragraph 3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MMR</td>
 <td>maternal mortality ratio</td>
 <td>Per 100 000 live births, SDG 3.1.1</td>
@@ -398,29 +459,29 @@ No acronym I did not give you.</pre></div>
 <div class="tablewrap"><table>
 
 <thead>
-<tr class="header">
+<tr>
 <th>Branch</th>
 <th>What it settles</th>
 <th>Where it starts</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1 Education</td>
 <td>What is measured, and the frame</td>
 <td>UNESCO ESD page, metadata 13.3.1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2 Process</td>
 <td>What is owed under the Paris Agreement</td>
 <td>Article 12, decision 17/CMA.1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3 Capacity</td>
 <td>Gaps and needs</td>
 <td>Paris Committee on Capacity-building, 1/CP.21 paragraph 71</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4 Learning</td>
 <td>Courses that build the skills</td>
 <td>UN CC:Learn course catalogue</td>
@@ -477,7 +538,15 @@ evidence of what a country did.</pre></div>
 <li>UNESCO, Education for sustainable development: <a href="https://www.unesco.org/en/sustainable-development/education/need-know">https://www.unesco.org/en/sustainable-development/education/need-know</a></li>
 <li>UN CC:Learn courses: <a href="https://www.uncclearn.org/courses/">https://www.uncclearn.org/courses/</a></li>
 </ul>
-</article></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div><script>
+</article>
+</div></div></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div><script>
+document.querySelectorAll('[data-ba2]').forEach(ba=>{
+ const b=ba.querySelector('.ba2btn'),cap=ba.querySelector('.ba2cap');
+ const t1=b.dataset.on,t0=b.textContent,c1=cap.dataset.on,c0=cap.textContent;
+ const em=ba.querySelector('.w2bar em'),e1=em.dataset.on,e0=em.textContent;
+ b.addEventListener('click',()=>{const on=ba.classList.toggle('on');
+  b.textContent=on?t1:t0;cap.textContent=on?c1:c0;em.textContent=on?e1:e0;});
+});
 document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
  const t=b.closest('.pbox').querySelector('pre').innerText;
  try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');

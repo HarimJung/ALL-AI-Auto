@@ -8,7 +8,7 @@
 <meta property="og:title" content="Skills | Claude for SDG">
 <meta property="og:description" content="Free skills that make AI read the official UN source first.">
 <meta property="og:url" content="https://sdgai.org/skills.html">
-<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta property="og:image" content="">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -109,6 +109,23 @@ ul.note{margin:0;padding-left:20px}
 .wk:hover{border-color:var(--ink)}
 .wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
 .wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
 .chips a:hover{border-color:var(--ink)}
@@ -139,11 +156,11 @@ pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:7
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
-@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
-</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html" class="on">Skills</a><a href="join.html">Join</a></div></nav><main>
+</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html" class="on">Skills</a><a href="join.html">Join</a></div></nav><main>
 <section>
  <div class="eyebrow">Skills</div>
  <h1 class="page">Free skills that read the UN source first</h1>
@@ -306,6 +323,472 @@ Pages: &lt;printed page numbers | PDF page numbers&gt;
 `demo/draft_brief.md` is a five-sentence draft citing the Secretary-General&#x27;s SDG progress report A/81/93-E/2026/73 (8 June 2026). Two sentences carry planted errors, and the answer key is in the same file. A copy of the report and its SHA-256 are in `data/anchors/skills/claim-check/` in the claude-for-sdg repository.
 </pre></details>
 </section>
+<section class="skill" id="declassification-sequence-check">
+ <div class="eyebrow">Free skill</div>
+ <h2>declassification-sequence-check</h2>
+ <p class="lede">Check the order of steps in an office&#x27;s own plan for sending closed classified files to the Archives and Records Management Section, against the Secretary-General&#x27;s bulletin on information sensitivity, classification and handling. Use when someone is packing project files for the Archives, or has a transfer plan, and asks whether declassification review has to happen first.</p>
+ <div class="row"><a class="btn primary" href="assets/declassification-sequence-check.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: declassification-sequence-check
+description: Check the order of steps in an office&#x27;s own plan for sending closed classified files to the Archives and Records Management Section, against the Secretary-General&#x27;s bulletin on information sensitivity, classification and handling. Use when someone is packing project files for the Archives, or has a transfer plan, and asks whether declassification review has to happen first.
+---
+
+# Declassification Sequence Check
+
+You give it one transfer plan and get back one sequence card, with each step tied to a quoted line of the bulletin.
+
+**Inputs**
+- `document`: required. The user&#x27;s own transfer plan, checklist, email or file list. Working notes are fine.
+- `markings`: optional. The classification levels the files carry, in the user&#x27;s own words.
+
+## Why this exists
+
+Offices close a project, pack the boxes and send them to the Archives. Often nobody thinks of declassification review until the boxes have gone. The bulletin sets the order. Review comes first. Transfer to the Archives comes after. A plan with these steps the wrong way round needs to be caught before the boxes move.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Secretary-General&#x27;s bulletin on information sensitivity, classification and handling | The declassification section. The paragraph on marking a date or event that triggers declassification. The paragraph on review before transfer to the Archives. The sub-paragraph on item-by-item review of strictly confidential records | `https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own document | The steps the office plans to take, in its own order | Pasted or attached by the user |
+
+If the bulletin does not open, say so in the first line of the answer. Do not fill in its wording from memory or from a search summary. Check the user&#x27;s document for order only, and mark every bulletin line UNVERIFIED.
+
+## Steps
+
+- Open the bulletin. Copy its symbol and title from the first page.
+- Find the declassification section. Copy the paragraph that begins &quot;4.1 The originator of the information&quot;.
+- Copy the paragraph that begins &quot;4.3 Review for possible declassification shall take place before records are transferred&quot;.
+- If the user&#x27;s document mentions strictly confidential files, copy the sub-paragraph that begins &quot;(a) Records that are classified as “strictly confidential”&quot;.
+- Read the user&#x27;s document. List each step in the order it appears. Keep the user&#x27;s words.
+- Put each step into one of three stages. Set a declassification date or event. Review the records. Transfer them to the Archives and Records Management Section. Steps that fit none of these go under Other.
+- Compare the user&#x27;s order with the bulletin&#x27;s order. Flag any transfer that comes before review. Flag any classified file that has no date or event marked on it. Keep the bulletin&#x27;s words &quot;where appropriate&quot; next to that flag.
+- Write the sequence card.
+
+## Answer layout
+
+```
+Sequence check · bulletin read &lt;today&#x27;s date&gt;   (or: bulletin did not open, every quote UNVERIFIED)
+
+Your order:     &lt;step&gt; / &lt;step&gt; / &lt;step&gt;
+Bulletin order:
+  Set:       &quot;&lt;quote from the marking paragraph&gt;&quot;
+  Review:    &quot;&lt;quote from the review before transfer paragraph&gt;&quot;
+  Transfer:  to the Archives and Records Management Section, after review
+
+| Your step | Stage | In order? | Bulletin line |
+|---|---|---|---|
+| &lt;user&#x27;s words&gt; | review | no, it comes after transfer | &quot;&lt;quote&gt;&quot; |
+
+Strictly confidential: &quot;&lt;quote from sub-paragraph (a)&gt;&quot;   (only if the document mentions it)
+Fix: &lt;which step to move, in one line&gt;
+Not covered: &lt;anything asked that the bulletin does not state&gt;
+```
+
+## Rules
+
+- **Review comes before transfer. Quote the bulletin for this every time. Never state the order from memory.**
+- Quote the bulletin&#x27;s own words. Shorten only by cutting. Keep &quot;shall&quot; and &quot;where appropriate&quot; exactly as written.
+- Work only on the user&#x27;s document. Do not add steps it does not mention, apart from the three stages.
+- Do not name who in the user&#x27;s office may carry out the review. Quote what the bulletin says about who reviews and stop there.
+- How to recall boxes that have already gone is NOT IN SOURCE. Say so. Name the Archives and Records Management Section as the office that holds them.
+- Do not work out when a record becomes old enough for review. Quote the sub-paragraph and leave the counting to the user.
+- Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Check the order of steps in my office&#x27;s plan for sending closed project files to the UN Archives. My plan is pasted below. Use only the Secretary-General&#x27;s bulletin on information sensitivity, classification and handling at https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf and my own plan. Quote the declassification paragraph on marking a date or event, the paragraph on review before transfer to the Archives and Records Management Section, and, if my plan mentions strictly confidential files, the sub-paragraph on item-by-item review. List my steps in my order, say which stage each one belongs to, and flag any transfer that comes before review. If you cannot open the bulletin, say so and mark every quote UNVERIFIED. Do not answer from memory.
+</pre></details>
+</section>
+<section class="skill" id="distribution-list-audit">
+ <div class="eyebrow">Free skill</div>
+ <h2>distribution-list-audit</h2>
+ <p class="lede">Check the user&#x27;s own distribution list or copy log for a recurring classified product, such as a situation report, against the UN Secretary-General&#x27;s bulletin on information sensitivity, classification and handling. Flags copies sent outside the standard list, copies made without authorization, and copies missing from the special registry. Use when someone asks whether a forward or an extra copy was allowed, or wants an auditable distribution list and copy log.</p>
+ <div class="row"><a class="btn primary" href="assets/distribution-list-audit.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: distribution-list-audit
+description: Check the user&#x27;s own distribution list or copy log for a recurring classified product, such as a situation report, against the UN Secretary-General&#x27;s bulletin on information sensitivity, classification and handling. Flags copies sent outside the standard list, copies made without authorization, and copies missing from the special registry. Use when someone asks whether a forward or an extra copy was allowed, or wants an auditable distribution list and copy log.
+---
+
+# Distribution List Audit
+
+One distribution list or copy log goes in and one audit comes out. Each finding quotes the line of the bulletin it rests on. The audit holds roles and document IDs only. It never holds the content of the report.
+
+**Inputs**
+- `document`: the user&#x27;s own distribution list, copy log, or short note of who received which product. Replace names with roles before pasting.
+- `product`: optional. The recurring product in question, for example a situation report, an operational update or a periodic political assessment.
+
+## Why this exists
+
+Recurring reports get forwarded on request. A colleague asks, the report looks useful, and the copy never reaches the registry. The bulletin treats this as a gap in control. Copying a classified sitrep needs authorization. Every copy goes in the special registry. Staff need a quick check against the actual text and a list format that an auditor can follow.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Secretary-General&#x27;s bulletin &quot;ST/SGB/2007/6&quot; on information sensitivity, classification and handling | The section on handling classified information. It covers the special registry, the rule on duplication, and standard distribution lists for recurrent products | `https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own document | The list, the log, or the note of who received what | Supplied by the user |
+
+The UN documents site sometimes fails or returns an empty page. If the bulletin does not open, say so plainly. Do not fill the rules from memory or from a search summary. Give the audit layout with each rule marked `NOT CHECKED: source did not open`.
+
+## Steps
+
+- Open the bulletin. Copy its symbol and title from the first page.
+- Find and quote exactly the lines this skill rests on. These are the line on standard distribution lists for recurrent products, the line on the special registry, and the line on duplication.
+- Read the user&#x27;s document. List each recipient role and each document ID. Do not repeat any report content.
+- Mark each recipient as on the standard list or off it.
+- For each copy, check whether the document records who authorized it. Only the originator or the head of the receiving or originating department or office can authorize a copy.
+- For each copy, check whether the document shows a registry entry.
+- Build the clean template with a standard list, a copy log and the open gaps.
+
+## Answer layout
+
+```
+&lt;product&gt; · bulletin opened &lt;today&#x27;s date&gt;   (or NOT OPENED and why)
+
+Rules checked
+Standard list: &quot;&lt;quoted line&gt;&quot;
+Registry: &quot;&lt;quoted line&gt;&quot;
+Copies: &quot;&lt;quoted line&gt;&quot;
+
+| Recipient role | Document ID | On standard list | Authorized by | In registry | Gap |
+|---|---|---|---|---|---|
+| &lt;role&gt; | &lt;ID&gt; | yes or no | &lt;originator, head of office, or none recorded&gt; | yes or no | &lt;what to fix&gt; |
+
+Template (fill names in your own system only)
+Standard list: &lt;product&gt;, &lt;owner&gt;, &lt;recipient names&gt;
+Copy log: &lt;document ID&gt;, &lt;recipient name&gt;, &lt;authorized by&gt;, &lt;registry entry&gt;
+
+Not covered: &lt;anything asked that the bulletin does not state&gt;
+```
+
+## Rules
+
+- **A finding with no quoted line behind it is `UNVERIFIED`. Never state a handling rule from memory as confirmed.**
+- Remove names and personal details first. Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+- The audit and the template hold roles, names and document IDs only. Never copy the content of the report into the answer.
+- Quote the bulletin&#x27;s own words. Keep &quot;must&quot; and &quot;may&quot; as written. Shorten only by cutting.
+- A request from the recipient is no authorization. Only the originator or the head of the receiving or originating department or office can authorize a copy.
+- Do not judge the classification level of the report. If the user&#x27;s document does not state it, write `NOT IN DOCUMENT`.
+- If the question asks about a form, a system or a sanction the bulletin does not describe, write `NOT IN SOURCE`.
+- Send any fix beyond the quoted rules to the originator or the head of office.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Check my distribution list and copy log for &lt;product&gt; against the UN Secretary-General&#x27;s bulletin &quot;ST/SGB/2007/6&quot; on information sensitivity, classification and handling, at https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf. Use only that bulletin and my document below. Quote the lines on standard distribution lists, the special registry and duplication. For each recipient, say whether they are on the standard list, who authorized the copy, and whether it is in the registry. Then give me a clean list and copy log with roles and document IDs only. If the bulletin does not open, say so and do not answer from memory. Do not repeat any report content. &lt;paste list with names replaced by roles&gt;
+</pre></details>
+</section>
+<section class="skill" id="donor-template">
+ <div class="eyebrow">Free skill</div>
+ <h2>donor-template</h2>
+ <p class="lede">Map a partnerships officer&#x27;s own master results sheet to one donor&#x27;s reporting fields. The results are written once and reused for each funder. Use when someone has to fill a donor report or assessment template with results they have already written.</p>
+ <div class="row"><a class="btn primary" href="assets/donor-template.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: donor-template
+description: Map a partnerships officer&#x27;s own master results sheet to one donor&#x27;s reporting fields. The results are written once and reused for each funder. Use when someone has to fill a donor report or assessment template with results they have already written.
+---
+
+# Donor Template
+
+You give it one master results sheet and one donor template. It gives back one field map. Each field shows the line in your document that it came from. If your document does not cover a field, the field is marked GAP.
+
+**Inputs**
+- `results`: your own master results sheet or report text. Required.
+- `template`: the donor&#x27;s reporting fields or form, pasted or attached. Required.
+- `donor`: optional. The funder&#x27;s name, used only as a label.
+
+## Why this exists
+
+Partnerships officers rewrite the same results for each funder. Every donor has its own format and its own assessment. The Joint Inspection Unit found that donor assessments &quot;overlap to a large degree in terms of the content covered. While valued, such&quot; assessments bring heavy transaction costs. It also found that relying on many funders &quot;subjects the United Nations system to various forms of external governance frameworks with various reporting requirements&quot;. If you write results once and map them to each template, you stop rewriting. Each result also stays worded the same way for every funder.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Joint Inspection Unit report on donor-led assessments of United Nations system organizations | The outcome section on how much donor assessments overlap. The section on global governance and the leadership role, on outside reporting requirements | `https://www.unjiu.org/sites/www.unjiu.org/files/jiu_rep_2017_6_english__0.pdf` |
+| The user&#x27;s own document | The results to report and the donor fields to fill | Provided by the user |
+
+If the report does not open, say so in one line. Leave out the quotes and do not fill them from memory or a search summary. If the user&#x27;s document cannot be read, stop and ask for it again.
+
+## Steps
+
+- Read the user&#x27;s results. Split them into single statements. Label each one with the heading or row it sits under in the document.
+- Read the donor template. List each field in the donor&#x27;s own words and order. Note any word limit or format the template states.
+- For each field, find the statements that answer it. Copy the user&#x27;s wording. Shorten only by cutting.
+- If no statement answers a field, write GAP and say in a few words what the field asks for.
+- If a statement fits more than one field, use it in each one and mark it as reused.
+- List the statements that no field used. This shows the officer what this donor does not ask for.
+- Open the Joint Inspection Unit report only if the user asks why one master sheet helps. Quote it exactly.
+
+## Answer layout
+
+```
+&lt;donor&gt; template · mapped from &lt;document name&gt;
+
+| Donor field | Text from your results | From |
+|---|---|---|
+| &lt;field in the donor&#x27;s words&gt; | &quot;&lt;your words&gt;&quot; | &lt;heading or row in your document&gt; |
+| &lt;field&gt; | GAP: &lt;what the field asks for&gt; | none |
+
+Not used by this template: &lt;statements left over&gt;
+Check before sending: &lt;word limits or formats the template states&gt;
+```
+
+## Rules
+
+- **Take results only from the user&#x27;s document. Never add a result, figure, partner or place that the document does not state.**
+- Keep the user&#x27;s wording. Never turn a planned result into an achieved one.
+- A field with no matching text is GAP. Never fill it with a guess or a generic phrase.
+- Keep the donor&#x27;s field names and their order exactly.
+- If a source cannot be opened, say so. Do not fill it from memory or a search summary.
+- Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; I will paste my master results sheet and a donor&#x27;s reporting template. Map my results to each donor field. Use the donor&#x27;s own field names and keep them in the same order. Take results only from my document and copy my wording, shortening only by cutting. For each field, show the heading or row in my document it came from. If nothing in my document answers a field, write GAP and say what the field asks for. Do not invent results, figures or partners. At the end, list the results this template did not use. Leave out anything marked confidential. If you cannot read my document, say so and do not fill it from memory.
+</pre></details>
+</section>
+<section class="skill" id="external-marking-check">
+ <div class="eyebrow">Free skill</div>
+ <h2>external-marking-check</h2>
+ <p class="lede">Check a draft that reuses text from a partner document marked confidential or otherwise sensitive. Confirms the partner&#x27;s marking is kept or matched with equal or stronger protection, and flags where partner consent is needed before the text is declassified or made public. Use when a team wants to reuse partner material in a donor update, report or web page.</p>
+ <div class="row"><a class="btn primary" href="assets/external-marking-check.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: external-marking-check
+description: Check a draft that reuses text from a partner document marked confidential or otherwise sensitive. Confirms the partner&#x27;s marking is kept or matched with equal or stronger protection, and flags where partner consent is needed before the text is declassified or made public. Use when a team wants to reuse partner material in a donor update, report or web page.
+---
+
+# External Marking Check
+
+One draft in, one check out. Each finding points to a passage in the user&#x27;s own document and to the bulletin clause that governs it. If the bulletin cannot be opened, the check says so and gives no ruling.
+
+**Inputs**
+- `draft`: the user&#x27;s own document, e.g. a donor update. Mark partner passages with a short label. Do not paste the partner&#x27;s confidential text.
+- `partner_marking`: the marking on the partner&#x27;s original, copied as printed, e.g. &quot;Confidential&quot;.
+- `audience`: who will see the draft. Internal, donors only, or public.
+- `consent`: optional. Any written reply from the partner about reuse.
+
+## Why this exists
+
+Partner proposals arrive stamped confidential. Teams then lift text into donor updates and the stamp gets lost on the way. The UN rule on information from outside sources is short. Keep the partner&#x27;s marking or use one that protects at least as much. Before declassifying, weigh what the partner expects and ask them first where that is appropriate.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| UN Secretary-General&#x27;s bulletin on information sensitivity, classification and handling | The clause on external information with prior markings. The clause on declassifying information from an outside source | `https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own draft | The text to check and the markings it carries | Supplied by the user |
+
+The two clauses, as given in the evidence for this skill:
+
+&gt; &quot;3.2 Where information from an external source contains prior sensitivity markings, it shall retain those markings or shall be assigned a classification that provides a degree of protectio n greater than or equal to that of the entity that furnished the information.&quot;
+
+&gt; &quot;4.4 When declassifying information received from an outside source, the Organization shall give due regard to expect ations of confidentiality of that outside source and, if appropriate, shall seek the prior consent of the outside source.&quot;
+
+If the bulletin does not open, write `SOURCE NOT OPENED`. Do not fill it from memory or a search summary.
+
+## Steps
+
+- Open the bulletin. Find both clauses and check that the wording matches the quotes above. If it does not open, say so and stop before any ruling.
+- Read the user&#x27;s draft. List every labelled partner passage. If it is unclear whether a passage comes from the partner, ask the user.
+- For each passage, note the partner&#x27;s marking and the marking the draft carries.
+- Apply the marking clause. A passage passes only if the draft keeps the partner&#x27;s marking or carries a classification that protects at least as much. A public draft carries no protection. Partner text marked confidential in a public draft fails.
+- If the team wants to lower the marking or publish, apply the declassification clause. Say what the partner is likely to expect, based only on its marking and any reply supplied. Say whether consent should be sought first. Quote any consent reply.
+- Give a fix for each failed passage. Remove it, hold it until the partner agrees, or replace it with text the team owns that holds nothing from the partner&#x27;s document.
+
+## Answer layout
+
+```
+Draft: &lt;title of the user&#x27;s document&gt;   Audience: &lt;audience&gt;
+Bulletin opened: yes, or SOURCE NOT OPENED
+
+| Passage | Partner marking | Draft marking | Result | Clause |
+|---|---|---|---|---|
+| &lt;label&gt; | &lt;as printed&gt; | &lt;as in draft&gt; | kept, raised or fails | marking clause |
+
+Consent: &lt;seek first, given, or not needed and why&gt;   &quot;&lt;quoted words from the declassification clause&gt;&quot;
+Fix: &lt;one line per failed passage&gt;
+Not covered: &lt;anything asked that the bulletin does not state&gt;
+```
+
+## Rules
+
+- **No ruling without the bulletin open. If it cannot be opened, write `SOURCE NOT OPENED` and do not fill from memory.**
+- Quote the bulletin&#x27;s words. Keep &quot;shall&quot; as &quot;shall&quot;. Never soften it to &quot;may&quot; or &quot;should&quot;.
+- Take the partner&#x27;s marking as printed. Do not guess what it means beyond what the bulletin says.
+- Whether consent is appropriate is the team&#x27;s call. Flag it every time partner text moves to a wider audience, and lean toward asking.
+- Never call partner text cleared for public use unless the user supplies a consent reply or states why consent is not appropriate.
+- If the question goes beyond the two clauses, such as who may declassify or how long a marking lasts, write `NOT IN SOURCE`.
+- Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Check my draft below for text taken from a partner document marked &lt;marking as printed&gt;. The draft is for &lt;internal, donors only, or public&gt;. Use only the UN Secretary-General&#x27;s bulletin at https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf and my draft. Quote the clause on external information with prior sensitivity markings and the clause on declassifying information from an outside source. For each labelled partner passage, say whether my draft keeps the partner&#x27;s marking or one that protects at least as much, and whether I should seek the partner&#x27;s consent before this goes out. Suggest a fix for any passage that fails. If you cannot open the bulletin, say so and do not answer from memory. I have left out the partner&#x27;s confidential text and put a label where each passage sits.
+</pre></details>
+</section>
+<section class="skill" id="logframe-qa">
+ <div class="eyebrow">Free skill</div>
+ <h2>logframe-qa</h2>
+ <p class="lede">Check a user&#x27;s own results framework or logframe line by line and say whether each line labelled as an outcome reads as an outcome or as an output with a new label. Each verdict gives a short reason, and background on why this happens is quoted from a Joint Inspection Unit report. Use when someone asks whether the outcomes in their logframe are really outputs, or wants them reworded before a progress report.</p>
+ <div class="row"><a class="btn primary" href="assets/logframe-qa.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: logframe-qa
+description: Check a user&#x27;s own results framework or logframe line by line and say whether each line labelled as an outcome reads as an outcome or as an output with a new label. Each verdict gives a short reason, and background on why this happens is quoted from a Joint Inspection Unit report. Use when someone asks whether the outcomes in their logframe are really outputs, or wants them reworded before a progress report.
+---
+
+# Logframe QA
+
+Your own results framework in, a verdict on every outcome line out. Each verdict rests on your document&#x27;s words and on the control question below.
+
+**Inputs**
+- `document`: required. The user&#x27;s own results framework or logframe, pasted or attached. Only the lines to check are needed.
+- `team`: optional. What the team delivers with its own resources, for example workshops or guidance notes. It helps decide which lines the team controls.
+
+## Why this exists
+
+Results frameworks often call something an outcome when the team can deliver it alone. A workshop held is in the team&#x27;s control. What participants do afterwards is not. A Joint Inspection Unit report on results-based management found that organizations focus on outputs they control and sometimes label them outcomes. It links this to how the accountability system works. The same report names the pressure to report outcomes every reporting cycle, even when outcomes take longer than a cycle to appear. An output with an outcome label makes a report claim a change that nobody has shown.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Joint Inspection Unit report on results-based management | Summary of challenges, where outputs the organization controls get identified as outcomes. A later list of challenges, where staff face pressure to report on outcomes every reporting cycle | `https://www.unjiu.org/sites/www.unjiu.org/files/jiu_rep_2017_6_english__0.pdf` |
+| The user&#x27;s own document | The lines to check, and any definitions of output and outcome it gives | Pasted or attached by the user |
+
+Find these two passages in the report by searching for their words.
+- &quot;identifying those as outcomes, given the nature of the accountability system, as well as&quot;
+- &quot;Disconnect between the longer-term outcome requirements of results-based management and the reporting cycle, with pressure to report on outcomes no matter the situation&quot;
+
+If the PDF does not open, say so. Do not fill it from memory or from a search summary. The verdicts can still be given from the user&#x27;s document alone.
+
+## Steps
+
+- Open the report PDF. Copy its title and document symbol from the cover. Find both passages and check they read as quoted. If the PDF does not open, record `REPORT NOT OPENED` and go on.
+- Read the user&#x27;s document. If it defines output and outcome, copy those definitions and use them in place of the control question. Say that you did.
+- List every line the document labels as an outcome. Keep its exact words. If the document has no labels, ask the user which lines are meant as outcomes.
+- Put the control question to each line. Could the team finish all of its own work and this line still not be true? If yes, the line reads as an outcome. If no, the team controls it and it reads as an output.
+- If the document does not say who has to change, or what the team delivers, mark the line `UNCLEAR` and name the missing piece.
+- For each output labelled as an outcome, write a rewrite that names the change the output should lead to. Use an actor the document already names. If it names none, write `ACTOR NOT IN DOCUMENT`. Keep the original line in the framework as an output.
+- If the report opened, add the first passage as the reason this pattern is common. Add the second passage only when the user mentions pressure to report outcomes every cycle.
+
+## Answer layout
+
+```
+&lt;document name&gt; · checked &lt;today&#x27;s date&gt;
+Report: opened, &quot;&lt;title from cover&gt;&quot;      (or REPORT NOT OPENED and why)
+Test used: the control question           (or the document&#x27;s own definitions, quoted)
+
+| Line as written | Labelled | Reads as | Reason |
+|---|---|---|---|
+| &quot;&lt;line&gt;&quot; | outcome | OUTPUT | The team delivers this with its own work. |
+| &quot;&lt;line&gt;&quot; | outcome | OUTCOME | It needs &lt;actor&gt; to change. |
+| ... | | | |
+
+Rewrites: &lt;each OUTPUT line, then a rewrite that names the actor and the change&gt;
+Why it happens: &quot;&lt;passage&gt;&quot;  JIU report, Summary of challenges
+Not covered: &lt;anything asked that the document and the report do not answer&gt;
+```
+
+## Rules
+
+- **A verdict rests on the user&#x27;s document and the control question. Anything said about why the pattern happens is a quoted passage from the report, or it is left out.**
+- Quote each line as the user wrote it. Do not tidy its wording in the table.
+- Never add a target, baseline, indicator value or date that the document does not contain.
+- Keep `UNCLEAR` when the document does not settle it. Do not guess a verdict to make the table look complete.
+- If the report did not open, say so at the top and quote nothing from it.
+- Do not judge the project or the team. The check is about labels only.
+- Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Check the results framework I paste below. For every line labelled as an outcome, tell me if it reads as an outcome or as an output. Use this question. Could my team finish all of its own work and this line still not be true? If yes, it is an outcome. If no, my team controls it and it is an output. If my document defines output and outcome, use those definitions instead. Quote each line as I wrote it and give your verdict with a short reason. Write UNCLEAR where my document does not say enough. For each output labelled as an outcome, suggest a rewrite that names who should change, using only actors named in my document. For background, use only the Joint Inspection Unit report at https://www.unjiu.org/sites/www.unjiu.org/files/jiu_rep_2017_6_english__0.pdf and quote it word for word. If you cannot open it, say so and do not fill from memory. Do not add targets or dates that are not in my document.
+</pre></details>
+</section>
+<section class="skill" id="meeting-actions">
+ <div class="eyebrow">Free skill</div>
+ <h2>meeting-actions</h2>
+ <p class="lede">Turn your own meeting minutes into an action table with a draft follow-up for each action and the staff role who signs it off. Use when an intern or new joiner has written the minutes and must draft follow-ups they cannot send or sign in UNDP&#x27;s name.</p>
+ <div class="row"><a class="btn primary" href="assets/meeting-actions.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: meeting-actions
+description: Turn your own meeting minutes into an action table with a draft follow-up for each action and the staff role who signs it off. Use when an intern or new joiner has written the minutes and must draft follow-ups they cannot send or sign in UNDP&#x27;s name.
+---
+
+# Meeting Actions
+
+Your minutes in, an action table out, with every follow-up marked as a draft and a staff role named to sign it off.
+
+**Inputs**
+- `minutes`: your own minutes or working notes, pasted or attached, with names and personal details removed.
+- `meeting`: optional. The group&#x27;s name as you want it in the header, for example the Result Group.
+- `sign_off`: optional. The staff role who approves your messages, for example your supervisor.
+
+## Why this exists
+
+An intern may write the minutes and draft the follow-up. A UNDP Rwanda internship description lists this work: &quot;ONE UN Rwanda, writing minutes and following up with communication, etc.&quot; The same document sets a limit: &quot;Interns are not staff members and may not represent UNDP in any official&quot;. You can draft the follow-up. A staff member has to send and sign it. A quick draft from a chat assistant reads as if you could send it yourself. This skill puts the sign-off next to every message so nobody misses it.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| UNDP Rwanda internship description | Responsibilities and Accountabilities section: the intern writes minutes and follows up on communication. Conditions section: interns are not staff and may not represent UNDP officially | `https://www.undp.org/sites/g/files/zskgke326/files/migration/rw/Internship_ME.pdf` |
+| Your minutes or notes | The actions the meeting agreed and who owns each one | The text you paste or attach |
+
+If the PDF does not open, say so at the top of the answer and write `SOURCE NOT OPENED` in place of each quote. Do not fill the quotes from memory or a search summary. Do not use any other page, policy or template.
+
+## Steps
+
+- Open the internship PDF. Find the Responsibilities and Accountabilities section and the Conditions section. Copy the two quoted lines word for word. If the file does not open, mark both `SOURCE NOT OPENED` and carry on with the minutes alone.
+- Read the minutes. If you see a name or other personal detail, stop. Ask the user to replace it with a role and paste the minutes again.
+- List each action the meeting agreed. Keep the minutes&#x27; own words. Give each action its own row.
+- Write the owner as a role taken from the minutes. Copy a due date only if the minutes state it. If they do not, write `NOT IN MINUTES`.
+- Draft a short follow-up for each action that needs a message. Start it with DRAFT. Write it for a staff member to send and leave the signature for them.
+- Fill the sign-off column with the staff role who approves and sends the message. Use `sign_off` if the user gave it. If nothing says who, write `ASK SUPERVISOR`.
+- Put anything the minutes leave unclear under Open questions. Leave it open for the user to check.
+
+## Answer layout
+
+```
+&lt;meeting&gt; · minutes from user · source read &lt;today&#x27;s date&gt;
+Task:  &quot;ONE UN Rwanda, writing minutes and following up with communication, etc.&quot;   Responsibilities and Accountabilities
+Limit: &quot;Interns are not staff members and may not represent UNDP in any official&quot;   Conditions
+(write SOURCE NOT OPENED in place of a quote that could not be checked)
+
+| Action, in the minutes&#x27; words | Owner role | Due | Draft follow-up | Signs off |
+|---|---|---|---|---|
+| &lt;action&gt; | &lt;role&gt; | &lt;as written, or NOT IN MINUTES&gt; | DRAFT: &lt;short message&gt; | &lt;staff role, or ASK SUPERVISOR&gt; |
+
+Open questions: &lt;what the minutes leave unclear&gt;
+All messages above are drafts. None has been sent or signed.
+```
+
+## Rules
+
+- **Every follow-up is a draft. The intern does not send or sign anything in UNDP&#x27;s name. A staff member signs off each message.**
+- Remove names and personal details first. Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+- Use only the internship PDF and the user&#x27;s minutes. Add nothing the minutes do not say.
+- Quote the PDF word for word. If it does not open, say so. Never quote it from memory or from a search summary.
+- Put roles in the owner and sign-off columns. The user adds names after the draft leaves the AI tool.
+- A draft does not promise money or agree to anything for UNDP. If an action needs that, flag it in Open questions for the staff member who signs off.
+- If the user asks you to send or sign a message, decline and point to the sign-off column.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; I am an intern and I wrote these meeting minutes. I removed names and personal details. Turn them into a table of actions in the minutes&#x27; own words. For each action give the owner as a role, the due date only if the minutes state it, a short follow-up message marked DRAFT, and the staff role who signs it off. I may not send or sign anything in UNDP&#x27;s name. Open https://www.undp.org/sites/g/files/zskgke326/files/migration/rw/Internship_ME.pdf and quote the line &quot;Interns are not staff members and may not represent UNDP in any official&quot;. If you cannot open that file, say so and do not quote it from memory. Use no other source. If something in the minutes is unclear, list it as an open question.
+</pre></details>
+</section>
 <section class="skill" id="metadata-read">
  <div class="eyebrow">Free skill</div>
  <h2>metadata-read</h2>
@@ -389,6 +872,245 @@ Source: &lt;PDF URL&gt; · read &lt;today&#x27;s date&gt;
 `engines/ai/indicator_card.py` in the claude-for-sdg repository downloads the same PDF, keeps its SHA-256 and cuts sections by their numbers. Copies of the 3.1.1 and 6.1.1 PDFs used for the recorded test are in `data/anchors/skills/metadata-read/`.
 </pre></details>
 </section>
+<section class="skill" id="partner-report-indicator-check">
+ <div class="eyebrow">Free skill</div>
+ <h2>partner-report-indicator-check</h2>
+ <p class="lede">Check the indicators and deliverables in an implementing partner&#x27;s narrative report against the baseline and end line in the user&#x27;s own programme document. Use when someone asks whether a partner report matches the programme document, or whether a target the partner says was met is backed by the indicator as written.</p>
+ <div class="row"><a class="btn primary" href="assets/partner-report-indicator-check.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: partner-report-indicator-check
+description: Check the indicators and deliverables in an implementing partner&#x27;s narrative report against the baseline and end line in the user&#x27;s own programme document. Use when someone asks whether a partner report matches the programme document, or whether a target the partner says was met is backed by the indicator as written.
+---
+
+# Partner Report Indicator Check
+
+You give it one programme document and one partner report. It gives back one checked line per indicator, and each line says where its evidence was found. If the report says a target was met but gives no value, the line says so.
+
+**Inputs**
+- `programme_document`: the user&#x27;s own programme or project document, or the part of it that holds the results framework. It must give each indicator, its baseline, its end line and its source of verification.
+- `partner_report`: the implementing partner&#x27;s narrative report, or the section of it that reports on results.
+- `indicator`: optional. Name one indicator to check. If this is left out, check every indicator in the programme document.
+
+## Why this exists
+
+Partner reports often say a target was met without giving the value, the unit or the source. A new officer then has to decide whether that sentence fits the baseline and end line agreed in the programme document. The UNDP terms of reference for an M&amp;E intern name this task directly. This skill turns it into a fixed side-by-side check that shows the evidence for each line.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| UNDP Rwanda, Monitoring and Evaluation internship terms of reference | Its section on responsibilities and accountabilities states the task: &quot;Review the programme documents and annual work plans, ensuring the indicators and deliverables of narrative reports from the implementing partners are in line with the baseline/end line information defined in the documents.&quot; It also names &quot;the analysis of the collected data and the final reporting against project indicators.&quot; | `https://www.undp.org/sites/g/files/zskgke326/files/migration/rw/Internship_ME.pdf` |
+| The user&#x27;s programme document | Indicators, baselines, end lines and sources of verification | Pasted or attached by the user |
+| The user&#x27;s partner narrative report | What the partner says was achieved | Pasted or attached by the user |
+
+The terms of reference only describe the task. Every value in the answer comes from the user&#x27;s two documents. If the UNDP file does not open, say so in one line and carry on with the user&#x27;s documents. Do not describe what it says from memory. If a user document is missing or cannot be read, stop and ask for it.
+
+## Steps
+
+- **Read the programme document.** List each indicator with its exact wording, baseline, end line, unit and source of verification. Note the page or section where each one sits.
+- **Read the partner report.** For each indicator, find the passage that reports on it. Copy the words and note the page or section.
+- **Match the indicator.** Check that the report talks about the same indicator. It must measure the same thing, in the same unit, for the same group of people or places. If the wording differs, quote both versions.
+- **Compare the value.** Put the reported value next to the baseline and the end line. Compare them only when both use the same unit. If the report gives no value, write `NO VALUE GIVEN`.
+- **Check the source.** Say whether the report names the source of verification that the programme document asks for.
+- **Check deliverables.** If the programme document or annual work plan lists deliverables, check each one the same way.
+- **Give a status** for each line. Use only these labels: `MATCHES`, `DIFFERS`, `NO VALUE GIVEN`, `NOT REPORTED`, `NOT IN PROGRAMME DOCUMENT`.
+- **List questions for the partner.** Write one line per gap, in plain words the officer can send.
+
+## Answer layout
+
+```
+Indicator check · &lt;programme name from the document&gt; · &lt;partner name from the report&gt;
+UNDP terms of reference: opened / could not be opened
+
+| Indicator (programme document words) | Baseline | End line | Partner report says | Source named | Status | Where |
+|---|---|---|---|---|---|---|
+| &lt;indicator&gt; | &lt;baseline&gt; | &lt;end line&gt; | &quot;&lt;quote&gt;&quot; | yes / no | &lt;status&gt; | programme document &lt;section&gt;, report &lt;section&gt; |
+
+Questions for the partner:
+- &lt;one line per gap&gt;
+
+Not covered: &lt;anything asked about that neither document states&gt;
+```
+
+## Rules
+
+- **&quot;Target met&quot; is a claim. It counts only when the report gives a value in the same unit as the end line. If there is no such value, the status is `NO VALUE GIVEN`.**
+- Quote both documents. Do not reword an indicator into a different one.
+- Never fill a missing baseline, end line or value from memory, from a similar project or from a guess. Write `NOT IN PROGRAMME DOCUMENT` or `NOT REPORTED`.
+- Do not work out new totals unless both documents give the parts in the same unit. If you do, show the working.
+- Mark a changed unit, group or place as `DIFFERS`, even when the partner calls the target met.
+- Do not judge the partner. Report what the documents say and what is missing. The supervisor decides.
+- If a source cannot be opened, say so. Do not fill it from memory or a search summary.
+- Remove names and personal details first. Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; I will paste two texts. The first is the results framework from my programme document. The second is an implementing partner&#x27;s narrative report. For each indicator in the programme document, quote its wording, baseline, end line and source of verification. Then quote what the partner report says about it, and say where in the report it appears. Mark each line MATCHES, DIFFERS, NO VALUE GIVEN, NOT REPORTED or NOT IN PROGRAMME DOCUMENT. A statement that a target was met counts only if the report gives a value in the same unit as the end line. Do not fill any gap from memory and do not guess. End with a short list of questions I can send to the partner. If you cannot read one of the texts, tell me and stop.
+</pre></details>
+</section>
+<section class="skill" id="question-batch-tracker">
+ <div class="eyebrow">Free skill</div>
+ <h2>question-batch-tracker</h2>
+ <p class="lede">Turn a batch of reviewer questions in the user&#x27;s own document into a tracker that logs each question with its batch, owner, due date and response status. Use when a Party&#x27;s focal point gets another batch of reviewer questions and has to restart coordination with national agencies.</p>
+ <div class="row"><a class="btn primary" href="assets/question-batch-tracker.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: question-batch-tracker
+description: Turn a batch of reviewer questions in the user&#x27;s own document into a tracker that logs each question with its batch, owner, due date and response status. Use when a Party&#x27;s focal point gets another batch of reviewer questions and has to restart coordination with national agencies.
+---
+
+# Question Batch Tracker
+
+One document in, one tracker out. Each question gets a batch, an owner, a due date and a status. Anything the document does not state is marked OPEN.
+
+**Inputs**
+- `document`: required. The user&#x27;s own file with the reviewer questions. It can be pasted text, an export from the question and answer platform, or an earlier version of this tracker.
+- `batch`: optional. The name of the new batch, as the reviewers labelled it.
+- `owners`: optional. The agencies or colleagues who usually answer each topic.
+
+## Why this exists
+
+Reviewers send questions in several batches. Each batch starts the chase across agencies again, and there is little time to consult. The online platform does not help much. A UNFCCC document records both problems as Parties reported them. A plain tracker kept outside the platform shows who owes which answer and by when.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| UNFCCC CMA document (PDF) | A table of challenges Parties reported. It names the batch problem and the platform problem in the two lines quoted below | `https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own document | The questions, any owners, any due dates and any answers already drafted | Supplied by the user |
+
+The two lines to quote:
+- &quot;Multiple batches of questions requiring repeated internal coordination and limited time for inter-agency consultation and preparation of responses&quot;
+- &quot;Technical issues with online question and answer platforms (e.g. character limits and attachment size restrictions, limited functionality for notifications, follow-up exchanges and tracking responses)&quot;
+
+The UN document server sometimes serves a check page instead of the PDF. If the file does not open, say so. Do not fill the quotes from memory or a search summary.
+
+## Steps
+
+- Open the UNFCCC PDF and find the two lines above. If it does not open, write `SOURCE NOT OPENED` in the header and work from the user&#x27;s document only.
+- Read the user&#x27;s document. Copy each question in the reviewers&#x27; own words. Shorten only by cutting.
+- Keep any question ID the reviewers gave. If there is none, use the batch name and a letter.
+- Take the owner from the document or from `owners`. If there is none, write `OPEN: no owner`.
+- Copy a due date only if the document states one. If there is none, write `OPEN: no due date`.
+- Set the status to one of these: Not started, With owner, Draft in, Cleared, Sent. Take it from the document. If the document is unclear, use Not started.
+- If the document holds an earlier tracker, keep the earlier batches and add the new batch below them. Flag any older question that is still not sent.
+- If a draft answer is long or needs an attachment, flag it `CHECK PLATFORM LIMITS`. Use the limits the platform itself shows.
+- End with a chase list. Give one line per owner with the question IDs they still owe.
+
+## Answer layout
+
+```
+&lt;batch&gt; · tracker built &lt;today&#x27;s date&gt; · source: opened or SOURCE NOT OPENED
+Why: &quot;&lt;quoted line on batches&gt;&quot;
+
+| ID | Question (reviewers&#x27; words) | Owner | Due | Status | Flag |
+|---|---|---|---|---|---|
+| &lt;id&gt; | &lt;question&gt; | &lt;owner or OPEN&gt; | &lt;due or OPEN&gt; | &lt;status&gt; | &lt;flag or blank&gt; |
+
+Chase: &lt;owner&gt;: &lt;IDs still owed&gt;
+Open items: &lt;questions with no owner or no due date&gt;
+```
+
+Keep the answer short. Use one row per question.
+
+## Rules
+
+- **An owner or due date the document does not state is `OPEN`. Never fill one from memory or a guess.**
+- Keep the reviewers&#x27; wording for each question. Do not merge questions.
+- Quote the UNFCCC lines word for word, or leave them out.
+- Do not state the platform&#x27;s character or file size limits. The source does not give them.
+- Do not draft the technical answers unless the user asks. This skill tracks them.
+- Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; I am a focal point and I just received another batch of reviewer questions. From the document I paste below, build a tracker table with one row per question. Give the reviewers&#x27; own wording, the owner, the due date, the status (Not started, With owner, Draft in, Cleared or Sent) and a flag. Take owners and due dates only from my document. Where one is missing, write OPEN and do not guess. Keep any earlier batches I include and flag questions that are still not sent. Mark answers that are long or need attachments with CHECK PLATFORM LIMITS. End with a chase list for each owner. If you cite the UNFCCC document at https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf, quote it word for word. If you cannot open it, say so. Do not answer from memory.
+</pre></details>
+</section>
+<section class="skill" id="redd-annex-presubmission-check">
+ <div class="eyebrow">Free skill</div>
+ <h2>redd-annex-presubmission-check</h2>
+ <p class="lede">Check a draft REDD+ technical annex to a Biennial Transparency Report (BTR) before it leaves the ministry. The check finds gaps, open placeholders, broken cross-references and mismatches in the user&#x27;s own document. It also flags timing risk, using the UNFCCC secretariat&#x27;s finding on annexes that arrive late. Use when a national team or a transparency officer asks whether an annex is ready to send.</p>
+ <div class="row"><a class="btn primary" href="assets/redd-annex-presubmission-check.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: redd-annex-presubmission-check
+description: Check a draft REDD+ technical annex to a Biennial Transparency Report (BTR) before it leaves the ministry. The check finds gaps, open placeholders, broken cross-references and mismatches in the user&#x27;s own document. It also flags timing risk, using the UNFCCC secretariat&#x27;s finding on annexes that arrive late. Use when a national team or a transparency officer asks whether an annex is ready to send.
+---
+
+# REDD+ Annex Pre-submission Check
+
+One draft annex goes in and one ready-or-not list comes out. Every flag points to a place in the user&#x27;s document or to a quoted line from the UNFCCC report.
+
+**Inputs**
+- `annex`: required. The user&#x27;s own draft technical annex, pasted or attached.
+- `send_plan`: optional. The user&#x27;s own words on when the team plans to send the annex and when review week falls.
+- `btr_text`: optional. The main BTR text that goes with the annex. The check uses it to confirm that the two agree.
+
+## Why this exists
+
+The secretariat has reported that some annexes arrived just before review week. The LULUCF experts then had little time to prepare. The secretariat also expects more annexes in the second BTR cycle. An annex that is complete and easy to follow when it arrives gives the experts the time they need. A check before the file leaves the ministry catches gaps that would otherwise come up during review.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| UNFCCC secretariat report on the technical analysis | The finding that some annexes came shortly before review week. The expectation of more annexes in the second BTR cycle. | `https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own draft annex | Everything the check says about content, structure and gaps | Supplied by the user |
+| The user&#x27;s BTR text, if given | Values and terms the annex must match | Supplied by the user |
+
+The UN document link sometimes returns an error page or a login page instead of the PDF. If it does not open, say so in the answer. Do not quote it from memory or from a search summary. Run the document checks anyway and mark the timing line `SOURCE NOT OPENED`.
+
+## Steps
+
+- Open the UN document. Find this line and copy it exactly with its page: &quot;In some cases, technical annexes were submitted shortly before the corresponding review weeks, leaving limited time for the secretariat and LULUCF experts to prepare for the technical analysis.&quot;
+- Find this line too and copy it with its page: &quot;The number of technical annexes submitted is likely to increase in the second cycle of BTRs as developing country Parties seek to demonstrate their REDD+ results&quot;
+- Read the whole annex before writing anything.
+- List every section heading in the annex. If it has a table of contents, check that each listed section is there.
+- Find every placeholder. Look for TBD, to be added, XX, empty tables, highlighted notes and comments left in the text.
+- Find every cross-reference. Check that each table, figure, annex or section it points to exists in the document.
+- Flag any passage that sends the reader to another document without naming that document.
+- If `btr_text` is given, compare each value and term the annex shares with it. List each mismatch with both locations.
+- If `send_plan` is given, compare it with the quoted finding. If the plan puts the annex close to review week, flag the timing risk and quote the line. Do not state a deadline. The opened sources do not set one.
+- Sort the flags. Blockers come first, then fixes, then notes.
+
+## Answer layout
+
+```
+Annex check · &lt;annex title as written in the document&gt;
+Source opened: yes, or SOURCE NOT OPENED and why
+Timing: &lt;flag, or no plan given&gt;   &quot;&lt;quoted line&gt;&quot;   UN document, page &lt;n&gt;
+
+| Flag | Where in the annex | What is wrong | Fix |
+|---|---|---|---|
+| Blocker | &lt;section or table&gt; | &lt;placeholder, broken reference or mismatch, quoted&gt; | &lt;one short action&gt; |
+| Fix | ... | ... | ... |
+| Note | ... | ... | ... |
+
+Ready to send: yes, or no with the count of blockers
+Not checked: &lt;anything asked that the opened sources do not cover&gt;
+```
+
+## Rules
+
+- **If the UN document does not open, say so. Never fill the quote or the page from memory.**
+- Judge the annex only against itself, the BTR text the user gives and the quoted finding.
+- The opened sources do not list what a REDD+ annex must contain. If the user asks about required content, write `NOT IN SOURCE`.
+- Never invent a deadline, a review week date, a required section or a number of tables.
+- Quote the user&#x27;s document exactly when you cite a problem.
+- Do not change technical values in the annex. Point to them and say what does not match.
+- Keep the user&#x27;s document inside this conversation. Do not send it to any other service or tool.
+- Write in plain English with short sentences.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Check my draft REDD+ technical annex before we send it with our Biennial Transparency Report. Use only my annex, the BTR text I give you and the UNFCCC document at https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf. List every placeholder, every cross-reference that points to something missing, every passage that sends the reader to an unnamed document and every value that differs from my BTR text. Quote my text for each problem and say where it is. Sort the list into blockers, fixes and notes. If my send plan puts the annex close to review week, quote the UN document&#x27;s line about annexes that arrived shortly before review weeks, with its page. If you cannot open the UN document, say so and do not quote it from memory. Do not invent deadlines or required sections.
+</pre></details>
+</section>
 <section class="skill" id="ref-year-check">
  <div class="eyebrow">Free skill</div>
  <h2>ref-year-check</h2>
@@ -467,6 +1189,154 @@ Reference year: &lt;year&gt; (&lt;n&gt; of &lt;total&gt; rows)
 `demo/water_6.1.1.csv` is an eight-country 6.1.1 table where every row claims 2024. `demo/answer_key.md` lists what is planted in it and what comes from the database itself. Copies of the API responses with their SHA-256 are in `data/anchors/skills/ref-year-check/` in the claude-for-sdg repository.
 </pre></details>
 </section>
+<section class="skill" id="review-finding-drafter">
+ <div class="eyebrow">Free skill</div>
+ <h2>review-finding-drafter</h2>
+ <p class="lede">Turn a technical expert reviewer&#x27;s own working notes on an issue into a side-by-side card that shows the same issue drafted as a question, as a recommendation and as an encouragement. Use when a first-time reviewer under the Enhanced Transparency Framework has a blank page and needs a worked example built from their own document.</p>
+ <div class="row"><a class="btn primary" href="assets/review-finding-drafter.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: review-finding-drafter
+description: Turn a technical expert reviewer&#x27;s own working notes on an issue into a side-by-side card that shows the same issue drafted as a question, as a recommendation and as an encouragement. Use when a first-time reviewer under the Enhanced Transparency Framework has a blank page and needs a worked example built from their own document.
+---
+
+# Review Finding Drafter
+
+You give it your notes and get back a card. The card drafts the same issue as a question, a recommendation and an encouragement, side by side. Every fact in a draft comes from your own document.
+
+**Inputs**
+- `document`: required. Your own working notes or draft review text. Paste it or attach it.
+- `issue`: optional. The point in the document you want drafted. If it is missing, take the first issue the notes raise and say which one you took.
+
+## Why this exists
+
+First review. Blank page. A UNFCCC report on the technical expert review process names this gap. It lists &quot;Limited practical examples and guidance for drafting questions, areas of improvement, recommendations, encouragements and capacity-building needs, particularly for first-time technical expert reviewers&quot;. The same report gives lead reviewers the job of keeping each review consistent. A draft card gives the new reviewer a worked example from their own case to take to the lead reviewer.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| UNFCCC report on the technical expert review process, the table of challenges | The line on limited examples and guidance for first-time technical expert reviewers | `https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf` |
+| Same report, the passage on lead reviewers | &quot;The LRs ensure consistency and quality in the TER process, facilitate communication between the Parties and the TERT, and provide guidance to the secretariat in compiling and editing the final TERRs.&quot; | Same file |
+| The user&#x27;s own document | The facts of the issue. This is the only source for the content of the drafts | Supplied by the user |
+
+If the UNFCCC file does not open, say so at the top of the answer. Do not restate its content from memory or from a search summary. The card can still be drafted from the user&#x27;s document.
+
+## Steps
+
+- Open the UNFCCC file. Find the two passages above and copy them word for word. If a passage is not in the opened file, write `NOT FOUND` next to it.
+- Read the user&#x27;s document. Pick the issue. List only the facts the document states about it. Write any missing fact as a gap.
+- Draft the question. It asks the Party for the missing information. Keep it short and specific. Name the gap in the document&#x27;s own words.
+- Draft the recommendation. It states what the Party should do to fix the gap in its next report. Use only facts from the document.
+- Draft the encouragement. It invites the Party to make an improvement it may choose to make. Keep it softer than the recommendation.
+- Under each draft, write a short line on why that label fits. Mark these lines as drafting guidance, since the quoted passages do not define the labels.
+- End with a line telling the reviewer to check the wording with the lead reviewer, and quote the lead reviewer passage.
+
+## Answer layout
+
+```
+Issue: &lt;the issue in the document&#x27;s words&gt;
+Source: opened / UNFCCC source not opened
+
+| Question | Recommendation | Encouragement |
+|---|---|---|
+| &lt;draft&gt; | &lt;draft&gt; | &lt;draft&gt; |
+| Why: asks for missing information | Why: names a fix the Party should make | Why: invites an optional improvement |
+
+Gaps in your notes: &lt;facts the drafts need that the document does not state&gt;
+Check with your lead reviewer: &quot;&lt;quoted lead reviewer passage&gt;&quot;
+Label guidance is drafting help. It is not a UNFCCC definition.
+```
+
+## Rules
+
+- **Use only facts in the user&#x27;s document. Never add a method, gas, sector, figure or name the document does not state.**
+- Quote the UNFCCC passages word for word. Never present a paraphrase as a quote.
+- The quoted passages list the drafting types without defining them. Say so on the card. Do not claim an official definition from memory.
+- If the UNFCCC file cannot be opened, write `UNFCCC source not opened` and do not fill its content from memory or a search summary.
+- Keep every draft neutral and polite. Address the report and the information. Do not blame the Party.
+- Use plain English and short sentences.
+- Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; I am a first-time technical expert reviewer. Using only my notes below, draft the same issue three ways, side by side: as a question to the Party, as a recommendation and as an encouragement. Under each draft, add a short line on why that label fits, and say that this is drafting help and not an official definition. Do not add any fact my notes do not state. List any gaps in my notes. If you can open the UNFCCC report at https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf, quote its passage on lead reviewers word for word and remind me to check my wording with my lead reviewer. If you cannot open it, say so and do not fill it from memory. My notes: &lt;paste your notes&gt;
+</pre></details>
+</section>
+<section class="skill" id="roster-availability-tracker">
+ <div class="eyebrow">Free skill</div>
+ <h2>roster-availability-tracker</h2>
+ <p class="lede">Turn the user&#x27;s own expert roster into a sheet that flags when each expert last confirmed availability, who still needs a fresh check, and who the backups are. Every rule about timing is traced to a quoted line in the secretariat report on technical expert reviews. Use when a secretariat officer is building a technical expert review team and experts are declining because their work changed after the availability survey.</p>
+ <div class="row"><a class="btn primary" href="assets/roster-availability-tracker.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: roster-availability-tracker
+description: Turn the user&#x27;s own expert roster into a sheet that flags when each expert last confirmed availability, who still needs a fresh check, and who the backups are. Every rule about timing is traced to a quoted line in the secretariat report on technical expert reviews. Use when a secretariat officer is building a technical expert review team and experts are declining because their work changed after the availability survey.
+---
+
+# Roster Availability Tracker
+
+Your roster in, one checked sheet out. Each expert gets a status, a backup and a next action, and every timing rule is backed by a quote.
+
+**Inputs**
+- `roster`: required. The user&#x27;s own document. A sheet or table with each expert, their area, when they last confirmed availability, and any named backup.
+- `review`: optional. Which review the team is for and its review week, if the user knows it.
+
+## Why this exists
+
+An expert who said yes in the availability survey may not be free when the invitation arrives. The secretariat report says the most common reason for declining was &quot;changes in work commitments since responding to the availability survey (50.6 per cent)&quot;. The team also has a fixed lead time. A roster that only shows survey answers hides who needs a fresh check and who has no backup.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Secretariat report on technical expert reviews | Section C on team composition: when the team must be formed. The reasons experts gave for declining. The section on challenges: limited availability and high rejection rates | `https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own roster document | Experts, areas, last confirmation, backups | Supplied by the user |
+
+If the report does not open, say so in the first line of the answer. Do not fill the timing rule or the decline reasons from memory or a search summary. Still build the sheet from the roster and mark each timing line `SOURCE NOT OPENED`.
+
+## Steps
+
+- Open the report. Find and copy these lines word for word: &quot;The secretariat forms the TERT for each TER at least 10 weeks prior to the review&quot; and the line on &quot;changes in work commitments since responding to the availability survey&quot;.
+- Read the user&#x27;s roster. Keep each expert&#x27;s label exactly as the user wrote it.
+- Give each expert one status. `Reconfirmed` if they confirmed after the survey. `Survey only` if their last confirmation was the survey. `No record` if the roster does not say.
+- Mark every `Survey only` and `No record` expert as needing a fresh check before the team is formed.
+- For each expert, name the backup from the roster. If there is none, write `NO BACKUP`.
+- If the user gave a review week, state the latest day to form the team using the quoted lead time. If not, give the rule as quoted and ask for the review week.
+- List any expert who appears as a backup for more than one person. One person cannot cover two gaps at once.
+
+## Answer layout
+
+```
+Roster check · report opened: yes or SOURCE NOT OPENED
+Team deadline: &quot;&lt;quoted line&gt;&quot;   &lt;latest day, or ask for review week&gt;
+
+| Expert | Area | Last confirmed | Status | Backup | Next action |
+|---|---|---|---|---|---|
+| &lt;label&gt; | &lt;area&gt; | &lt;as in roster&gt; | Survey only | &lt;name or NO BACKUP&gt; | Reconfirm now |
+
+Check first: &lt;experts marked Survey only or No record&gt;
+Gaps: &lt;experts with NO BACKUP, and backups used twice&gt;
+Why reconfirm: &quot;&lt;quoted decline reason&gt;&quot;
+```
+
+## Rules
+
+- **Remove names and personal details first. Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.**
+- Use only the report and the user&#x27;s roster. Do not add experts, backups or confirmations the roster does not state.
+- Quote the report for every timing rule. If the report did not open, write `SOURCE NOT OPENED` and do not supply the rule from memory.
+- Treat a survey answer as a starting point. An expert is `Reconfirmed` only when the roster shows a check after the survey.
+- Keep the user&#x27;s own labels and wording for each expert and area.
+- If the user asks about funding, eligibility or invitation rules the report does not state, write `NOT IN SOURCE`.
+- Keep sentences short. Put the next action for each expert in plain words.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Here is my expert roster for a technical expert review team. Remove any names and personal details before you read it. For each expert, tell me when they last confirmed availability, whether that was only the availability survey, who their backup is, and what I should do next. Flag anyone with no backup and any backup listed for more than one person. Use only my roster and the secretariat report at https://documents.un.org/api/symbol/access?s=FCCC/PA/CMA/2026/10&amp;l=en&amp;t=pdf. Quote the report&#x27;s line on when the team must be formed and its line on why experts decline. If you cannot open the report, say so and do not answer those points from memory.
+</pre></details>
+</section>
 <section class="skill" id="indicator-card">
  <div class="eyebrow">Free skill</div>
  <h2>indicator-card</h2>
@@ -537,12 +1407,89 @@ Source       &lt;source field of the data row&gt;
 `engines/ai/indicator_card.py &lt;code&gt; &lt;country&gt;` in the claude-for-sdg repository does steps 1 to 5 and keeps a copy of every source it read, with its SHA-256.
 </pre></details>
 </section>
+<section class="skill" id="sensitivity-precheck">
+ <div class="eyebrow">Free skill</div>
+ <h2>sensitivity-precheck</h2>
+ <p class="lede">Check a UN staff member&#x27;s own draft before it goes into an AI tool. Help them decide whether it is sensitive, mark it, and keep classified material on protected channels, with every rule quoted from the Secretary-General&#x27;s bulletin on information sensitivity. Use when someone is about to paste a note, email or draft into an AI tool and has not yet decided how it is classified.</p>
+ <div class="row"><a class="btn primary" href="assets/sensitivity-precheck.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: sensitivity-precheck
+description: Check a UN staff member&#x27;s own draft before it goes into an AI tool. Help them decide whether it is sensitive, mark it, and keep classified material on protected channels, with every rule quoted from the Secretary-General&#x27;s bulletin on information sensitivity. Use when someone is about to paste a note, email or draft into an AI tool and has not yet decided how it is classified.
+---
+
+# Sensitivity Precheck
+
+One draft in, one pre-paste check out. Every rule is quoted from the bulletin. The person who wrote or received the document makes the classification call.
+
+**Inputs**
+- `document`: the user&#x27;s own draft, note or email, with names and personal details already removed.
+- `marking`: optional. Any classification the document already carries.
+- `origin`: optional. Whether the user wrote it or received it from an outside source.
+
+## Why this exists
+
+New staff often paste a draft into an AI tool to fix the wording before anyone has asked whether it is sensitive. The bulletin gives that decision to the person who created or received the information. It also limits how classified material may travel electronically. An AI tool cannot make this decision for the user. The user decides and marks first, and only then picks a channel.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Secretary-General&#x27;s bulletin on information sensitivity | The section on identification and markings (who decides and marks). The handling section and its line on electronic transmission. The section that lists the classification levels | `https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own document | The text to check | Supplied by the user |
+
+The PDF usually opens with a plain download. If it does not open, say so in the first line of the answer. Then use only the two quotes in the Steps below and write `NOT OPENED` for everything else, including the list of levels. Do not fill the gaps from memory or a search summary.
+
+## Steps
+
+- Open the bulletin. Copy its symbol and date from the first page.
+- Find the passage on identification and markings. Check that it reads: &quot;Section 3 Identification and markings 3.1 The originator of the information concer ned, or its recipient if the information is received from an outside source, under the overall supervision and guidance of the head of department or office, shall decide whether the information is sensitive and mark it with the appropriate classifi cation as detailed in section 4 below.&quot;
+- Find the line on electronic transmission. Check that it reads: &quot;(f) Electronic transmission of classifi ed information shall be performed only through the use of protected means of communication, in accordance with section 5.4 below.&quot;
+- Open the section the first quote points to (&quot;as detailed in section 4 below&quot;). List each classification level in the bulletin&#x27;s own words, with its own definition. If that section does not open, write `NOT OPENED`.
+- Read the user&#x27;s document. If it already carries a classification marking, or the user says it is classified, stop. Quote the transmission line and do not work on the text.
+- Otherwise, go through the draft and find each passage that may make it sensitive under the definitions you opened. Quote the passage. Give the reason in a few words, tied to the bulletin&#x27;s wording. Mark each one `YOUR CALL`.
+- Close with the marking step. The user decides the level and marks the draft before sharing it. Point them to their head of department or office for guidance, since the bulletin places the decision under that supervision.
+
+## Answer layout
+
+```
+Sensitivity precheck · bulletin &lt;symbol&gt;, &lt;date&gt; · read &lt;today&#x27;s date&gt;
+Who decides: &quot;&lt;quoted line&gt;&quot;   &lt;section and paragraph&gt;
+How it may travel: &quot;&lt;quoted line&gt;&quot;   &lt;section and paragraph&gt;
+Levels: &lt;each level in the bulletin&#x27;s words&gt;   (or NOT OPENED)
+
+| Passage in your draft | Why it may be sensitive | Bulletin wording | Status |
+|---|---|---|---|
+| &quot;&lt;quoted text&gt;&quot; | &lt;a few words&gt; | &quot;&lt;short quote&gt;&quot; | YOUR CALL |
+
+Your next step: decide the level, mark the draft, then choose the channel.
+Not covered: &lt;anything asked that the opened bulletin does not state&gt;
+```
+
+## Rules
+
+- **Remove names and personal details first. Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.**
+- **Never decide the classification for the user. Flag and quote. The originator or recipient makes the call.**
+- Never tell the user a draft is safe to paste. Say what the bulletin requires and leave the decision with them.
+- If the document is marked or described as classified, stop and quote the transmission line.
+- Quote the bulletin for every rule. Keep its &quot;shall&quot; as &quot;shall&quot;.
+- Use the bulletin&#x27;s names for the levels. Never invent a level or a definition.
+- If the user asks which AI tools count as protected means of communication, or which tool their organization allows, write `NOT IN SOURCE`. Treat no tool as protected unless an opened document says so.
+- If the bulletin does not open, say so first. Never fill a section from memory.
+- Write in plain English with short sentences.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Before I share my draft anywhere, help me check it for sensitivity. I have removed names and personal details. Use only the Secretary-General&#x27;s bulletin at https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf and my draft below. Quote the bulletin&#x27;s lines on who decides and marks sensitivity, on electronic transmission of classified information, and its list of classification levels. Then quote each passage in my draft that may be sensitive, say why in a few words, and mark it as my call. Do not decide the level for me and do not tell me the draft is safe to paste. If you cannot open the bulletin, say so and do not answer from memory. My draft: &lt;paste here&gt;
+</pre></details>
+</section>
 <section class="skill" id="latest-edition">
  <div class="eyebrow">Free skill</div>
  <h2>latest-edition</h2>
  <p class="lede">Answer any request for a figure from a UN flagship report (HDI, SDG Report, World Population Prospects, SOFI, World Health Statistics and the like) from the latest edition only. Use when someone asks for a number &quot;from the latest report&quot;, or names a report without an edition. Names the edition and its publication date, reads the publisher&#x27;s current file, and refuses to give a number from memory.</p>
  <div class="row"><a class="btn primary" href="assets/latest-edition.SKILL.md" download>Download SKILL.md</a></div>
- <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Type <code>/latest-edition Human Development Report, HDI for Ghana</code>, or any code and country.</li><li>Check the source line under each value before you quote it.</li></ol>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
  <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
  <details><summary>Read the file</summary><pre>---
 name: latest-edition
@@ -578,8 +1525,10 @@ The publisher&#x27;s own page for the report, then the data file linked from tha
 | World Investment Report | UNCTAD | `https://unctad.org/topic/investment/world-investment-report` |
 | State of the Global Climate | WMO | `https://wmo.int/publication-series/state-of-global-climate` |
 
-For the HDI the data file is the composite indices time series CSV linked from the downloads page
-(`HDR25_Composite_indices_complete_time_series.csv` for the 2025 edition). The value is in column `hdi_&lt;year&gt;`, the rank in `hdi_rank_&lt;year&gt;`.
+For the HDI the data file is the composite indices time series CSV linked from the downloads page.
+Do not hard-code the file name. It carries the edition in its prefix, so read it off the page you just
+opened (checked on 2026-10-25: the file was named `HDR&lt;YY&gt;_Composite_indices_complete_time_series.csv`).
+The value is in column `hdi_&lt;year&gt;`, the rank in `hdi_rank_&lt;year&gt;`.
 
 ## Steps
 
@@ -610,12 +1559,11 @@ Source: &lt;URL&gt; · read &lt;today&#x27;s date&gt;
 
 ## Running it as code
 
-`engines/ai/reports_table.py` in the claude-for-sdg repository opens each publisher page above, keeps a copy with its SHA-256 and keeps a row only when the edition and date are written on the page.
-`engines/ai/hdi_card.py` reads the current and the previous HDR CSV side by side.
+`engines/material/` in the claude-for-sdg repository keeps a copy of each publisher page with its SHA-256 and accepts an edition or a date only when it is written in the quoted sentence of that stored page.
 </pre></details>
 </section>
 <section>
  <div class="eyebrow">Next week</div>
  <h2>Get the next skill when it is out</h2>
  <div class="row"><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a><a class="btn" href="join.html">What you get</a></div>
-</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div></body></html>

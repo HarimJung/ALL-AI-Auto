@@ -1,0 +1,314 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>An SDG one-pager for your director | Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="I tested one prompt with one skill on Progress towards the Sustainable Development Goals. The answer quoted 5 lines word for word, each with its page marker.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/sdg-director-brief.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="An SDG one-pager for your director | Claude for SDG">
+<meta property="og:description" content="I tested one prompt with one skill on Progress towards the Sustainable Development Goals. The answer quoted 5 lines word for word, each with its page marker.">
+<meta property="og:url" content="https://sdgai.org/sdg-director-brief.html">
+<meta property="og:image" content="">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style><style>
+.ghead{padding-block:48px 10px;display:flex;flex-direction:column;gap:16px;border-bottom:0}
+.ghead h1{font-size:clamp(36px,6vw,64px);font-weight:900;letter-spacing:-.035em;line-height:1.02;max-width:18ch}
+.ghead .lede{font-size:19px;max-width:60ch;margin:0}
+.stamp{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 13px/1.5 var(--mono);color:var(--mut)}
+.stamp b{color:var(--un-ink);font-weight:600}
+.savebar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--un-tint);border-radius:14px;padding:12px 16px;font-weight:700;max-width:720px}
+.savebar span{font:500 14px var(--body);color:var(--ink)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.toc a{display:inline-flex;gap:8px;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--ink)}
+.toc b{font-family:var(--mono);font-weight:600;color:var(--un-ink)}
+.gbody{display:flex;flex-direction:column;gap:18px;padding-block:8px 40px;max-width:860px}
+.gbody h2{font-size:clamp(26px,3.6vw,36px);font-weight:900;letter-spacing:-.025em;line-height:1.1;margin:34px 0 0;padding-top:26px;border-top:2px solid var(--ink);scroll-margin-top:16px}
+.gbody h3{font-size:20px;font-weight:800;margin:14px 0 0}
+.gbody p,.gbody li{font-size:17px;line-height:1.6;max-width:68ch;margin:0}
+.gbody ul,.gbody ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.gbody hr{display:none}
+.gbody>*{min-width:0;max-width:100%}
+.gbody table{table-layout:auto}
+.gbody td:first-child,.gbody th:first-child{width:1%}
+.gbody td{vertical-align:top;line-height:1.5}
+.gbody td:first-child{font-weight:700;white-space:nowrap}
+.pbox{position:relative;display:flex;flex-direction:column;gap:0}
+.pbox .ph{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);border-radius:14px 14px 0 0;padding:9px 14px;font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.pbox pre{border-radius:0 0 14px 14px;border-top:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.pbox button{font:600 12.5px var(--mono);background:var(--paper);color:var(--ink);border:0;border-radius:8px;padding:5px 11px;cursor:pointer}
+.pbox button.done{background:var(--un);color:#fff}
+.ba2{max-width:860px;display:flex;flex-direction:column;gap:14px}
+.win2{border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--card);
+  box-shadow:0 18px 0 -6px rgba(20,26,33,.05),0 30px 60px -28px rgba(20,26,33,.35)}
+.w2bar{display:flex;align-items:center;gap:8px;height:46px;padding:0 16px;background:var(--paper);border-bottom:1.5px solid var(--hair)}
+.w2bar i{width:10px;height:10px;border-radius:50%;background:var(--hair)}
+.w2bar span{margin-left:10px;font-weight:800;font-size:15px}
+.w2bar em{margin-left:auto;font:600 12.5px var(--mono);font-style:normal;color:var(--mut);
+  background:var(--hair);border-radius:999px;padding:4px 11px}
+.ba2.on .w2bar em{color:#fff;background:#3F7E44}
+.w2q{margin:0;padding:16px 20px 12px;font:600 15px var(--mono);color:var(--mut);line-height:1.5;border-bottom:1.5px dashed var(--hair)}
+.w2rows{padding:8px 20px 18px;display:flex;flex-direction:column}
+.w2row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair)}
+.w2row:last-child{border-bottom:0}
+.w2k{flex:1;font-size:17px;font-weight:700}
+.w2v{font-size:26px;font-weight:900;letter-spacing:-.02em;border:0;background:none;padding:0;border-radius:0}
+.w2v.pre{color:var(--mut)}
+.w2v.pre.wrong{color:#B23B2E;text-decoration:line-through;text-decoration-thickness:2px}
+.w2v.post{display:none;color:#2d7a3f}
+.ba2.on .w2v.pre{display:none}
+.ba2.on .w2v.post{display:inline}
+.w2chip{display:none;font:600 12.5px var(--mono);color:#fff;background:var(--un);border-radius:999px;padding:4px 10px}
+.ba2.on .w2chip{display:inline-block}
+.ba2btn{align-self:flex-start;border:0;border-radius:999px;background:var(--un);color:#fff;
+  font:800 16px var(--body);padding:13px 24px;cursor:pointer;box-shadow:0 4px 0 var(--un-sm)}
+.ba2.on .ba2btn{background:var(--ink);box-shadow:0 4px 0 #000}
+.ba2cap{margin:0;font-size:16.5px;font-weight:700;line-height:1.5}
+.ba2 .src{font:500 13px var(--mono);color:var(--mut)}
+.gsrc{font-size:15px}
+.gsrc a,.gbody li{overflow-wrap:anywhere;min-width:0}
+@media (max-width:620px){.gbody td:first-child{white-space:normal}}
+.savebar a{margin-left:auto;font:700 14px var(--body);color:var(--un-ink)}
+.gwrap{display:grid;grid-template-columns:1fr;gap:40px}
+.gmain{min-width:0}
+.gside{display:none}
+@media (min-width:1080px){
+ .gwrap{grid-template-columns:230px minmax(0,1fr)}
+ .gside{display:block;position:sticky;top:20px;align-self:start;padding-top:56px;max-height:calc(100vh - 40px);overflow:auto}
+ .gside>b{font-size:14px;font-weight:800}
+ .gside ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+ .gside a{display:grid;grid-template-columns:22px 1fr;gap:6px;padding:8px 0;font-size:14px;line-height:1.35;color:var(--mut);text-decoration:none;border-bottom:1px solid var(--hair)}
+ .gside a:hover{color:var(--ink)}
+ .gside a b{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+ .ghead .toc{display:none}
+}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "An SDG one-pager for your director", "description": "**I tested one prompt with one skill on Progress towards the Sustainable Development Goals. The answer quoted 5 lines word for word, each with its page marker.**", "author": {"@type": "Person", "name": "Harim Jung"}, "url": "https://sdgai.org/sdg-director-brief.html", "isAccessibleForFree": true}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html" class="on">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<div class="gwrap">
+<aside class="gside"><b>In this guide</b><ol><li><a href="#the-work-moment"><b>·</b><span>The work moment</span></a></li><li><a href="#the-five-quoted-lines"><b>·</b><span>The five quoted lines</span></a></li><li><a href="#what-the-test-showed"><b>·</b><span>What the test showed</span></a></li><li><a href="#the-steps-of-the-skill"><b>·</b><span>The steps of the skill</span></a></li><li><a href="#copy-paste-prompt"><b>·</b><span>Copy-paste prompt</span></a></li><li><a href="#sources"><b>·</b><span>Sources</span></a></li></ol></aside>
+<div class="gmain">
+<section class="ghead">
+ <div class="eyebrow">Claude Cheat Keys for UN Reporting &amp; Briefing</div>
+ <h1>An SDG one-pager for your director</h1>
+ <p class="lede">I tested one prompt with one skill on Progress towards the Sustainable Development Goals. The answer quoted 5 lines word for word, each with its page marker.</p>
+ <div class="stamp"><span><b>3 min</b> read</span><span><b>5</b> sections</span><span>Sources opened <b>2026-10-21</b>.</span></div>
+ <div class="savebar">Save this page.<span>Every prompt below copies in one click. Dates are the editions quoted.</span><a href="#first-prompt">Jump to the first prompt</a></div>
+ <ul class="toc"><li><a href="#the-work-moment">The work moment</a></li><li><a href="#the-five-quoted-lines">The five quoted lines</a></li><li><a href="#what-the-test-showed">What the test showed</a></li><li><a href="#the-steps-of-the-skill">The steps of the skill</a></li><li><a href="#copy-paste-prompt">Copy-paste prompt</a></li><li><a href="#sources">Sources</a></li></ul>
+</section>
+<article class="gbody"><h2 id="the-work-moment">The work moment</h2>
+<p>I needed a one-pager for my director on SDG progress. The source was Progress towards the Sustainable Development Goals. I asked for a claim, the evidence and a clear ask, on a single page. Every figure needed its source and year. Every quote needed its page marker.</p>
+<p>The brief had to rest on lines like these:</p>
+<blockquote>
+<p>"Of the 139 targets of the Goals with available trend data, 36% are on track or making moderate progress. Nearly half (49%) are making only marginal progress, while 15% have regressed below the 2015 baseline." [p 2]</p>
+</blockquote>
+<blockquote>
+<p>"down 6.1% in 2024 and a further 23.1% in 2025, the largest annual contraction on record" [p 3]</p>
+</blockquote>
+<h2 id="the-five-quoted-lines">The five quoted lines</h2>
+<p>These are the parts of the report the answer quoted, each with its page marker.</p>
+<ol type="1">
+<li>"Of the 139 targets of the Goals with available trend data, 36% are on track or making moderate progress. Nearly half (49%) are making only marginal progress, while 15% have regressed below the 2015 baseline." [p 2]</li>
+<li>"progress is not only possible, but also already happening." [p 2]</li>
+<li>"down 6.1% in 2024 and a further 23.1% in 2025, the largest annual contraction on record" [p 3]</li>
+<li>"Closing the annual $4 trillion Goal financing gap in developing countries requires a bold global investment push, fundamental reform of the international financial architecture, a tripling of multilateral development bank lending capacity" [p 3]</li>
+<li>"must move from aspiration to accountability" [p 4]</li>
+</ol>
+<h2 id="what-the-test-showed">What the test showed</h2>
+<p>Claude ran with the skill. Tools allowed: WebFetch, Bash(curl:*). Asked 2026-10-30 22:07 UTC.</p>
+<p>The claim opened like this:</p>
+<blockquote>
+<p>Real gains are happening, but most SDG targets will be missed by 2030.</p>
+</blockquote>
+<p>The answer ended with a list of things to check. Three of them, word for word:</p>
+<blockquote>
+<p><strong>The report's own numbers don't fully match.</strong> Page 2 calls the full 49% "marginal progress." Page 4 splits it into 32% marginal progress and 17% stagnation (no progress).</p>
+</blockquote>
+<blockquote>
+<p>I picked quotes that avoid those spots, so every quote matches the document exactly. That's why the $4 trillion quote stops at "lending capacity."</p>
+</blockquote>
+<blockquote>
+<p>The $4 trillion gap is described as "annual," with no data year given, so I cited it by page only.</p>
+</blockquote>
+<p>The ask was left open:</p>
+<blockquote>
+<p><strong>The ask is a placeholder.</strong> You didn't say what decision you need, so I wrote three neutral options with bracketed gaps.</p>
+</blockquote>
+<h2 id="the-steps-of-the-skill">The steps of the skill</h2>
+<p>In the test, the answer was laid out in these parts.</p>
+<ol type="1">
+<li><strong>Claim.</strong> A few lines, backed by a quote with its page marker.</li>
+<li><strong>Evidence.</strong> Each figure carries the report and its page. A year is given where the report gives one.</li>
+<li><strong>Ask.</strong> Options for the director, with blanks to fill when the decision is not stated.</li>
+<li><strong>Checks.</strong> A list of things to check before you send it.</li>
+</ol>
+<h2 id="copy-paste-prompt">Copy-paste prompt</h2>
+<div class="pbox" id="first-prompt"><div class="ph"><span>Paste into Claude</span><button type="button">Copy</button></div><pre>Please write an internal one-pager for my director on the current status of SDG progress, using the Secretary-General&#39;s 2026 SDG progress report attached below. Structure it as a claim, the evidence, and a clear ask, and keep it to a single page. Every figure must carry its source and year, and for every quote you use, quote the document word for word with its page marker.</pre></div>
+<h2 id="sources">Sources</h2>
+<ul class="gsrc">
+<li><a href="https://unstats.un.org/sdgs/files/report/2026/secretary-general-sdg-report-2026--EN.pdf">Progress towards the Sustainable Development Goals</a></li>
+<li><a href="https://github.com/ur-grue/autopunk-media-skills/tree/main/skills/writing/institutional/management-briefing-writer">management-briefing-writer skill by ur-grue/autopunk-media-skills on GitHub</a></li>
+</ul>
+</article>
+</div></div></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div><script>
+document.querySelectorAll('[data-ba2]').forEach(ba=>{
+ const b=ba.querySelector('.ba2btn'),cap=ba.querySelector('.ba2cap');
+ const t1=b.dataset.on,t0=b.textContent,c1=cap.dataset.on,c0=cap.textContent;
+ const em=ba.querySelector('.w2bar em'),e1=em.dataset.on,e0=em.textContent;
+ b.addEventListener('click',()=>{const on=ba.classList.toggle('on');
+  b.textContent=on?t1:t0;cap.textContent=on?c1:c0;em.textContent=on?e1:e0;});
+});
+document.querySelectorAll('.pbox button').forEach(b=>b.addEventListener('click',async()=>{
+ const t=b.closest('.pbox').querySelector('pre').innerText;
+ try{await navigator.clipboard.writeText(t);b.textContent='Copied';b.classList.add('done');
+  setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1600)}catch(e){b.textContent='Select and copy'}
+}));
+</script></body></html>

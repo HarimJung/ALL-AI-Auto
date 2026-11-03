@@ -8,7 +8,7 @@
 <meta property="og:title" content="Claude for SDG: AI that quotes the UN source">
 <meta property="og:description" content="Weekly, tested ways to make AI quote the official UN source, with free skills and indicator cards checked against the SDG Global Database.">
 <meta property="og:url" content="https://sdgai.org/">
-<meta property="og:image" content="https://sdgai.org/assets/w02/slide_01.jpg">
+<meta property="og:image" content="">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -109,6 +109,23 @@ ul.note{margin:0;padding-left:20px}
 .wk:hover{border-color:var(--ink)}
 .wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
 .wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
 .chips a:hover{border-color:var(--ink)}
@@ -139,39 +156,23 @@ pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:7
 footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap}
 footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
-@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Claude for SDG", "url": "https://sdgai.org/", "description": "Weekly, tested ways to make AI quote the official UN source.", "inLanguage": "en", "author": {"@type": "Person", "name": "Harim Jung"}, "potentialAction": {"@type": "SearchAction", "target": "https://sdgai.org/indicators.html?q={search_term_string}", "query-input": "required name=search_term_string"}}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="w02.html">This week</a><a href="weeks.html">Weeks</a><a href="guides.html">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Claude for SDG", "url": "https://sdgai.org/", "description": "Weekly, tested ways to make AI quote the official UN source.", "inLanguage": "en", "author": {"@type": "Person", "name": "Harim Jung"}, "potentialAction": {"@type": "SearchAction", "target": "https://sdgai.org/indicators.html?q={search_term_string}", "query-input": "required name=search_term_string"}}</script></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
 <header class="hero">
  <div>
   <div class="eyebrow">A community for people who report on the SDGs</div>
   <h1>Make AI <span>read the UN source</span> before it answers.</h1>
   <p class="lede">Every week: one method that makes Claude read the official UN source before it answers, tested in public, with a free skill you can use the same day.</p>
-  <div class="row"><a class="btn primary" href="w02.html">See this week's test</a><a class="btn" href="skills.html">Get the free skill</a></div>
- </div>
- <div class="duo" aria-label="What Claude said without the skill, next to the official value">
-  <div class="said"><span class="small">Claude, no skill, no tools</span><div class="big dim">0.602</div><q>the latest report I&#x27;m confident about is the 2025 Human Development Report (released May 2025)…</q></div>
-  <div class="truth"><span class="small">UNDP HDR 2025 CSV</span><div class="big">0.628</div><span class="small" style="text-transform:none">Ghana · rank 143 · data year 2023</span></div>
+  <div class="row"><a class="btn primary" href="guides.html">Read the guides</a><a class="btn" href="skills.html">Get the free skill</a></div>
  </div>
 </header>
 <section>
- <div class="eyebrow">This week · W02</div>
- <div class="drop">
-  <img src="assets/w02/slide_01.jpg" alt="W02 slide 1: I asked Claude for Ghana&#x27;s HDI. Memory 0.602. Report 0.628.">
-  <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
-   <h2>Ask for a UN report figure, get the edition it came from</h2>
-   <p class="lede">Ghana and Kenya, Human Development Index. What Claude said from memory, what the HDR 2025 file says, and the latest edition of ten UN flagship reports, each checked on the publisher&#x27;s own page.</p>
-   <div class="row"><a class="btn" href="w02.html">Open W02</a><a class="btn" href="weeks.html">All weeks</a></div>
-  </div>
- </div>
-</section>
-<section>
- <div class="eyebrow">AI vs source</div>
- <h2>What it said, next to what the source says</h2>
- <div class="vs"><a class="vsc" href="tests.html#w02-c1_value"><span class="h">HDI · Ghana · W02</span><div><span class="small">Claude from memory</span><div class="big dim mid">0.602</div></div><div><span class="small">UNDP HDR 2025 CSV</span><div class="big mid">0.628</div></div></a><a class="vsc" href="tests.html#w02-c1_value_kenya"><span class="h">HDI · Kenya · W02</span><div><span class="small">Claude from memory</span><div class="big dim mid">0.613</div></div><div><span class="small">UNDP HDR 2025 CSV</span><div class="big mid">0.628</div></div></a><a class="vsc" href="tests.html#w01-value_ghana"><span class="h">SDG 6.1.1 · Ghana · W01</span><div><span class="small">Claude from memory</span><div class="big dim mid">38%</div></div><div><span class="small">SDG Global Database</span><div class="big mid">42.9%</div></div></a><a class="vsc" href="tests.html#w01-value_kenya"><span class="h">SDG 6.1.1 · Kenya · W01</span><div><span class="small">Claude from memory</span><div class="big dim mid">30–40%</div></div><div><span class="small">SDG Global Database</span><div class="big mid dim mid">NOT IN SOURCE</div></div></a></div>
- <div class="row"><a class="btn" href="tests.html">Open the test log</a></div>
+ <div class="eyebrow">Free guides</div>
+ <h2>49 guides, every prompt in full</h2>
+ <div class="gcards"><a class="gc" href="evidence-gap-check.html" data-s="Claude Cheat Keys for UN Reporting &amp; Briefing" data-q="check that every statistic in a progress report states its evidence **before a draft progress report is cleared, each statistic should state its data year and indicator, and its figures should agree across sections. i asked claude to run this check on a stored copy of the report, with no web search. here is what it found and how the skill works.**"><span class="gtag">Claude Cheat Keys for UN Reporting &amp; Briefing</span><h3>Check that every statistic in a progress report states its evidence</h3><p>Before a draft progress report is cleared, each statistic should state its data year and indicator, and its figures should agree across sections. I asked Claude to run this check on a stored copy of the report, with no web search. Here is what it found and how the skill works.</p><span class="gmeta">3 min read · 4 sections<i>→</i></span></a><a class="gc" href="pasted-decision-check.html" data-s="Claude Cheat Keys for UN Reporting &amp; Briefing" data-q="check a pasted decision before you quote it **i pasted a long paris agreement decision document from a pdf and asked claude to quote it by page. the answer opened by saying the paste had stopped partway through.**"><span class="gtag">Claude Cheat Keys for UN Reporting &amp; Briefing</span><h3>Check a pasted decision before you quote it</h3><p>I pasted a long Paris Agreement decision document from a PDF and asked Claude to quote it by page. The answer opened by saying the paste had stopped partway through.</p><span class="gmeta">3 min read · 6 sections<i>→</i></span></a><a class="gc" href="ter-one-pager.html" data-s="Claude Cheat Keys for UN Reporting &amp; Briefing" data-q="a one-pager on fccc/pa/cma/2026/10 with every quote paged **i asked claude, with the writing-for-navigation skill, for a one-page brief on the technical expert review of biennial transparency reports. it put the bottom line first and quoted 5 lines word for word, each with its page marker.**"><span class="gtag">Claude Cheat Keys for UN Reporting &amp; Briefing</span><h3>A one-pager on FCCC/PA/CMA/2026/10 with every quote paged</h3><p>I asked Claude, with the writing-for-navigation skill, for a one-page brief on the technical expert review of biennial transparency reports. It put the bottom line first and quoted 5 lines word for word, each with its page marker.</p><span class="gmeta">3 min read · 4 sections<i>→</i></span></a><a class="gc" href="btr-review-report-qa.html" data-s="Claude Cheat Keys for UN Reporting &amp; Briefing" data-q="pre-submission qa on the technical expert review of biennial transparency reports **i asked claude, with the red-team-review skill, to run a pre-submission qa on fccc/pa/cma/2026/10. its verdict was not ready to submit.**"><span class="gtag">Claude Cheat Keys for UN Reporting &amp; Briefing</span><h3>Pre-submission QA on the Technical expert review of biennial transparency reports</h3><p>I asked Claude, with the red-team-review skill, to run a pre-submission QA on FCCC/PA/CMA/2026/10. Its verdict was not ready to submit.</p><span class="gmeta">3 min read · 4 sections<i>→</i></span></a><a class="gc" href="report-claims-apart.html" data-s="Claude Cheat Keys for UN Reporting &amp; Briefing" data-q="keep a report&#x27;s own claims out of your facts **a secretariat report mixes figures with its own judgements. in one test, claude with the not-ai skill kept the two apart and restated 8 quoted lines with more caution.**"><span class="gtag">Claude Cheat Keys for UN Reporting &amp; Briefing</span><h3>Keep a report&#x27;s own claims out of your facts</h3><p>A secretariat report mixes figures with its own judgements. In one test, Claude with the not-ai skill kept the two apart and restated 8 quoted lines with more caution.</p><span class="gmeta">4 min read · 4 sections<i>→</i></span></a><a class="gc" href="ter-section-drafting.html" data-s="Claude Cheat Keys for UN Reporting &amp; Briefing" data-q="drafting an expert review section with page markers and labels **i asked claude, with the official-document-skill, to draft a report section from fccc/pa/cma/2026/10 only. every sentence came back with a page and a label.**"><span class="gtag">Claude Cheat Keys for UN Reporting &amp; Briefing</span><h3>Drafting an expert review section with page markers and labels</h3><p>I asked Claude, with the official-document-skill, to draft a report section from FCCC/PA/CMA/2026/10 only. Every sentence came back with a page and a label.</p><span class="gmeta">3 min read · 4 sections<i>→</i></span></a></div><div class="row"><a class="btn primary" href="guides.html">See all 49 guides →</a></div>
 </section>
 <section>
  <div class="eyebrow">How it works</div>
@@ -195,4 +196,4 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
  <p class="lede">A method post every Tuesday and one chart from UN data every Thursday. Free, and you can leave any time.</p>
  <div class="row"><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a><a class="btn" href="join.html">What you get</a></div>
  <p class="note">Run by Harim Jung. <a href="about.html">About this site and how the checks work</a>.</p>
-</section></main><footer><div class="links"><a href="about.html">About</a><a href="tests.html">Test log</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published. Last checked on 2026-10-20.</p></footer></div></body></html>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div></body></html>
