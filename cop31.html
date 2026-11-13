@@ -1,0 +1,227 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>COP31 desk | Claude for SDG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="COP31 desk sheets: one public UN document, one skill, the exact prompt and the check you still do.">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://sdgai.org/cop31.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Claude for SDG">
+<meta property="og:title" content="COP31 desk | Claude for SDG">
+<meta property="og:description" content="COP31 desk sheets: one public UN document, one skill, the exact prompt and the check you still do.">
+<meta property="og:url" content="https://sdgai.org/cop31.html">
+<meta property="og:image" content="">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#F4F2EC;--card:#FFFFFF;--ink:#141A21;--mut:#5C6772;--hair:#DCD6CA;--un:#009EDB;--un-ink:#0379AE;
+ --or:#D97757;--or-ink:#B4532F;--or-tint:#F6E5DC;--un-tint:#E3F2FA;--ok:#3F7E44;
+ --display:Archivo,system-ui,sans-serif;--body:Archivo,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+a{color:var(--un-ink)} a:focus-visible,button:focus-visible{outline:3px solid var(--un);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+nav{display:flex;align-items:center;gap:6px 20px;padding-block:18px;border-bottom:1.5px solid var(--ink);flex-wrap:wrap}
+nav .brand{font-family:var(--display);font-weight:900;font-size:19px;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .brand b{color:var(--or)}
+nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
+nav .links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+nav .links a.on{color:var(--or-ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or-ink)}
+.lede{color:var(--mut);max-width:62ch}
+section{padding-block:48px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid var(--hair);min-width:0}
+h1.page{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:900}
+h3{font-size:19px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.primary{background:var(--or);border-color:var(--or);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{padding-block:56px 44px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-bottom:1px solid var(--hair)}
+.hero h1{font-size:clamp(36px,5.8vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.03}
+.hero h1 span{color:var(--un)}
+.hero .lede{font-size:18px;margin-block:18px 24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.said,.truth{background:var(--card);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.said{border:1.5px dashed var(--hair)} .truth{border:2px solid var(--un)}
+.small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+a.small{text-decoration:none;color:var(--or-ink);font-weight:600}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(44px,6vw,64px);line-height:1;letter-spacing:-.04em;color:var(--un);font-variant-numeric:tabular-nums}
+.big.dim{color:var(--mut)}
+.big.mid{font-size:clamp(30px,4vw,40px)}
+q{quotes:"\201C" "\201D"}
+.said q{color:var(--mut);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{font-family:var(--mono);font-weight:600;color:var(--or-ink)}
+.step p{color:var(--mut);font-size:15.5px}
+.drop{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:22px}
+.drop img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--hair);display:block}
+.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.joincard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strip img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+video{width:100%;max-width:520px;border-radius:14px;border:1px solid var(--hair);background:var(--card)}
+.post{white-space:pre-wrap;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:22px;max-width:68ch;overflow-wrap:anywhere}
+.ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.abc .q,.tl .q{font-weight:700}
+.abc .a,.tl .a{color:var(--mut);font-size:15px}
+.verdict{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.verdict.off{color:var(--or-ink)} .verdict.ok{color:var(--ok)}
+.chart{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+.ctl{display:flex;gap:8px;align-self:flex-end}
+.ctl button{font:600 13px var(--mono);border:1.5px solid var(--hair);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.ctl button[aria-pressed="true"]{border-color:var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(96px,240px) 1fr 64px;align-items:center;gap:12px;min-height:38px}
+.bar .c{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .t{height:22px;border-left:1.5px solid var(--hair);position:relative}
+.bar .t i{position:absolute;inset:0 auto 0 0;background:var(--un);border-radius:0 4px 4px 0}
+.bar .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.none .c{color:var(--mut)} .bar.none .t{border-left-style:dashed}
+.bar.none em{font:600 12.5px var(--mono);color:var(--mut);padding-left:10px;line-height:22px;font-style:normal;white-space:nowrap}
+.bar:hover .t i{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font:500 13px var(--mono);padding:6px 9px;border-radius:8px;white-space:nowrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+th{font:600 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+pre{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px;overflow-x:auto;font:14px/1.55 var(--mono);margin:0;max-width:100%}
+.note{font-size:14px;color:var(--mut);max-width:72ch}
+ul.note{margin:0;padding-left:20px}
+.pair2{display:grid;grid-template-columns:1fr minmax(0,330px);gap:18px;align-items:start}
+.pair2 img,.pair2 video{width:100%;border-radius:14px;border:1px solid var(--hair);display:block}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vsc{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;min-width:0;text-decoration:none;color:var(--ink)}
+.vsc:hover{border-color:var(--ink)}
+.vsc .h{grid-column:1/-1;font-weight:700}
+.vsc div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px 22px;scroll-margin-top:16px}
+.tl .meta{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.tl .side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl .src{border-left:3px solid var(--un);padding-left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.tl blockquote{margin:0;font-size:15.5px}
+.weeks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.wk{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:18px;display:grid;grid-template-columns:150px 1fr;gap:18px;text-decoration:none;color:var(--ink);align-items:start}
+.wk:hover{border-color:var(--ink)}
+.wk img{width:100%;border-radius:10px;border:1px solid var(--hair);display:block}
+.wk div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gc{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.gc:nth-child(4n+1),.gc:nth-child(4n+4){background:var(--or-tint)}
+.gc:hover{border-color:var(--ink)}
+.gc[hidden]{display:none}
+.gc h3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin:0}
+.gc p{margin:0;font-size:15.5px;line-height:1.55;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gtag{align-self:flex-start;border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font:600 12px var(--mono)}
+.gmeta{display:flex;align-items:center;font:500 13px var(--mono);color:var(--mut);margin-top:auto}
+.gmeta i{margin-left:auto;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:17px}
+.gfind{display:flex;flex-direction:column;gap:14px}
+.gfind input{width:100%;max-width:460px;font:16px var(--body);padding:12px 18px;border:1.5px solid var(--hair);border-radius:999px;background:var(--card);color:var(--ink)}
+.gchips{display:flex;flex-wrap:wrap;gap:8px}
+.gchips button{font:700 14.5px var(--body);border:0;border-radius:999px;padding:8px 14px;background:var(--hair);color:var(--ink);cursor:pointer}
+.gchips button b{font-weight:500;color:var(--mut)}
+.gchips button[aria-pressed="true"]{background:var(--or);color:#fff}
+.gchips button[aria-pressed="true"] b{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips a{display:inline-block;border:1.5px solid var(--hair);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.chips b{font-family:var(--mono);font-weight:600;color:var(--or-ink);margin-right:6px}
+code{font:14px var(--mono);background:var(--or-tint);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}
+.skill{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+details summary{cursor:pointer;font-weight:800}
+details[open] summary{margin-bottom:12px}
+.abc .a,.tl .a{white-space:pre-wrap;overflow-wrap:anywhere}
+section[id],tr[id]{scroll-margin-top:16px}
+tr[id]:target td{background:var(--or-tint)}
+table.ba td:first-child{font-weight:700}
+table.ba td{overflow-wrap:anywhere}
+table.reports{min-width:640px}
+table.reports td{vertical-align:top}
+table.reports td.rep{min-width:300px}
+table.reports td.rep>a{font-weight:700}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.proofs a{font:600 12px var(--mono)}
+td.nw{white-space:nowrap}
+th.n{text-align:right}
+@media (max-width:780px){table.reports{min-width:0}table.reports thead{display:none}
+ table.reports,table.reports tbody{display:block;width:100%}
+ table.reports tr{display:flex;flex-wrap:wrap;gap:4px 14px;padding:14px;border-bottom:1px solid var(--hair)}
+ table.reports tr:last-child{border-bottom:0}
+ table.reports td{display:block;border:0;padding:0;text-align:left;min-width:0;font-weight:600}table.reports td.rep{flex-basis:100%;font-weight:400}}
+pre.wrapt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;max-width:72ch}
+footer{padding-top:28px;color:var(--mut);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap}
+footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
+@media (max-width:780px){.hero,.duo,.steps,.drop,.join,.ab,.pair2,.vs,.tl,.weeks,.gcards{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
+@media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
+</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html">Guides</a><a href="cop31.html" class="on">COP31</a><a href="indicators.html">Indicators</a><a href="skills.html">Skills</a><a href="join.html">Join</a></div></nav><main>
+<section>
+ <div class="eyebrow">COP31 desk</div>
+ <h1 class="page">Claude Cheat Keys for UN · COP31</h1>
+ <p class="lede">One sheet for each COP31 desk job. Each one shows what came back when I gave Claude a public UN document and one skill, the exact way to ask, and the check you still do yourself.</p>
+</section>
+<section class="skill" id="cop_desk_00_howto">
+ <div class="eyebrow">COP31 desk 0/5 · 2026-11-11</div>
+ <h2>A country climate dashboard, then six desks</h2>
+ <img src="cop/cop_desk_00_howto.gif" alt="COP31 desk sheet: a country climate dashboard, then six desks" loading="lazy" style="width:100%;max-width:540px;border-radius:12px;border:1px solid #e5e0d6">
+ <p class="note">From the public UN document Open-Meteo · Climate TRACE: </p>
+ <h3>Copy this</h3><pre>Make a climate card for Kenya.</pre>
+ <div class="row"><a class="btn primary" href="https://github.com/HarimJung/ALL-AI-Auto/blob/HEAD/assets/country-climate-card.SKILL.md">Get the skill: country-climate-card</a><a class="btn" href="https://www.linkedin.com/posts/harimjungmsc_unsdg-claudeskills-sdgai-ugcPost-7525645483457925120-T5km/">Read the LinkedIn post</a></div>
+ <p class="note">Public UN documents only. Never paste a closed draft, informal notes or anything marked restricted.</p>
+</section>
+<section class="skill" id="cop_desk_01_brief">
+ <div class="eyebrow">COP31 desk 1/5 · 2026-11-12</div>
+ <h2>One page for the minister</h2>
+ <img src="cop/cop_desk_01_brief.gif" alt="COP31 desk sheet: one page for the minister" loading="lazy" style="width:100%;max-width:540px;border-radius:12px;border:1px solid #e5e0d6">
+ <p class="note">From the public UN document FCCC/PA/CMA/2026/10: Technical expert review of biennial transparency reports</p>
+ <h3>Copy this</h3><pre>Use the brief skill. One page on FCCC/PA/CMA/2026/10 for my minister. Organize it as claim, evidence, ask. Quote word for word with page numbers.</pre>
+ <div class="row"><a class="btn primary" href="https://github.com/clawic/skills/tree/main/skills/brief">Get the skill: brief</a></div>
+ <p class="note">Public UN documents only. Never paste a closed draft, informal notes or anything marked restricted.</p>
+</section>
+<section class="skill" id="cop_desk_02_digest">
+ <div class="eyebrow">COP31 desk 2/5 · 2026-11-13</div>
+ <h2>The report, mapped by decision</h2>
+ <img src="cop/cop_desk_02_digest.gif" alt="COP31 desk sheet: the report, mapped by decision" loading="lazy" style="width:100%;max-width:540px;border-radius:12px;border:1px solid #e5e0d6">
+ <p class="note">From the public UN document FCCC/PA/CMA/2018/3/Add.2: Katowice CMA report, addendum, part two</p>
+ <h3>Copy this</h3><pre>Use the chat-with-pdf skill. Summarise FCCC/PA/CMA/2018/3/Add.2 by decision, word for word with page numbers. Tell me if my copy is incomplete.</pre>
+ <div class="row"><a class="btn primary" href="https://github.com/claude-office-skills/skills/tree/main/chat-with-pdf">Get the skill: chat-with-pdf</a></div>
+ <p class="note">Public UN documents only. Never paste a closed draft, informal notes or anything marked restricted.</p>
+</section>
+<section class="skill" id="cop_desk_03_glossary">
+ <div class="eyebrow">COP31 desk 3/5 · 2026-11-16</div>
+ <h2>The acronyms, in the six UN languages</h2>
+ <img src="cop/cop_desk_03_glossary.gif" alt="COP31 desk sheet: the acronyms, in the six UN languages" loading="lazy" style="width:100%;max-width:540px;border-radius:12px;border:1px solid #e5e0d6">
+ <p class="note">From the public UN document FCCC/PA/CMA/2026/10: Technical expert review of biennial transparency reports</p>
+ <h3>Copy this</h3><pre>Use the translation-glossary-builder skill. Build a glossary of every acronym in FCCC/PA/CMA/2026/10 in the six UN languages, with the page where each appears. Mark any term you are unsure of with (verify).</pre>
+ <div class="row"><a class="btn primary" href="https://github.com/ur-grue/autopunk-media-skills/tree/main/skills/translation/reference/translation-glossary-builder">Get the skill: translation-glossary-builder</a></div>
+ <p class="note">Public UN documents only. Never paste a closed draft, informal notes or anything marked restricted.</p>
+</section>
+<section class="skill" id="cop_desk_04_followup">
+ <div class="eyebrow">COP31 desk 4/5 · 2026-11-17</div>
+ <h2>Who owes what, by when</h2>
+ <img src="cop/cop_desk_04_followup.gif" alt="COP31 desk sheet: who owes what, by when" loading="lazy" style="width:100%;max-width:540px;border-radius:12px;border:1px solid #e5e0d6">
+ <p class="note">From the public UN document FCCC/PA/CMA/2018/3/Add.2: Katowice CMA report, addendum, part two</p>
+ <h3>Copy this</h3><pre>Use the meeting-follow-up skill on FCCC/PA/CMA/2018/3/Add.2. List decisions, requests and deadlines, quoting each with its page.</pre>
+ <div class="row"><a class="btn primary" href="https://github.com/QuixiAI/Hexis/tree/main/skills/installed/meeting-follow-up">Get the skill: meeting-follow-up</a></div>
+ <p class="note">Public UN documents only. Never paste a closed draft, informal notes or anything marked restricted.</p>
+</section>
+<section class="skill" id="cop_desk_05_donor">
+ <div class="eyebrow">COP31 desk 5/5 · 2026-11-18</div>
+ <h2>A donor brief that knows what it doesn&#x27;t know</h2>
+ <img src="cop/cop_desk_05_donor.gif" alt="COP31 desk sheet: a donor brief that knows what it doesn&#x27;t know" loading="lazy" style="width:100%;max-width:540px;border-radius:12px;border:1px solid #e5e0d6">
+ <p class="note">From the public UN document A/81/93–E/2026/73: Progress towards the Sustainable Development Goals, report of the Secretary-General</p>
+ <h3>Copy this</h3><pre>Use the grant-writer skill. Draft a donor brief for our renewal using the 2026 SDG progress report. Quote every figure with its page and leave our own results as [placeholders].</pre>
+ <div class="row"><a class="btn primary" href="https://github.com/bestagentkits/agency-skills/tree/main/skills/specialized/grant-writer">Get the skill: grant-writer</a></div>
+ <p class="note">Public UN documents only. Never paste a closed draft, informal notes or anything marked restricted.</p>
+</section>
+<section>
+ <div class="eyebrow">Next</div>
+ <h2>Get the next one when it is out</h2>
+ <div class="row"><a class="btn" href="https://www.linkedin.com/in/harimjungmsc/">Follow on LinkedIn</a><a class="btn" href="skills.html">All free skills</a></div>
+</section></main><footer><div class="links"><a href="about.html">About</a><a href="join.html">Join</a></div><p>Claude for SDG is an independent community project by Harim Jung. It is not affiliated with Anthropic or the United Nations. Views are my own.</p><p>Every figure on this site is read from the UN SDG Global Database, the SDG Metadata Repository or the publisher's own report page and data file, and matched to a stored copy of the source before it is published.</p></footer></div></body></html>

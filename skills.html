@@ -160,7 +160,7 @@ footer .links a{color:var(--ink);font-weight:700;text-decoration:none}
  .hero{padding-block:36px 32px;gap:28px}section{padding-block:36px}}
 @media (max-width:480px){.wk{grid-template-columns:96px 1fr;gap:14px;padding:14px}.vsc{grid-template-columns:1fr 1fr}
  .bar{grid-template-columns:96px 1fr 52px;gap:8px}.big{font-size:44px}}
-</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html">Guides</a><a href="indicators.html">Indicators</a><a href="skills.html" class="on">Skills</a><a href="join.html">Join</a></div></nav><main>
+</style></head><body><div class="wrap"><nav><a class="brand" href="index.html">Claude <b>for</b> SDG</a><div class="links"><a href="guides.html">Guides</a><a href="cop31.html">COP31</a><a href="indicators.html">Indicators</a><a href="skills.html" class="on">Skills</a><a href="join.html">Join</a></div></nav><main>
 <section>
  <div class="eyebrow">Skills</div>
  <h1 class="page">Free skills that read the UN source first</h1>
@@ -321,6 +321,152 @@ Pages: &lt;printed page numbers | PDF page numbers&gt;
 ## Demo
 
 `demo/draft_brief.md` is a five-sentence draft citing the Secretary-General&#x27;s SDG progress report A/81/93-E/2026/73 (8 June 2026). Two sentences carry planted errors, and the answer key is in the same file. A copy of the report and its SHA-256 are in `data/anchors/skills/claim-check/` in the claude-for-sdg repository.
+</pre></details>
+</section>
+<section class="skill" id="classified-intake-steps">
+ <div class="eyebrow">Free skill</div>
+ <h2>classified-intake-steps</h2>
+ <p class="lede">Turn a classified item that arrived by email into a short intake card for UN staff. The card says to print it on receipt, file and store it as the bulletin directs, keep it on protected systems, and use AI only on the unclassified parts of the work. Every step is quoted from the Secretary-General&#x27;s bulletin on classified information. Use when someone has a classified attachment in their inbox and asks whether AI can summarise it.</p>
+ <div class="row"><a class="btn primary" href="assets/classified-intake-steps.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: classified-intake-steps
+description: Turn a classified item that arrived by email into a short intake card for UN staff. The card says to print it on receipt, file and store it as the bulletin directs, keep it on protected systems, and use AI only on the unclassified parts of the work. Every step is quoted from the Secretary-General&#x27;s bulletin on classified information. Use when someone has a classified attachment in their inbox and asks whether AI can summarise it.
+---
+
+# Classified Intake Steps
+
+One classified item in, one intake card out. Each step quotes the bulletin. Anything the opened text does not state is marked NOT IN SOURCE.
+
+**Inputs**
+- `document`: the user&#x27;s own working notes about the item. This can be the cover email with the attachment removed, or a short note of what arrived and how it is marked. It is never the classified content itself.
+- `question`: what the user wants to do with the item, such as get a summary or pass it to a colleague.
+
+## Why this exists
+
+A classified attachment looks like any other file in an inbox. The quick move is to drop it into an AI tool for a summary. The bulletin asks for a paper step on receipt and protected systems for any electronic handling. Unless your office has approved an AI tool for classified work, treat it as an unprotected system. Staff need the steps at the moment the file arrives, with the bulletin&#x27;s own words behind each one.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| Secretary-General&#x27;s bulletin on classified information | The paragraph on printing items received in electronic form, the paragraph on filing and storage it points to, the paragraph on protected means of communication, and the paragraph on controls for automated information systems | `https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf` |
+| The user&#x27;s own document | What arrived, how it is marked, and what the user wants to do | Pasted or attached by the user |
+
+The UN documents site sometimes returns an error or a bot check instead of the PDF. If the bulletin does not open, say so plainly. Do not fill the steps from memory or a search summary. Give the user the link and stop.
+
+## Steps
+
+- Read the user&#x27;s document first. If it holds classified content, stop. Tell the user to remove it from the chat and not to paste it again. Work only from the marking and the user&#x27;s own notes.
+- Open the bulletin PDF. Copy the document symbol and the title from the first page.
+- Find the paragraph that begins &quot;(e) A hard copy of classified information received in an electronic form&quot;. Quote it as the receipt step.
+- Find the subparagraph that the receipt step points to with the words &quot;as detailed in subparagraph (d) above&quot;. Quote what it says on filing and storage. If the text is not there, write NOT IN SOURCE.
+- Find the paragraph that begins &quot;(f) Electronic transmission&quot;. Quote it as the sending step.
+- Find the paragraph that begins &quot;Heads of departments and offices&quot;. Quote the part on &quot;controls that both prevent access by unauthorized persons&quot;.
+- Answer the user&#x27;s question. If they asked AI to summarise, read, translate or rewrite the classified item, say no and quote the sending step. Then list what AI can still help with on the unclassified side. Examples are a reply to the sender asking which protected channel to use, a plan for the user&#x27;s own unclassified tasks, or a checklist built from this card.
+- Say who decides which systems are protected. The bulletin gives this to heads of departments and offices working with IT services. Tell the user to ask their office which systems are approved. Do not name a system yourself.
+
+## Answer layout
+
+```
+Intake card · &lt;document symbol from the first page&gt;
+Item: &lt;what arrived and its marking, from the user&#x27;s notes&gt;
+
+On receipt: print it.          &quot;&lt;quoted line&gt;&quot;   &lt;paragraph label&gt;
+Store it: as the bulletin says. &quot;&lt;quoted line&gt;&quot;   &lt;paragraph label&gt;   (or NOT IN SOURCE)
+Sending it: protected means only. &quot;&lt;quoted line&gt;&quot;   &lt;paragraph label&gt;
+Systems: approved controls only.  &quot;&lt;quoted line&gt;&quot;   &lt;paragraph label&gt;
+
+AI on this item: no. Use it only for the unclassified parts below.
+- &lt;unclassified task AI can help with&gt;
+- ...
+
+Ask your office: &lt;which protected systems are approved, and anything else the bulletin leaves to the office&gt;
+Not covered: &lt;anything asked that the bulletin does not state&gt;
+```
+
+## Rules
+
+- **Remove names and personal details first. Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.**
+- Never summarise, translate, rewrite or analyse the classified content. If it is pasted, stop and say so.
+- Quote the bulletin for every step. Shorten only by cutting. Keep &quot;must&quot; and &quot;shall&quot; as written.
+- If the bulletin does not open, say it could not be opened. Do not fill the steps from memory, a news item or a search summary.
+- Never say that a named AI tool or platform is approved for classified information. The bulletin leaves approval to heads of departments and offices.
+- If the question asks about a classification level, a form or a procedure the opened text does not describe, write NOT IN SOURCE and point the user to their office.
+- Never invent a paragraph label, a classification level or a contact.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; I have a classified email attachment and I want to know what to do with it. Do not ask me to paste it and do not summarise it. Use only the Secretary-General&#x27;s bulletin at https://documents.un.org/api/symbol/access?s=ST/SGB/2007/6&amp;l=en&amp;t=pdf and my own notes below. Make me a short intake card. Quote the bulletin&#x27;s lines on printing classified items received in electronic form, filing and storing them, sending them only through protected means of communication, and controls on automated information systems. Give the paragraph label for each quote. Then list what AI can help me with on the unclassified parts of my work only. If you cannot open the bulletin, say so and do not answer from memory. My notes: &lt;what arrived, how it is marked, what I want to do&gt;.
+</pre></details>
+</section>
+<section class="skill" id="country-climate-card">
+ <div class="eyebrow">Free skill</div>
+ <h2>country-climate-card</h2>
+ <p class="lede">Make a one-page climate card for any country from three open datasets, with every number computed in code. Use when someone preparing a bilateral meeting, a briefing or a funding proposal gives a country name and wants its capital&#x27;s heat trend, its emissions and biggest source, and its latest NDC on one page.</p>
+ <div class="row"><a class="btn primary" href="assets/country-climate-card.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: country-climate-card
+description: Make a one-page climate card for any country from three open datasets, with every number computed in code. Use when someone preparing a bilateral meeting, a briefing or a funding proposal gives a country name and wants its capital&#x27;s heat trend, its emissions and biggest source, and its latest NDC on one page.
+---
+
+# Country climate card
+
+One input: a country name. One output: a card a delegation adviser can read in ten seconds before a bilateral.
+Every number comes from an API response you saved. Nothing comes from memory.
+
+## 1. Pull the data (save each response to a file before you read it)
+
+Use the ISO3 code (Kenya = `KEN`) and the capital&#x27;s latitude and longitude to two decimals.
+
+| What | URL |
+|---|---|
+| Daily max temperature, capital | `https://archive-api.open-meteo.com/v1/archive?latitude=&lt;lat&gt;&amp;longitude=&lt;lon&gt;&amp;start_date=1961-01-01&amp;end_date=2025-12-31&amp;daily=temperature_2m_max&amp;timezone=auto` |
+| Total emissions, one call per year 2015 to 2024 | `https://api.climatetrace.org/v6/country/emissions?countries=&lt;ISO3&gt;&amp;since=&lt;year&gt;&amp;to=&lt;year&gt;` |
+| Emissions by sector, 2024, one call per sector | same URL with `&amp;since=2024&amp;to=2024&amp;sectors=&lt;sector&gt;` for `agriculture buildings fluorinated-gases forestry-and-land-use fossil-fuel-operations manufacturing mineral-extraction power transportation waste` |
+| NDC content | `https://www.climatewatchdata.org/api/v1/data/ndc_content?countries[]=&lt;ISO3&gt;&amp;per_page=500` |
+
+Climate TRACE: read `[0].emissions.co2e_100yr` (tonnes). `since` and `to` must be the same year, or you get a sum of years.
+Open-Meteo is CC BY 4.0: credit it on the card.
+
+## 2. Compute in code (Python, standard library is enough)
+
+- **Hot-day line** `T` = the 90th percentile of all daily maxima 1961–1990, rounded to a whole degree.
+- **Hot days per year** = days with max ≥ `T`. `base` = mean 1961–1990, `recent` = mean 2016–2025, `ratio` = recent / base.
+- **Emissions**: total 2024 and change since 2015, in Mt CO₂e.
+- **Sector shares**: drop `forestry-and-land-use` (it is often a net sink and swamps the rest), then each sector&#x27;s share of the sum of the others. `top` = largest.
+- **NDC**: for `ghg_target`, `conditionality` and `submission`, take the row with the highest `id` (the latest submission).
+- **The sentence** (same rule for every country):
+  - power share &lt; 10% and top is not power → «Power is not its problem. Its &lt;top&gt; are.» (a small power share is not a clean grid, so never write «clean»)
+  - otherwise → «Its &lt;top&gt; lead, at &lt;share&gt;%. &lt;Second&gt; come next, at &lt;share&gt;%.»
+  - nouns: agriculture farms, transportation roads, manufacturing factories, buildings buildings, waste landfills, fossil-fuel-operations oil and gas fields, mineral-extraction mines, fluorinated-gases cooling gases.
+
+## 3. Lay out the card (4:5, 1080 × 1350)
+
+Top to bottom: the prompt line · country name · **hero `&lt;ratio&gt;×` more hot days in &lt;capital&gt;** with base and recent under it ·
+bar chart of hot days per year 1961–2025, 2016–2025 in a warm colour, flat lines at base and recent · the sentence, second line bold ·
+three tiles (emissions 2024 · biggest source · latest NDC) · one source line.
+Phone rule: nothing a reader must read under 24 px.
+
+## City mode («heat card for &lt;city&gt;»)
+
+Open-Meteo only, with `daily=temperature_2m_max,temperature_2m_min` at the city&#x27;s coordinates. Same hot-day line `T`.
+Hero = `recent − base` more hot days a year. Add warm nights: nights with minimum above 20 °C, 1961–90 mean against 2016–25 mean.
+Tiles: the hot-day line `T`, the worst year (most hot days), the hottest day in the series.
+
+## 4. Hand back
+
+The card, then a JSON block with `T base recent ratio total24 growth top share_top power_share ndc_submission conditionality sentence`,
+then the raw `ghg_target` sentence word for word.
+
+## What a person still checks
+
+- The NDC line against the country&#x27;s own NDC document on unfccc.int. Climate Watch is a reading of it.
+- The grid cell: ERA5 is about 25 km. A coastal capital can land on sea.
+- Emissions are Climate TRACE estimates, not the national inventory. Say so if the card goes into an official brief.
 </pre></details>
 </section>
 <section class="skill" id="declassification-sequence-check">
@@ -948,6 +1094,81 @@ Not covered: &lt;anything asked about that neither document states&gt;
 ## Copy-paste prompt (works in any assistant)
 
 &gt; I will paste two texts. The first is the results framework from my programme document. The second is an implementing partner&#x27;s narrative report. For each indicator in the programme document, quote its wording, baseline, end line and source of verification. Then quote what the partner report says about it, and say where in the report it appears. Mark each line MATCHES, DIFFERS, NO VALUE GIVEN, NOT REPORTED or NOT IN PROGRAMME DOCUMENT. A statement that a target was met counts only if the report gives a value in the same unit as the end line. Do not fill any gap from memory and do not guess. End with a short list of questions I can send to the partner. If you cannot read one of the texts, tell me and stop.
+</pre></details>
+</section>
+<section class="skill" id="procedure-step-check">
+ <div class="eyebrow">Free skill</div>
+ <h2>procedure-step-check</h2>
+ <p class="lede">Run a procedure-first check on the user&#x27;s own anonymized timeline of a contested staff decision. Each step is checked against the procedural rules the user supplies, before any merits review. Use when an appeals or legal desk is preparing a case that may reach the ILO Administrative Tribunal and wants to find missed steps early.</p>
+ <div class="row"><a class="btn primary" href="assets/procedure-step-check.SKILL.md" download>Download SKILL.md</a></div>
+ <h3>Use it</h3><ol class="note" style="margin:0;padding-left:20px"><li>In Claude, add the file as a skill (Customize, then Skills).</li><li>Check the source line under each value before you quote it.</li></ol>
+ <p class="note">Can't use Claude at work? Paste the rules section into the assistant you are allowed to use, and give it the source links.</p>
+ <details><summary>Read the file</summary><pre>---
+name: procedure-step-check
+description: Run a procedure-first check on the user&#x27;s own anonymized timeline of a contested staff decision. Each step is checked against the procedural rules the user supplies, before any merits review. Use when an appeals or legal desk is preparing a case that may reach the ILO Administrative Tribunal and wants to find missed steps early.
+---
+
+# Procedure Step Check
+
+One anonymized timeline in, one procedure check out. Every required step is matched to a timeline entry or marked missing. The merits come after.
+
+**Inputs**
+- `timeline`: the user&#x27;s anonymized timeline of the contested decision, one event per line.
+- `rules`: the procedural text that applied, pasted from the user&#x27;s own document. Each step keeps its reference as written there.
+- `decision`: optional. One line naming the contested decision.
+
+## Why this exists
+
+Legal desks tend to start with the merits of a contested decision. The Joint Inspection Unit review of UNESCO appeals points to procedure: &quot;Adverse judgments were largely due to procedural noncompliance and legal errors, underscoring the need for strengthened compliance and early dispute resolution.&quot; A skipped step is easier to find and fix before a case is argued than after.
+
+## Sources (use these and nothing else)
+
+| Document | What it holds | File |
+|---|---|---|
+| JIU review highlights | The section &quot;Appeals processes and the ILO Administrative Tribunal&quot;, with the finding on adverse judgments | `https://www.unjiu.org/sites/www.unjiu.org/files/jiu-rep-2026-1_review_highlights.pdf` |
+| The user&#x27;s own document | The anonymized timeline and the procedural rules text that applied | Supplied by the user |
+
+If the JIU file does not open, say so in the answer and write SOURCE NOT OPENED. Do not quote it from memory or from a search summary. The check still runs on the user&#x27;s document. If the user gives no rules text, do not supply rules from memory. Write RULES NOT PROVIDED and list only the timeline events.
+
+## Steps
+
+Run these in order.
+
+- **Open the JIU file.** Copy the quoted line and the section heading it sits under. If the file does not open, record that.
+- **Screen the user&#x27;s document.** If it contains names or personal details, stop and ask the user to remove them.
+- **List the required steps.** Take each procedural step from the rules text, in its own words. Keep &quot;shall&quot; as required and &quot;should&quot; as expected. Note a time limit only as the rules state it.
+- **Match each step to the timeline.** Find the entry that shows the step was done. Quote that entry.
+- **Mark a status.** Done when an entry shows it. Missing when no entry shows it. Unclear when the entry is vague. Late when the rules set a time limit and the timeline shows it was passed.
+- **List the gaps.** Put Missing, Late and Unclear steps at the top. Name the record that would close each one.
+- **Only then turn to the merits.** Say the procedure check is complete and that merits review can start. Do not review the merits inside this skill.
+
+## Answer layout
+
+```
+Procedure check · sources read &lt;today&#x27;s date&gt;
+Finding: &quot;&lt;quoted JIU line&gt;&quot;  JIU review highlights, &lt;section heading&gt;   (or SOURCE NOT OPENED)
+
+| Step | Rule says | Timeline shows | Status | Rule reference |
+|---|---|---|---|---|
+| &lt;step&gt; | &quot;&lt;rule words&gt;&quot; | &quot;&lt;entry&gt;&quot; or none | Done, Missing, Unclear or Late | &lt;reference in the user&#x27;s document&gt; |
+
+Gaps before merits: &lt;Missing, Late and Unclear steps, with the record that would close each&gt;
+Not covered: &lt;anything asked that the opened documents do not state&gt;
+```
+
+## Rules
+
+- **Remove names and personal details first. Use your own working notes, leave out anything marked confidential, and use the AI tool your organization allows.**
+- Every required step comes from the user&#x27;s rules text. Never add a step from memory or from general practice.
+- Quote the rules and the timeline. Shorten only by cutting. Never turn a &quot;should&quot; into a &quot;shall&quot;.
+- A step with no timeline entry is Missing. Do not assume it happened.
+- Do not predict how the Tribunal would rule. Do not give a view on the merits.
+- If the question needs a rule, a time limit or a form that the user&#x27;s document does not hold, write NOT IN SOURCE.
+- Never invent a number, a time limit or a date.
+
+## Copy-paste prompt (works in any assistant)
+
+&gt; Check the procedure in this anonymized case before any merits review. Here is my timeline and the procedural rules that applied: &lt;paste&gt;. Use only my text and the JIU review highlights at https://www.unjiu.org/sites/www.unjiu.org/files/jiu-rep-2026-1_review_highlights.pdf. List each step the rules require, in their own words. For each step, quote the timeline entry that shows it was done, or mark it Missing, Late or Unclear. Put the gaps first. If you cannot open the JIU file, say so and do not quote it from memory. Do not add rules I did not give you. Do not give a view on the merits or the likely outcome.
 </pre></details>
 </section>
 <section class="skill" id="question-batch-tracker">
